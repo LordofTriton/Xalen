@@ -1,0 +1,79 @@
+.topNav {
+    width: 100vw;
+    height: 70px;
+    background-color: var(--white);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /* overflow: hidden; */
+    z-index: 20;
+}
+
+.topNavLogo {
+    height: 70%;
+    aspect-ratio: 1;
+    margin: 5% 0px 0px 15px;
+    padding: 0px;
+    animation: strobe 5s infinite;
+    pointer-events: none;
+    float: left;
+}
+
+.topNavTitle {
+    font-family: Lightning;
+    color: var(--orange-peel);
+    font-size: 30px;
+    padding: 0px;
+    animation: title_anim 5s infinite;
+    float: left;
+    margin: 17px 0px 0px 30px;
+}
+
+.topNavMenuButton {
+    height: 50%;
+    aspect-ratio: 1;
+    margin: 4% 20px 0px 0px;
+    cursor: pointer;
+    transition: all 0.5s;
+    float: right;
+}
+
+.topNavMenuButton:hover {
+    transform: scale(1.2,1.2);
+}
+
+.topNavMenu {
+    width: 150px;
+    height: fit-content;
+    position: fixed;
+    top: 70px;
+    right: 0px;
+    background-color: var(--white);
+    border-radius: 0px 0px 0px 5px;
+    transition: all 0.5s;
+    z-index: 15;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 35px 0px 35px 0px;
+}
+
+.topNavMenuOption {
+    color: var(--orange-peel);
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+    font-weight: 300;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.topNavMenuOption:hover {
+    transform: scale(1.2,1.2);
+}
+
+@media screen and (min-width: 1125px) {
+    .topNav {
+        display: none;
+    }
+}

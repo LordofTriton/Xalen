@@ -1,0 +1,128 @@
+@keyframes emerge_zoom {
+    0% {transform: scale(0.5,0.5);}
+    100% {transform: scale(1,1);}
+}
+
+.chatWindow {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    background-color: var(--white);
+    float: right;
+    background-image: url(../../images/chatBckg2.jpeg);
+    background-size: contain;
+    overflow-y: auto;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    padding: 30px;
+    box-sizing: border-box;
+    padding-bottom: 160px;
+}
+
+.dateTimeDisplay {
+    color: dimgray;
+    font-weight: 600;
+    text-align: center;
+    font-size: 13px;
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+}
+
+.chatMessage {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    margin: 0px 0px 10px 0px;
+}
+
+.chatContent {
+    background-color: var(--orange-peel);
+    padding: 10px 20px 10px 20px;
+    margin: 0px;
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 15px;
+    max-width: 60%;
+    word-wrap: break-word;
+    animation: emerge_zoom 0.1s ease-in-out;
+    font-weight: 400;
+}
+
+.chatContentTyping {
+    background-color: var(--heat-wave);
+    padding: 10px 20px 10px 20px;
+    margin: 0px;
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 15px;
+    max-width: 60%;
+    word-wrap: break-word;
+    animation: strobe 5s infinite;
+    position: absolute;
+}
+
+.chatInputDock {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.chatInputDockField {
+    width: 78%;
+    height: 50px;
+    margin: 10px 0px 10px 2%;
+    border: 0px;
+    outline: 0px;
+    border-radius: 5px;
+    background-color: var(--white);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.chatInputDockSubmit {
+    width: 16%;
+    height: 50px;
+    margin: 10px 0px 10px 2%;
+    float: left;
+    background-color: var(--heat-wave);
+    color: var(--white);
+    border: 0px;
+    outline: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.chatInputDockSubmit:hover {
+    background-color: var(--orange-peel);
+    transform: scale(1.1,1.1);
+}
+
+
+@media screen and (min-width: 1125px) {
+    .chatWindow {
+        width: 85vw !important;
+        height: 100vh;
+        left: 15vw;
+        top: 0px;
+    }
+    .chatInputDock {
+        width: 85vw;
+    }
+    .chatInputDockField {
+        width: 88%;
+    }
+    .chatInputDockSubmit {
+        width: 6%;
+    }
+}

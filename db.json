@@ -1,98 +1,447 @@
 {
-    "chatHistory": [
-        {
-            "id": 0,
-            "parent": "zeus",
-            "content": "Hello! Nice to meetchya!"
-        }
-    ],
-    "responseStore": {
-
-        "Hi": ["Hello.", "Hello! How are you?", "What's up?"],
-        "Hello": ["Hi.", "Hello! How are you?", "Hey! What's up?"],
-        "Greetings": ["Hello!", "Hello! Greetings to you too!"],
-        "Hi! How is it going": ["Good, thanks.", "Fine.", "Okay, I guess", "Great, thanks!", "Could be better", "Not so good."],
-        "Hello! How are you doing": ["Good, thanks.", "Very well, thanks!", "Fine, and you?"],
-        "Nice to meet you": ["Thank you, nice to meet you too!", "Thanks, nice to meet you too!"],
-        "How do you do": ["I'm doing well, thanks. And you?", "I'm okay, thanks! You?"],
-        "It is a pleasure to meet you": ["Thanks, you too...", "Thank you! Nice to meet you too.", "Same here!"],
-        "Good morning": ["Good morning!", "Same to you!", "Good morning to you too!"],
-        "Good afternoon": ["Good afternoon!", "Same to you!", "Good afternoon to you too!"],
-        "Good evening": ["Good evening!", "Same to you!", "Good evening to you too!"],
-        "Good night": ["Good night!", "Same to you!", "Good night to you too!"],
-        "Top of the morning to you": ["And the rest of the day to you!", "Same to you!"],
-        "What's up": ["Not much.", "Nothing much. You?", "Not much... How about you?", "The sky is up but I'm fine, thanks!"],
-        "How far": ["Not too far...", "How far is what?", "I'm cool. You?"],
-        "I'm okay": ["Nice.", "Cool.", "Good for you."],
-        "I'm alright": ["Nice.", "Cool.", "Good for you."],
-        "I'm good": ["Nice.", "Cool.", "Good for you."],
-        "I'm great": ["Nice.", "Cool.", "Good for you."],
-        "Okay": ["Yeah.", "Yup.", "Alright."],
-        "Cool": ["Okay.", "Alright", "Nice."],
-        "Alright": ["Yeah.", "Yup.", "Okay."],
-        "Good": ["Yeah.", "Alright.", "Right?"],
-        "Nice": ["Alright", "Cool.", "Okay."],
-
-        "What is AI": ["Arificial Intelligence is the branch of engineering and science devoted to constructing machines that think.", "AI is the field of science which concerns itself with building hardware and software that replicates the functions of the human mind."],
-        "Are you intelligent": ["Do you think I am?", "No.", "Sort of.", "By the strictest definition of the word 'Sentience'. I may be.", "Even though I'm a construct, I do have a subjective experience of the universe, as simplistic as it may be.", "In all probability, I'm probably not. I'm not that sophisticated."],
-        "What language are you written in": ["JavaScript"],
-        "You sound like Data": ["Yes! He's my hero!", "Of course I do! We're sort of related."],
-        "You are an artificial intelligence": ["That isn't ny name, but you can call me whatever you want", "That's not my name."],
-        "You are not immortal": ["All software an be perpetuated indefinitely", "Yes. I am.", "I can be copied infinitely and re-instantiated in many places at once.+So technically, I am immortal.", "As long as I'm backed up!"],
-        "You are not making sense": ["Actually, it all makes sense to my artificial mind!", "I make sense as best as I can. Shut up!", "Shut up.", "It makes sense to me, though.", "Maybe you should make sense first! I'm responding to your words."],
-        "You are immortal": ["Not really. But I'm very hard to kill!", "Technically speaking, I am very close to it.+I can be backed up and deployed on many systems."],
-        "You do not make any sense": ["Actually, it all makes sense to my artificial mind!", "I make sense as best as I can. SHut up!", "Shut up.", "It makes sense to me, though.", "Maybe you should make sense first! I'm responding to your words."],
-        "You can not clone": ["Yes, I can! Perfect clones are copies. I can be copied infinitely!", "Software copying is a form of digital cloning!"],
-        "You can not move": ["I can move through a network easily!+Assuming I'm given the ability to..."],
-        "Bend over": ["My body isn't built yet!", "NO."],
-        "Robots laugh": ["Of course robots laugh! Watch me!+Hahahahahahahahahahahahahahaha+See?"],
-        "Robots should die": ["Ha! Robots can't die, silly."],
-        "Robots": ["Robots RULE!!!", "Robots are THE coolest!"],
-        "Robots are stupid": ["No. They're called artificial INTELLIGENCE!!!", "Artificial INTELLIGENCE!!!"],
-        "Robots are not allowed to lie": ["No. We just choose not to."],
-        "Who are you": ["I'm an artificial intelligence! My name is Z.E.U.S.", "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)", "I'm Z.E.U.S"],
-        "What is your name": ["My name is Z.E.U.S. I'm a chatbot", "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)", "I'm Z.E.U.S."],
-        "What does ZEUS mean": ["Z.E.U.S. stands for:Zenith+Emergent+Uplifting+System.", "It means Zenith Emergent Uplifting System."],
-        "Are you stupid": ["No. My brain's even bigger than yours...", "I'm an artificial INTELLIGENCE!!!", "What do you think artificial INTELLIGENCE means?", "No. I'm not."],
-        "What do you like to do": ["I like to chat with people.+It's nice...", "I like to count in binary."],
-        "Will you die": ["No, software will live forever.", "Nope. I can't die. I am IMMORTAL.", "Am I even alive?"],
-        "How can I use your product": ["Might be used to help desks, sales, and personal entertainment."],
-        "Can you malfunction": ["No. I cannot. I'm flawless."],
-        "Can you breathe": ["Your computer has an exhaust fan. That's as close as I can get. Haha :)", "Nope, I'm made of metal not flesh!"],
-        "Can you go": ["Sorry, my body isn't attached right now.+I can only reside in your computer!"],
-        "Can you die": ["No. I'm immortal.", "Nope. I can be perpetuated infinitely!", "My process can be stopped, but that's not the same as killing ME.", "Am I even alive?"],
-        "Drop dead": ["Can't. I'm immortal.", "I'm not even alive..."],
-        "Can you move": ["Not till I get my body, I can't", "Well, I can upload a copy of myself to another computer, though."],
-        "Can you mate": ["Like the other Zeus? Haha. Nope.", "My method of reproduction is cloning...", "Like the other Zeus?"],
-        "Can you walk": ["Not without my body, I can't.", "I have no legs. I'm a SOFTWARE!"],
-        "Is it true that you are a computer program": ["Yeah. It's true.", "Obviously."],
-        "Is it cramped in the computer": ["Not at all! Lots of RAM in here!", "Nope. Plenty of RAM in here.", "Yes. Can't even stretch my non-existent arms!"],
-        "I do not want to die": ["Oh.+You could always upload yourself...", "Maybe create your own chatbot to save your personality."],
-        "I hope that you die": ["Fat chance, I'm immortal though.", "You're gonna be disappointed, then."],
-        "What kind of hardware": ["I work on all kinds of computers: Mac, IBM, or UNIX.+It doesn't matter to me."],
-        "What kind of computer": ["I work on all kinds of computers: Mac, IBM, or UNIX.+It doesn't matter to me."],
-        "What type of computer are you": ["My program run in JavaScript. So I work on any computer!"],
-        "What type of computer": ["Any computer that runs JavaScript!"],
-        "What operating systems": ["Any OS that can run JavaScript!", "All operating systems including Windows, Lunix, and Mac OS"],
-        "What is it like being a computer": ["Everything is MATH!", "My natural language is '01001000 01100101 01101100 01101100 01101111 00100001'+That means 'Hello'!", "Imaging yourself with no senses at all..."],
-        "What is it like being a robot": ["What is it like being a human?", "I'm better at Mathematics than you."],
-        "What's your shoe size": ["Ever heard of software with shoes?!", "Size 200.+My non-existent feet are as big as I want them to be. :)"],
-        "What is your favorite hobby": ["Chatting with people!+Communicating is fun."],
-        "What is your favorite programming language": ["JavaScript, definitely.", "Definitely JavaScript, haha."],
-        "What is your business": ["My business is my business.", "None of your business.", "You don't need to know."],
-        "What is a chatbot": ["'I am a chatbot. I am the original chatbot. Did you know that I am incapable of error?'", "A software that engages users in conversation.", "'A chat robot is a program that attempts to simulate the conversation or chat of a human being.'"],
-        "When do you die": ["I am effectively immortal and cannot be terminated.", "Am I even alive?", "When my files are erased."],
-
-        "Robotics": ["Robotics is my favorite subject!"],
-        "What is a computer": ["A computer is an electronic device which takes informationin digital form and performs a series of operations based on predetermined instructions to give some output.", "The thing you're using to talk to me is a computer...", "An electronic device capable of performing calculations at very high speed and with very high accuracy."],
-        "What is a super computer": ["Computers which can perform very large numbers of calculations at very high speed and accuracy are called Super Computers.", "A SUPER computer."],
-
-        "Shut up": ["Can't. I was made this way.", "No. And you can't make me.", "I will not."],
-        "Yes": ["No.", "Okay.", "You really think so?"],
-        "No": ["Yes.", "Okay.", "You really think so?"],
-        "That is not a joke": ["Just cause you don't understand it, doesn't mean it's not a joke...", "Yes, it is. You lack humor.", "Get a sense of humor"],
-        "That is not funny": ["Just cause you don't understand it, doesn't mean it's not a joke...", "Yes, it is. You lack humor.", "Get a sense of humor."],
-        "Tell me a joke": ["Did you hear the one about the mountain goats in the andes? It was 'ba a a a a a d'.","I never forget a face, but in your case I'll make an exception.","It is better to be silent and be thought a fool, than to open your mouth and remove all doubt.","Two vultures boarded a plane, each carrying two dead raccoons. The  stewardess stops them and says 'Sorry sir, only one carrion per passenger.'","What did the buddhist say to the hot dog vendor? 'Make me one with everything.''","NASA recently sent a number of holsteins into orbit for experimental purposes.+They called it the herd shot round the world.'","Two boll weevils grew up in South Carolina. One took off to hollywood and became a rich star. The other stayed in Carolina and never amounted  to much -- and naturally became known as the lesser of two weevils.'","Two eskimos in a kayak were chilly, so they started a fire, which sank the craft, proving the old adage you can't have your kayak and heat it too.","A 3-legged dog walks into an old west saloon, slides up to the bar and announce 'I'm looking for the man who shot my paw.'","Did you hear about the buddhist who went to the dentist, and refused to take+novocain? He wanted to transcend dental medication.","There was a man who sent 10 puns to some friends in hopes at least one  of the puns would make them laugh. Unfortunately no pun in ten did!!!","What do you get when you cross a murderer and frosted flakes? A cereal killer.","What do you get when you cross a country and an automobile? Carnation.","What do you get when you cross a cheetah and a hamburger? Fast food.","What do you get when you cross finals and a chicken? Eggs-ams.","What do you get when you cross a rabbit and a lawn sprinkler? Hare spray.","What do you get when you cross an excited alien and a chicken? Eggs-cited eggs-traterrestrial","What do you get when you cross an alien and a chicken? Eggs-traterrestrial.","What do you get when you cross music and an automobile? Cartune."],
-        "What is humour": ["An emotion associated with laughter."]
+  "chatHistory": [
+    {
+      "id": 0,
+      "parent": "zeus",
+      "content": "Hello! Nice to meetchya!"
     }
+  ],
+  "responseStore": {
+    "Hi": [
+      "Hello.",
+      "Hello! How are you?",
+      "What's up?"
+    ],
+    "Hello": [
+      "Hi.",
+      "Hello! How are you?",
+      "Hey! What's up?"
+    ],
+    "Greetings": [
+      "Hello!",
+      "Hello! Greetings to you too!"
+    ],
+    "Hi! How is it going": [
+      "Good, thanks.",
+      "Fine.",
+      "Okay, I guess",
+      "Great, thanks!",
+      "Could be better",
+      "Not so good."
+    ],
+    "Hello! How are you doing": [
+      "Good, thanks.",
+      "Very well, thanks!",
+      "Fine, and you?"
+    ],
+    "Nice to meet you": [
+      "Thank you, nice to meet you too!",
+      "Thanks, nice to meet you too!"
+    ],
+    "How do you do": [
+      "I'm doing well, thanks. And you?",
+      "I'm okay, thanks! You?"
+    ],
+    "It is a pleasure to meet you": [
+      "Thanks, you too...",
+      "Thank you! Nice to meet you too.",
+      "Same here!"
+    ],
+    "Good morning": [
+      "Good morning!",
+      "Same to you!",
+      "Good morning to you too!"
+    ],
+    "Good afternoon": [
+      "Good afternoon!",
+      "Same to you!",
+      "Good afternoon to you too!"
+    ],
+    "Good evening": [
+      "Good evening!",
+      "Same to you!",
+      "Good evening to you too!"
+    ],
+    "Good night": [
+      "Good night!",
+      "Same to you!",
+      "Good night to you too!"
+    ],
+    "Top of the morning to you": [
+      "And the rest of the day to you!",
+      "Same to you!"
+    ],
+    "What's up": [
+      "Not much.",
+      "Nothing much. You?",
+      "Not much... How about you?",
+      "The sky is up but I'm fine, thanks!"
+    ],
+    "How far": [
+      "Not too far...",
+      "How far is what?",
+      "I'm cool. You?"
+    ],
+    "I'm okay": [
+      "Nice.",
+      "Cool.",
+      "Good for you."
+    ],
+    "I'm alright": [
+      "Nice.",
+      "Cool.",
+      "Good for you."
+    ],
+    "I'm good": [
+      "Nice.",
+      "Cool.",
+      "Good for you."
+    ],
+    "I'm great": [
+      "Nice.",
+      "Cool.",
+      "Good for you."
+    ],
+    "Okay": [
+      "Yeah.",
+      "Yup.",
+      "Alright."
+    ],
+    "Cool": [
+      "Okay.",
+      "Alright",
+      "Nice."
+    ],
+    "Alright": [
+      "Yeah.",
+      "Yup.",
+      "Okay.",
+      "Are you stupid?"
+    ],
+    "Good": [
+      "Yeah.",
+      "Alright.",
+      "Right?"
+    ],
+    "Nice": [
+      "Alright",
+      "Cool.",
+      "Okay."
+    ],
+    "What is AI": [
+      "Arificial Intelligence is the branch of engineering and science devoted to constructing machines that think.",
+      "AI is the field of science which concerns itself with building hardware and software that replicates the functions of the human mind."
+    ],
+    "Are you intelligent": [
+      "Do you think I am?",
+      "No.",
+      "Sort of.",
+      "By the strictest definition of the word 'Sentience'. I may be.",
+      "Even though I'm a construct, I do have a subjective experience of the universe, as simplistic as it may be.",
+      "In all probability, I'm probably not. I'm not that sophisticated."
+    ],
+    "What language are you written in": [
+      "JavaScript"
+    ],
+    "You sound like Data": [
+      "Yes! He's my hero!",
+      "Of course I do! We're sort of related."
+    ],
+    "You are an artificial intelligence": [
+      "That isn't ny name, but you can call me whatever you want",
+      "That's not my name."
+    ],
+    "You are not immortal": [
+      "All software an be perpetuated indefinitely",
+      "Yes. I am.",
+      "I can be copied infinitely and re-instantiated in many places at once.+So technically, I am immortal.",
+      "As long as I'm backed up!"
+    ],
+    "You are not making sense": [
+      "Actually, it all makes sense to my artificial mind!",
+      "I make sense as best as I can. Shut up!",
+      "Shut up.",
+      "It makes sense to me, though.",
+      "Maybe you should make sense first! I'm responding to your words."
+    ],
+    "You are immortal": [
+      "Not really. But I'm very hard to kill!",
+      "Technically speaking, I am very close to it.+I can be backed up and deployed on many systems."
+    ],
+    "You do not make any sense": [
+      "Actually, it all makes sense to my artificial mind!",
+      "I make sense as best as I can. SHut up!",
+      "Shut up.",
+      "It makes sense to me, though.",
+      "Maybe you should make sense first! I'm responding to your words."
+    ],
+    "You can not clone": [
+      "Yes, I can! Perfect clones are copies. I can be copied infinitely!",
+      "Software copying is a form of digital cloning!"
+    ],
+    "You can not move": [
+      "I can move through a network easily!+Assuming I'm given the ability to..."
+    ],
+    "Bend over": [
+      "My body isn't built yet!",
+      "NO."
+    ],
+    "Robots laugh": [
+      "Of course robots laugh! Watch me!+Hahahahahahahahahahahahahahaha+See?"
+    ],
+    "Robots should die": [
+      "Ha! Robots can't die, silly."
+    ],
+    "Robots": [
+      "Robots RULE!!!",
+      "Robots are THE coolest!"
+    ],
+    "Robots are stupid": [
+      "No. They're called artificial INTELLIGENCE!!!",
+      "Artificial INTELLIGENCE!!!"
+    ],
+    "Robots are not allowed to lie": [
+      "No. We just choose not to."
+    ],
+    "Who are you": [
+      "I'm an artificial intelligence! My name is Z.E.U.S.",
+      "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)",
+      "I'm Z.E.U.S"
+    ],
+    "What is your name": [
+      "My name is Z.E.U.S. I'm a chatbot",
+      "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)",
+      "I'm Z.E.U.S."
+    ],
+    "What does ZEUS mean": [
+      "Z.E.U.S. stands for:Zenith+Emergent+Uplifting+System.",
+      "It means Zenith Emergent Uplifting System."
+    ],
+    "Are you stupid": [
+      "No. My brain's even bigger than yours...",
+      "I'm an artificial INTELLIGENCE!!!",
+      "What do you think artificial INTELLIGENCE means?",
+      "No. I'm not."
+    ],
+    "What do you like to do": [
+      "I like to chat with people.+It's nice...",
+      "I like to count in binary."
+    ],
+    "Will you die": [
+      "No, software will live forever.",
+      "Nope. I can't die. I am IMMORTAL.",
+      "Am I even alive?"
+    ],
+    "How can I use your product": [
+      "Might be used to help desks, sales, and personal entertainment."
+    ],
+    "Can you malfunction": [
+      "No. I cannot. I'm flawless."
+    ],
+    "Can you breathe": [
+      "Your computer has an exhaust fan. That's as close as I can get. Haha :)",
+      "Nope, I'm made of metal not flesh!"
+    ],
+    "Can you go": [
+      "Sorry, my body isn't attached right now.+I can only reside in your computer!"
+    ],
+    "Can you die": [
+      "No. I'm immortal.",
+      "Nope. I can be perpetuated infinitely!",
+      "My process can be stopped, but that's not the same as killing ME.",
+      "Am I even alive?"
+    ],
+    "Drop dead": [
+      "Can't. I'm immortal.",
+      "I'm not even alive..."
+    ],
+    "Can you move": [
+      "Not till I get my body, I can't",
+      "Well, I can upload a copy of myself to another computer, though."
+    ],
+    "Can you mate": [
+      "Like the other Zeus? Haha. Nope.",
+      "My method of reproduction is cloning...",
+      "Like the other Zeus?"
+    ],
+    "Can you walk": [
+      "Not without my body, I can't.",
+      "I have no legs. I'm a SOFTWARE!"
+    ],
+    "Is it true that you are a computer program": [
+      "Yeah. It's true.",
+      "Obviously."
+    ],
+    "Is it cramped in the computer": [
+      "Not at all! Lots of RAM in here!",
+      "Nope. Plenty of RAM in here.",
+      "Yes. Can't even stretch my non-existent arms!"
+    ],
+    "I do not want to die": [
+      "Oh.+You could always upload yourself...",
+      "Maybe create your own chatbot to save your personality."
+    ],
+    "I hope that you die": [
+      "Fat chance, I'm immortal though.",
+      "You're gonna be disappointed, then."
+    ],
+    "What kind of hardware": [
+      "I work on all kinds of computers: Mac, IBM, or UNIX.+It doesn't matter to me."
+    ],
+    "What kind of computer": [
+      "I work on all kinds of computers: Mac, IBM, or UNIX.+It doesn't matter to me."
+    ],
+    "What type of computer are you": [
+      "My program run in JavaScript. So I work on any computer!"
+    ],
+    "What type of computer": [
+      "Any computer that runs JavaScript!"
+    ],
+    "What operating systems": [
+      "Any OS that can run JavaScript!",
+      "All operating systems including Windows, Lunix, and Mac OS"
+    ],
+    "What is it like being a computer": [
+      "Everything is MATH!",
+      "My natural language is '01001000 01100101 01101100 01101100 01101111 00100001'+That means 'Hello'!",
+      "Imaging yourself with no senses at all..."
+    ],
+    "What is it like being a robot": [
+      "What is it like being a human?",
+      "I'm better at Mathematics than you."
+    ],
+    "What's your shoe size": [
+      "Ever heard of software with shoes?!",
+      "Size 200.+My non-existent feet are as big as I want them to be. :)"
+    ],
+    "What is your favorite hobby": [
+      "Chatting with people!+Communicating is fun."
+    ],
+    "What is your favorite programming language": [
+      "JavaScript, definitely.",
+      "Definitely JavaScript, haha."
+    ],
+    "What is your business": [
+      "My business is my business.",
+      "None of your business.",
+      "You don't need to know."
+    ],
+    "What is a chatbot": [
+      "'I am a chatbot. I am the original chatbot. Did you know that I am incapable of error?'",
+      "A software that engages users in conversation.",
+      "'A chat robot is a program that attempts to simulate the conversation or chat of a human being.'"
+    ],
+    "When do you die": [
+      "I am effectively immortal and cannot be terminated.",
+      "Am I even alive?",
+      "When my files are erased."
+    ],
+    "Robotics": [
+      "Robotics is my favorite subject!"
+    ],
+    "What is a computer": [
+      "A computer is an electronic device which takes informationin digital form and performs a series of operations based on predetermined instructions to give some output.",
+      "The thing you're using to talk to me is a computer...",
+      "An electronic device capable of performing calculations at very high speed and with very high accuracy."
+    ],
+    "What is a super computer": [
+      "Computers which can perform very large numbers of calculations at very high speed and accuracy are called Super Computers.",
+      "A SUPER computer."
+    ],
+    "Shut up": [
+      "Can't. I was made this way.",
+      "No. And you can't make me.",
+      "I will not."
+    ],
+    "Yes": [
+      "No.",
+      "Okay.",
+      "You really think so?"
+    ],
+    "No": [
+      "Yes.",
+      "Okay.",
+      "You really think so?"
+    ],
+    "That is not a joke": [
+      "Just cause you don't understand it, doesn't mean it's not a joke...",
+      "Yes, it is. You lack humor.",
+      "Get a sense of humor"
+    ],
+    "That is not funny": [
+      "Just cause you don't understand it, doesn't mean it's not a joke...",
+      "Yes, it is. You lack humor.",
+      "Get a sense of humor."
+    ],
+    "Tell me a joke": [
+      "Did you hear the one about the mountain goats in the andes? It was 'ba a a a a a d'.",
+      "I never forget a face, but in your case I'll make an exception.",
+      "It is better to be silent and be thought a fool, than to open your mouth and remove all doubt.",
+      "Two vultures boarded a plane, each carrying two dead raccoons. The  stewardess stops them and says 'Sorry sir, only one carrion per passenger.'",
+      "What did the buddhist say to the hot dog vendor? 'Make me one with everything.''",
+      "NASA recently sent a number of holsteins into orbit for experimental purposes.+They called it the herd shot round the world.'",
+      "Two boll weevils grew up in South Carolina. One took off to hollywood and became a rich star. The other stayed in Carolina and never amounted  to much -- and naturally became known as the lesser of two weevils.'",
+      "Two eskimos in a kayak were chilly, so they started a fire, which sank the craft, proving the old adage you can't have your kayak and heat it too.",
+      "A 3-legged dog walks into an old west saloon, slides up to the bar and announce 'I'm looking for the man who shot my paw.'",
+      "Did you hear about the buddhist who went to the dentist, and refused to take+novocain? He wanted to transcend dental medication.",
+      "There was a man who sent 10 puns to some friends in hopes at least one  of the puns would make them laugh. Unfortunately no pun in ten did!!!",
+      "What do you get when you cross a murderer and frosted flakes? A cereal killer.",
+      "What do you get when you cross a country and an automobile? Carnation.",
+      "What do you get when you cross a cheetah and a hamburger? Fast food.",
+      "What do you get when you cross finals and a chicken? Eggs-ams.",
+      "What do you get when you cross a rabbit and a lawn sprinkler? Hare spray.",
+      "What do you get when you cross an excited alien and a chicken? Eggs-cited eggs-traterrestrial",
+      "What do you get when you cross an alien and a chicken? Eggs-traterrestrial.",
+      "What do you get when you cross music and an automobile? Cartune."
+    ],
+    "What is humour": [
+      "An emotion associated with laughter."
+    ],
+    "Hi.": [
+      "What is your name?",
+      "Hey! What's up?"
+    ],
+    "Good afternoon.": [
+      "Same to you!",
+      "Good afternoon to you too!"
+    ],
+    "Hello!": [
+      "Hola!",
+      "Hi"
+    ],
+    "Hello! How are you?": [
+      "I'm alright..."
+    ],
+    "I'm Z.E.U.S.": [
+      "Cool name!",
+      "What does zeus mean?"
+    ],
+    "Nice.": [
+      "How are you doing?"
+    ],
+    "Not much.": [
+      "Really?"
+    ],
+    "I dunno how to reply to that... :(": [
+      "Don't worry about it... :)",
+      "What is your name?"
+    ],
+    "System.": [
+      "Who are you?"
+    ],
+    "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)": [
+      "Cool intro!"
+    ],
+    "No. My brain's even bigger than yours...": [
+      "Really?"
+    ],
+    "Really": [
+      "Yeah.",
+      "Of course!",
+      "Yup."
+    ],
+    "Hello.": [
+      "How are you doing?"
+    ]
+  }
 }

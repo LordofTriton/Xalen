@@ -67,18 +67,31 @@ const ChatWindow = () => {
         }
     }, [currentMessage])
 
-    function learnStuff() {
-        let lastZeusMsg = chatHistory.slice(-1,1)[0].content
-        let lastUserMsg = currentMessage
+    function learnStuff(learningMaterial, lastUserMsg) {
+        console.log("Learn History: ", learningMaterial)
+        let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
+        lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
+        console.log("Reply: ", lastZeusMsg)
+        if (lastZeusMsg) {
+            lastZeusMsg = lastZeusMsg.content
 
-        let keys = Object.keys(responseStore)
-        if (!keys.includes(lastZeusMsg)) {
-            let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
-            axios.post("http://localhost:3000/responseStore", store).then(re => {
-                axios.get("http://localhost:3005/responseStore").then(re => {
-                    setResponseStore(re.data)
+            let keys = Object.keys(responseStore)
+            if (!keys.includes(lastZeusMsg)) {
+                let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
+                axios.post("http://localhost:3005/responseStore", store).then(re => {
+                    axios.get("http://localhost:3005/responseStore").then(re => {
+                        setResponseStore(re.data)
+                    })
                 })
-            })
+            }
+            else {
+                let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
+                axios.post("http://localhost:3005/responseStore", store).then(re => {
+                    axios.get("http://localhost:3005/responseStore").then(re => {
+                        setResponseStore(re.data)
+                    })
+                })
+            }
         }
     }
 
@@ -89,7 +102,7 @@ const ChatWindow = () => {
                 parent: "user",
                 content: newMsg
             }
-            // learnStuff()
+            learnStuff(chatHistory.concat(newMessage), newMsg)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()
@@ -101,6 +114,7 @@ const ChatWindow = () => {
     function replyMessage(index) {
         if (index >= 0) {
             let keys = Object.keys(responseStore)
+            console.log("store: ", keys)
             if (keys.length > 0) {
                 let reply = responseStore[keys[index]]
                 reply = reply[Math.floor(Math.random() * reply.length)].split("+")

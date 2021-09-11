@@ -1,9 +1,6 @@
 import axios from "axios"
 
-const host = "localhost"
-const port = "3001"
-
-const baseAPIURL = `${host}:${port}`
+const baseAPIURL = `https://lordoftriton.github.io/data/ZeusDB.json`
 
 const getChatHistory = () => {
     let data = []
@@ -13,6 +10,11 @@ const getChatHistory = () => {
     return data
 }
 
-const APIService = {baseAPIURL, getChatHistory}
+const getResponseStore = () => {
+    let data = axios.get("https://lordoftriton.github.io/data/ZeusDB.json").then(re => re.data)
+    return data.responseStore ? data.responseStore : {}
+}
+
+const APIService = {baseAPIURL, getChatHistory, getResponseStore}
 
 export default APIService

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 //Services
 import DateTime from '../../services/dateTime';
-
+// import APIService from '../../services/api';
 
 var stringSimilarity = require("string-similarity");
 
@@ -36,12 +36,13 @@ const ChatWindow = () => {
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
     const [currentMessage, setCurrentMessage] = useState("")
-    const [learning, setLearning] = useState(false)
+    // const [learning, setLearning] = useState(false)
     const [responseStore, setResponseStore] = useState({})
 
     if (Object.keys(responseStore).length < 1) {
-        axios.get("http://localhost:3005/responseStore").then(re => {
-            setResponseStore(re.data)
+        // setResponseStore(APIService.getResponseStore())
+        axios.get("https://lordoftriton.github.io/data/ZeusDB.json").then(re => {
+            setResponseStore(re.data.responseStore)
         })
     }
 
@@ -67,33 +68,33 @@ const ChatWindow = () => {
         }
     }, [currentMessage])
 
-    function learnStuff(learningMaterial, lastUserMsg) {
-        console.log("Learn History: ", learningMaterial)
-        let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
-        lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
-        console.log("Reply: ", lastZeusMsg)
-        if (lastZeusMsg) {
-            lastZeusMsg = lastZeusMsg.content
+    // function learnStuff(learningMaterial, lastUserMsg) {
+    //     console.log("Learn History: ", learningMaterial)
+    //     let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
+    //     lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
+    //     console.log("Reply: ", lastZeusMsg)
+    //     if (lastZeusMsg) {
+    //         lastZeusMsg = lastZeusMsg.content
 
-            let keys = Object.keys(responseStore)
-            if (!keys.includes(lastZeusMsg)) {
-                let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
-                axios.post("http://localhost:3005/responseStore", store).then(re => {
-                    axios.get("http://localhost:3005/responseStore").then(re => {
-                        setResponseStore(re.data)
-                    })
-                })
-            }
-            else {
-                let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
-                axios.post("http://localhost:3005/responseStore", store).then(re => {
-                    axios.get("http://localhost:3005/responseStore").then(re => {
-                        setResponseStore(re.data)
-                    })
-                })
-            }
-        }
-    }
+    //         let keys = Object.keys(responseStore)
+    //         if (!keys.includes(lastZeusMsg)) {
+    //             let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
+    //             axios.post("https://lordoftriton.github.io/data/ZeusDB.json", store).then(re => {
+    //                 axios.get("http://localhost:3005/responseStore").then(re => {
+    //                     setResponseStore(re.data)
+    //                 })
+    //             })
+    //         }
+    //         else {
+    //             let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
+    //             axios.post("http://localhost:3005/responseStore", store).then(re => {
+    //                 axios.get("http://localhost:3005/responseStore").then(re => {
+    //                     setResponseStore(re.data)
+    //                 })
+    //             })
+    //         }
+    //     }
+    // }
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -102,7 +103,7 @@ const ChatWindow = () => {
                 parent: "user",
                 content: newMsg
             }
-            learnStuff(chatHistory.concat(newMessage), newMsg)
+            // learnStuff(chatHistory.concat(newMessage), newMsg)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()

@@ -5,10 +5,8 @@
 
 .chatWindow {
     width: 100vw;
-    height: calc(100vh - 70px);
-    background-color: var(--white);
+    height: calc(100vh - 140px);
     float: right;
-    background-image: url(../../images/chatBckg2.jpeg);
     background-size: contain;
     overflow-y: auto;
     position: absolute;

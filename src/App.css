@@ -50,6 +50,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: var(--platinum);
+  background-image: url(images/chatBckg2.jpeg);
+  background-size: contain;
   box-sizing: border-box;
 }

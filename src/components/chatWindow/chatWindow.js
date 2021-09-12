@@ -7,16 +7,23 @@ import DateTime from '../../services/dateTime';
 
 var stringSimilarity = require("string-similarity");
 
+let d = new Date()
+
 const defaultMessage = {
     parent: "zeus",
-    content: ["Hello!", "Hi.", "Hello! How are you?", `Good ${DateTime.dayPeriod()}.`][Math.floor(Math.random() * 4)]
+    content: ["Hello!", "Hi.", "Hello! How are you?", `Good ${DateTime.dayPeriod()}.`][Math.floor(Math.random() * 4)],
+    time: d
 }
 
 const ChatWindow = () => {
     const [chatHistory, setChatHistory] = useState([defaultMessage])
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
-    const [currentMessage, setCurrentMessage] = useState("")
+    const [currentMessage, setCurrentMessage] = useState({
+        parent: "",
+        content: "",
+        time: d
+    })
     const [responseStore, setResponseStore] = useState({})
 
     if (Object.keys(responseStore).length < 1) {
@@ -31,12 +38,13 @@ const ChatWindow = () => {
     }
 
     useEffect(() => {
+        console.log(currentMessage.content)
         let keys = Object.keys(responseStore)
         if (keys.length > 0) {
             let index = -1
             let match = 0.3
             for (let i = 0; i < keys.length; i++) {
-                let difference = stringSimilarity.compareTwoStrings(currentMessage, keys[i])
+                let difference = stringSimilarity.compareTwoStrings(currentMessage.content, keys[i])
                 if (difference > match) {
                     index = i;
                     match = difference;
@@ -76,16 +84,18 @@ const ChatWindow = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         if (/^[a-zA-Z]/.test(newMsg)) {
+            let d = new Date()
             const newMessage = {
                 parent: "user",
-                content: newMsg
+                content: newMsg,
+                time: d
             }
             // learnStuff(chatHistory.concat(newMessage), newMsg)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()
 
-            setTimeout(() => setCurrentMessage(newMessage.content), 1000)
+            setTimeout(() => setCurrentMessage(newMessage), 1000)
         }
     }
 
@@ -93,13 +103,15 @@ const ChatWindow = () => {
         if (index >= 0) {
             let keys = Object.keys(responseStore)
             if (keys.length > 0) {
+                let d = new Date()
                 let reply = responseStore[keys[index]]
                 reply = reply[Math.floor(Math.random() * reply.length)].split("+")
                 let replyList = []
                 for (let i = 0; i < reply.length; i++) {
                     const newZeusMessage = {
                         parent: "zeus",
-                        content: reply[i]
+                        content: reply[i],
+                        time: d
                     }
                     replyList.push(newZeusMessage)
                     scrollDown()
@@ -128,6 +140,10 @@ const ChatWindow = () => {
                         <h3 className="chatContent" style={{float: message.parent === "zeus" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white" : "var(--orange-peel)", color: message.parent === "user" ? "var(--orange-peel)" : "var(--white)"}}>
                             {message.content}
                         </h3>
+                        <h4 className="chatMessageTime" style={{
+                            textAlign: message.parent === "zeus" ? "left" : "right",
+                            transform: message.parent === "zeus" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
+                        >{DateTime.formatTime(message.time)}</h4>
                     </div>
                 )
             }

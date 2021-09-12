@@ -21,6 +21,26 @@ const dayPeriod = () => {
     return "evening"
 }
 
-const DateTime = {getDateFormatOne ,dayPeriod}
+function formatTime(d) {
+    let hour = d.getHours().toString()
+    let minute = d.getMinutes().toString()
+    let endTime = ""
+    if (minute.length === 1) minute = "0" + minute;
+    if (hour % 12 > 0) {
+        if (String(hour % 12).length === 1) {
+            endTime += "0" + (hour % 12) + ":" + minute
+        }
+        else {
+            endTime += (hour % 12) + ":" + minute
+        }
+        if (hour > 12) {endTime += " PM"} else {endTime += " AM"}
+    }
+    else {
+        endTime += 12 + ":" + minute + " PM"
+    }
+    return endTime
+}
+
+const DateTime = {getDateFormatOne, dayPeriod, formatTime}
 
 export default DateTime

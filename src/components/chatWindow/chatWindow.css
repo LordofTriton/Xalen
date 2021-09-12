@@ -33,6 +33,19 @@
     margin: 0px 0px 10px 0px;
 }
 
+.chatMessageTime {
+    display: none;
+    color: dimgray;
+    font-weight: 200;
+    margin: 10px 10px 10px 10px;
+    padding: 0px;
+    
+}
+
+.chatMessage:hover .chatMessageTime {
+    display: block;
+}
+
 .chatContent {
     background-color: var(--orange-peel);
     padding: 10px 20px 10px 20px;

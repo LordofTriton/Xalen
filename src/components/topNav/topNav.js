@@ -14,6 +14,7 @@ const TopNav = () => {
             <div style={{height: "100%", width: "50%", borderRadius: "0px 100px 100px 0px", boxShadow: "4px 0px 8px 0 rgba(0,0,0,0.2)", float: "left"}}>
                 <img className="topNavLogo" src={logo} alt="logo" />
                 <h3 className="topNavTitle">Zeus</h3>
+                <h4 className="topNavStatus">Online</h4>
             </div>
             <img className="topNavMenuButton" src={menuMode ? closepic:menupic} alt="pic" onClick={() => setMenuMode(!menuMode)} />
         </div>

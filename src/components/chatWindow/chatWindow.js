@@ -8,24 +8,6 @@ import DateTime from '../../services/dateTime';
 
 var stringSimilarity = require("string-similarity");
 
-// const responseStore = [
-//     "Hi",
-//     "Hello! How are you?",
-//     "I'm cool.",
-//     "How are you doing?",
-//     "I'm cool. I'm GREAT!+You?",
-//     "I'm alright...",
-//     "Nice.",
-//     "Thanks",
-//     "You're welcome.",
-//     "What is your name?",
-//     "My name is Z.E.U.S.+I'm the COOLEST chatbot you will ever see! :)",
-//     "What does Zeus mean?",
-//     "Z.E.U.S means Zenith Emergent Uplifting System!",
-//     "What can you do?",
-//     "I can tell great jokes! Wanna hear one?"
-// ]
-
 const defaultMessage = {
     parent: "zeus",
     content: ["Hello!", "Hi.", "Hello! How are you?", `Good ${DateTime.dayPeriod()}.`][Math.floor(Math.random() * 4)]
@@ -41,8 +23,8 @@ const ChatWindow = () => {
 
     if (Object.keys(responseStore).length < 1) {
         // setResponseStore(APIService.getResponseStore())
-        axios.get("https://lordoftriton.github.io/data/ZeusDB.json").then(re => {
-            setResponseStore(re.data.responseStore)
+        axios.get("https://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
+            setResponseStore(re.data)
         })
     }
 
@@ -68,33 +50,31 @@ const ChatWindow = () => {
         }
     }, [currentMessage])
 
-    // function learnStuff(learningMaterial, lastUserMsg) {
-    //     console.log("Learn History: ", learningMaterial)
-    //     let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
-    //     lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
-    //     console.log("Reply: ", lastZeusMsg)
-    //     if (lastZeusMsg) {
-    //         lastZeusMsg = lastZeusMsg.content
+    function learnStuff(learningMaterial, lastUserMsg) {
+        let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
+        lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
+        if (lastZeusMsg) {
+            lastZeusMsg = lastZeusMsg.content
 
-    //         let keys = Object.keys(responseStore)
-    //         if (!keys.includes(lastZeusMsg)) {
-    //             let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
-    //             axios.post("https://lordoftriton.github.io/data/ZeusDB.json", store).then(re => {
-    //                 axios.get("http://localhost:3005/responseStore").then(re => {
-    //                     setResponseStore(re.data)
-    //                 })
-    //             })
-    //         }
-    //         else {
-    //             let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
-    //             axios.post("http://localhost:3005/responseStore", store).then(re => {
-    //                 axios.get("http://localhost:3005/responseStore").then(re => {
-    //                     setResponseStore(re.data)
-    //                 })
-    //             })
-    //         }
-    //     }
-    // }
+            let keys = Object.keys(responseStore)
+            if (!keys.includes(lastZeusMsg)) {
+                let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
+                axios.post("https://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
+                    axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
+                        setResponseStore(re.data)
+                    })
+                })
+            }
+            else {
+                let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
+                axios.post("http://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
+                    axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
+                        setResponseStore(re.data)
+                    })
+                })
+            }
+        }
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -115,7 +95,6 @@ const ChatWindow = () => {
     function replyMessage(index) {
         if (index >= 0) {
             let keys = Object.keys(responseStore)
-            console.log("store: ", keys)
             if (keys.length > 0) {
                 let reply = responseStore[keys[index]]
                 reply = reply[Math.floor(Math.random() * reply.length)].split("+")
@@ -149,7 +128,7 @@ const ChatWindow = () => {
             {
                 chatHistory.map((message) =>
                     <div className="chatMessage">
-                        <h3 className="chatContent" style={{float: message.parent === "zeus" ? "left" : "right"}}>
+                        <h3 className="chatContent" style={{float: message.parent === "zeus" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white" : "var(--orange-peel)", color: message.parent === "user" ? "var(--orange-peel)" : "var(--white)"}}>
                             {message.content}
                         </h3>
                     </div>

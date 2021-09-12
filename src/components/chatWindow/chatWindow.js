@@ -4,7 +4,6 @@ import axios from 'axios';
 
 //Services
 import DateTime from '../../services/dateTime';
-// import APIService from '../../services/api';
 
 var stringSimilarity = require("string-similarity");
 
@@ -18,11 +17,9 @@ const ChatWindow = () => {
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
     const [currentMessage, setCurrentMessage] = useState("")
-    // const [learning, setLearning] = useState(false)
     const [responseStore, setResponseStore] = useState({})
 
     if (Object.keys(responseStore).length < 1) {
-        // setResponseStore(APIService.getResponseStore())
         axios.get("https://lordoftriton.github.io/data/ZeusDB.json").then(re => {
             setResponseStore(re.data.responseStore)
         })

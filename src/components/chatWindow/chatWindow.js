@@ -24,7 +24,7 @@ const ChatWindow = () => {
     if (Object.keys(responseStore).length < 1) {
         // setResponseStore(APIService.getResponseStore())
         axios.get("https://lordoftriton.github.io/data/ZeusDB.json").then(re => {
-            setResponseStore(re.data)
+            setResponseStore(re.data.responseStore)
         })
     }
 

@@ -23,7 +23,7 @@ const ChatWindow = () => {
 
     if (Object.keys(responseStore).length < 1) {
         // setResponseStore(APIService.getResponseStore())
-        axios.get("https://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
+        axios.get("https://lordoftriton.github.io/data/ZeusDB.json").then(re => {
             setResponseStore(re.data)
         })
     }
@@ -50,31 +50,31 @@ const ChatWindow = () => {
         }
     }, [currentMessage])
 
-    function learnStuff(learningMaterial, lastUserMsg) {
-        let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
-        lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
-        if (lastZeusMsg) {
-            lastZeusMsg = lastZeusMsg.content
+    // function learnStuff(learningMaterial, lastUserMsg) {
+    //     let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
+    //     lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
+    //     if (lastZeusMsg) {
+    //         lastZeusMsg = lastZeusMsg.content
 
-            let keys = Object.keys(responseStore)
-            if (!keys.includes(lastZeusMsg)) {
-                let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
-                axios.post("https://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
-                    axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
-                        setResponseStore(re.data)
-                    })
-                })
-            }
-            else {
-                let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
-                axios.post("http://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
-                    axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
-                        setResponseStore(re.data)
-                    })
-                })
-            }
-        }
-    }
+    //         let keys = Object.keys(responseStore)
+    //         if (!keys.includes(lastZeusMsg)) {
+    //             let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
+    //             axios.post("https://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
+    //                 axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
+    //                     setResponseStore(re.data)
+    //                 })
+    //             })
+    //         }
+    //         else {
+    //             let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
+    //             axios.post("http://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
+    //                 axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
+    //                     setResponseStore(re.data)
+    //                 })
+    //             })
+    //         }
+    //     }
+    // }
 
     const handleSubmit = (event) => {
         event.preventDefault()

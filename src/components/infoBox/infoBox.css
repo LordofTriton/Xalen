@@ -9,7 +9,7 @@
 .infoBox {
     width: 90%;
     height: fit-content;
-    border-radius: 10px;
+    border-radius: 20px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -22,7 +22,7 @@
 .infoBoxTop {
     width: 100%;
     height: fit-content;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: var(--white);
 }
 
@@ -50,6 +50,13 @@
     padding: 0px;
 }
 
+.infoBoxURL:hover a {
+    background-color: var(--white);
+    color: var(--orange-peel);
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+}
+
 .infoBoxURL a {
     color: var(--white);
     margin: 0px;
@@ -58,6 +65,7 @@
     font-style: italic;
     font-weight: 400;
     font-size: 19px;
+    transition: all 0.5s;
 }
 
 

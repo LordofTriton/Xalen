@@ -58,15 +58,20 @@
 
 .sideNavButtonGallery {
     width: 90%;
-    height: 300px;
-    border-radius: 100px 100px 0px 0px;
+    height: fit-content;
     position: absolute;
     bottom: 0px;
     left: 0px;
-    box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s;
     margin: 0px 5% 0px 5%;
     overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.sideNavButtonGallery hr {
+    /* border-bottom: 2px solid var(--orange-peel); */
+    margin: 0px 25% 0px 25%;
+    background-color: var(--orange-peel);
 }
 
 .sideNavButton {

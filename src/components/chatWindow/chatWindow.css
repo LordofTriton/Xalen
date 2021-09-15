@@ -125,7 +125,7 @@
 @media screen and (min-width: 1125px) {
     .chatWindow {
         width: 85vw !important;
-        height: 100vh;
+        height: calc(100vh - 90px);
         left: 15vw;
         top: 0px;
     }

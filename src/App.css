@@ -33,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--dark-orchid);
+  background: var(--heat-wave);
   border-radius: 10px;
 }
 

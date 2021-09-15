@@ -5,10 +5,10 @@ import axios from 'axios';
 //Services
 import DateTime from '../../services/dateTime';
 
-var stringSimilarity = require("string-similarity");
-
+//Defaults
+const stringSimilarity = require("string-similarity");
+const baseAPIURL = "https://zeus-chat-server.herokuapp.com/responseStore";
 let d = new Date()
-
 const defaultMessage = {
     parent: "zeus",
     content: ["Hello!", "Hi.", "Hello! How are you?", `Good ${DateTime.dayPeriod()}.`][Math.floor(Math.random() * 4)],
@@ -27,8 +27,8 @@ const ChatWindow = () => {
     const [responseStore, setResponseStore] = useState({})
 
     if (Object.keys(responseStore).length < 1) {
-        axios.get("https://lordoftriton.github.io/data/ZeusDB.json").then(re => {
-            setResponseStore(re.data.responseStore)
+        axios.get(baseAPIURL).then(re => {
+            setResponseStore(re.data)
         })
     }
 
@@ -54,31 +54,31 @@ const ChatWindow = () => {
         }
     }, [currentMessage])
 
-    // function learnStuff(learningMaterial, lastUserMsg) {
-    //     let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
-    //     lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
-    //     if (lastZeusMsg) {
-    //         lastZeusMsg = lastZeusMsg.content
+    function learnStuff(learningMaterial, lastUserMsg) {
+        let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
+        lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
+        if (lastZeusMsg) {
+            lastZeusMsg = lastZeusMsg.content
 
-    //         let keys = Object.keys(responseStore)
-    //         if (!keys.includes(lastZeusMsg)) {
-    //             let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
-    //             axios.post("https://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
-    //                 axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
-    //                     setResponseStore(re.data)
-    //                 })
-    //             })
-    //         }
-    //         else {
-    //             let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
-    //             axios.post("http://api.npoint.io/5182d190d46f50417195/responseStore", store).then(re => {
-    //                 axios.get("http://api.npoint.io/5182d190d46f50417195/responseStore").then(re => {
-    //                     setResponseStore(re.data)
-    //                 })
-    //             })
-    //         }
-    //     }
-    // }
+            let keys = Object.keys(responseStore)
+            if (!keys.includes(lastZeusMsg)) {
+                let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
+                axios.post(baseAPIURL, store).then(re => {
+                    axios.get(baseAPIURL).then(re => {
+                        setResponseStore(re.data)
+                    })
+                })
+            }
+            else {
+                let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
+                axios.post(baseAPIURL, store).then(re => {
+                    axios.get(baseAPIURL).then(re => {
+                        setResponseStore(re.data)
+                    })
+                })
+            }
+        }
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -89,7 +89,7 @@ const ChatWindow = () => {
                 content: newMsg,
                 time: d
             }
-            // learnStuff(chatHistory.concat(newMessage), newMsg)
+            learnStuff(chatHistory.concat(newMessage), newMsg)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()

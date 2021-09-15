@@ -1,3 +1,5 @@
+Visit the deployed project at [https://zeus-chat.herokuapp.com](https://zeus-chat.herokuapp.com).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

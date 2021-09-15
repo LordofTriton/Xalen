@@ -5,7 +5,7 @@
 
 .chatWindow {
     width: 100vw;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 160px);
     float: right;
     background-size: contain;
     overflow-y: auto;
@@ -14,7 +14,7 @@
     left: 0px;
     padding: 30px;
     box-sizing: border-box;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 .dateTimeDisplay {

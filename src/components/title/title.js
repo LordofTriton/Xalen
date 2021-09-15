@@ -8,8 +8,7 @@ const Title = ({toggle, control}) => {
     const [loader, setLoader] = useState(0)
 
 
-    setTimeout(() => setLoader(loader + 1), 1000)
-    if (loader === 11) control(false)
+    setTimeout(() => loader <= 10 ? setLoader(loader + 0.01) : control(false), 10)
     
     return(
         <div className="titleContainer" style={{marginLeft: toggle ? "0px" : "-100vw"}}>

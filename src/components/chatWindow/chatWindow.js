@@ -38,7 +38,6 @@ const ChatWindow = () => {
     }
 
     useEffect(() => {
-        console.log(currentMessage.content)
         let keys = Object.keys(responseStore)
         if (keys.length > 0) {
             let index = -1

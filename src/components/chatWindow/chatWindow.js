@@ -123,7 +123,8 @@ const ChatWindow = () => {
         else {
             const newZeusMessage = {
                 parent: "zeus",
-                content: "I dunno how to reply to that... :("
+                content: "I dunno how to reply to that... :(",
+                time: d
             }
             scrollDown()
             setChatHistory(chatHistory.concat(newZeusMessage))
@@ -142,6 +143,7 @@ const ChatWindow = () => {
                         </h3>
                         <h4 className="chatMessageTime" style={{
                             textAlign: message.parent === "zeus" ? "left" : "right",
+                            float: message.parent === "zeus" ? "left" : "right",
                             transform: message.parent === "zeus" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
                         >{DateTime.formatTime(message.time)}</h4>
                     </div>

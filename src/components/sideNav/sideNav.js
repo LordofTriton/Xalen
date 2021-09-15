@@ -16,6 +16,7 @@ const SideNav = () => {
                 <h3 className="sideNavMenuOption" style={{display: menuMode ? "block" : "none"}}>Settings</h3>
                 <h3 className="sideNavMenuOption" style={{display: menuMode ? "block" : "none"}}>Info</h3>
                 <h3 className="sideNavTitle">Zeus</h3>
+                <h4 className="sideNavStatus">Online</h4>
             </div>
         </div>
     )

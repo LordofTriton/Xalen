@@ -45,6 +45,15 @@
     padding: 0px;
     text-align: center;
     animation: title_anim 5s infinite;
+    margin: 70px 0px 0px 0px;
+}
+
+.sideNavStatus {
+    color: var(--orange-peel);
+    font-weight: 400;
+    padding: 0px;
+    text-align: center;
+    margin: 10px 0px 0px 0px;
 }
 
 .sideNavButtonGallery {
@@ -57,12 +66,13 @@
     box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s;
     margin: 0px 5% 0px 5%;
+    overflow: hidden;
 }
 
 .sideNavButton {
     width: 20%;
     aspect-ratio: 1;
-    margin: 50px 40% 70px 40%;
+    margin: 50px 40% 40px 40%;
     cursor: pointer;
     transition: all 0.5s;
 }

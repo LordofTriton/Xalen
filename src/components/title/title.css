@@ -26,7 +26,7 @@
 .titleLogo {
     width: 50%;
     aspect-ratio: 1;
-    margin: 140px 25% 50px 25%;
+    margin: 120px 25% 50px 25%;
     animation: logoAnim 1s ease-in-out;
     pointer-events: none;
 }
@@ -43,6 +43,13 @@
     animation: titleEmerge 1s ease-in-out;
     margin: 0px 0px 0px 0px;
     display: inline-block;
+}
+
+.titleMark {
+    font-family: Lightning;
+    color: var(--orange-peel);
+    display: inline-block;
+    transform: translate(10px, -70px);
 }
 
 .titleLoader {

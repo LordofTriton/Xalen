@@ -46,6 +46,17 @@
   height: 100vh;
 }
 
+.dimmer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 18;
+  transition: all 0.5s;
+}
+
 .displayContent {
   width: 100vw;
   height: 100vh;

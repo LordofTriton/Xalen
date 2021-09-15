@@ -18,6 +18,7 @@ const Title = ({toggle, control}) => {
                 <p style={{animationDuration: "2s"}}>E</p>
                 <p style={{animationDuration: "1s"}}>U</p>
                 <p style={{animationDuration: "1.5s"}}>S</p>
+                <h3 className="titleMark">TM</h3>
             </h3>
             <div className="titleLoader" style={{width: ((loader / 10) * 100) + "vw", display: toggle ? "block" : "none"}}></div>
         </div>

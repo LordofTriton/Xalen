@@ -7,7 +7,7 @@ import DateTime from '../../services/dateTime';
 
 //Defaults
 const stringSimilarity = require("string-similarity");
-const baseAPIURL = "https://zeus-chat-server.herokuapp.com/responseStore";
+const baseAPIURL = "https://ajtempserver.herokuapp.com/ZEUSChat";
 let d = new Date()
 const defaultMessage = {
     parent: "zeus",

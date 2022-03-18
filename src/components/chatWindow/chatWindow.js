@@ -132,7 +132,7 @@ const ChatWindow = () => {
                 for (let i = 0; i < reply.length; i++) {
                     const newZeusMessage = {
                         parent: "zeus",
-                        content: reply[i],
+                        content: reply[i].trim(),
                         time: d
                     }
                     replyList.push(newZeusMessage)

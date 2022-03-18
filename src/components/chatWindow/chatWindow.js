@@ -7,7 +7,7 @@ import DateTime from '../../services/dateTime';
 
 //Defaults
 const stringSimilarity = require("string-similarity");
-const baseAPIURL = "https://ajtempserver.herokuapp.com/ZEUSChat";
+const baseAPIURL = "https://zeus-chat-server.herokuapp.com/responseStore";
 let d = new Date()
 const defaultMessage = {
     parent: "zeus",
@@ -50,32 +50,55 @@ const ChatWindow = () => {
                 }
             }
             setTyping(true)
-            setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
+            if (currentMessage.content.split(" ")[0].toLowerCase() !== "say") {
+                setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
+            }
         }
     }, [currentMessage])
 
     function learnStuff(learningMaterial, lastUserMsg) {
         let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
         lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
-        if (lastZeusMsg) {
-            lastZeusMsg = lastZeusMsg.content
 
-            let keys = Object.keys(responseStore)
-            if (!keys.includes(lastZeusMsg)) {
-                let store = {...responseStore, [lastZeusMsg]: [lastUserMsg]}
+        if (lastUserMsg.split(" ")[0].toLowerCase() === "say") {
+            let previousUserMsg = learningMaterial.filter(msg => msg.parent === "user")
+            previousUserMsg = previousUserMsg[previousUserMsg.length - 2]
+            previousUserMsg = previousUserMsg.content;
+
+            axios.get(baseAPIURL).then(re => {
+                let store = {...re.data, [previousUserMsg]: [lastUserMsg.split(" ").splice(1, lastUserMsg.split(" ").length).join(" ")]}
                 axios.post(baseAPIURL, store).then(re => {
                     axios.get(baseAPIURL).then(re => {
                         setResponseStore(re.data)
                     })
                 })
-            }
-            else {
-                let store = {...responseStore, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
-                axios.post(baseAPIURL, store).then(re => {
+            })
+        }
+        else {
+            if (lastZeusMsg) {
+                lastZeusMsg = lastZeusMsg.content
+
+                let keys = Object.keys(responseStore)
+                if (!keys.includes(lastZeusMsg)) {
                     axios.get(baseAPIURL).then(re => {
-                        setResponseStore(re.data)
+                        let store = {...re.data, [lastZeusMsg]: [lastUserMsg]}
+                        axios.post(baseAPIURL, store).then(re => {
+                            axios.get(baseAPIURL).then(re => {
+                                setResponseStore(re.data)
+                            })
+                        })
                     })
-                })
+                }
+                else {
+                    axios.get(baseAPIURL).then(re => {
+                        let store = {...re.data, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
+                        axios.post(baseAPIURL, store).then(re => {
+                            axios.get(baseAPIURL).then(re => {
+                                setResponseStore(re.data)
+                            })
+                        })
+                    })
+                }
             }
         }
     }
@@ -120,9 +143,15 @@ const ChatWindow = () => {
             }
         }
         else {
+            const ignorance = [
+                "...+I've forgotten what I wanted to say...", 
+                "Not sure how exactly to reply to that lol", 
+                "Hmmmm...", 
+                "I.. totally forgot what I was about to say lol"
+            ][Math.floor(Math.random() * 4)]
             const newZeusMessage = {
                 parent: "zeus",
-                content: "I dunno how to reply to that... :(",
+                content: ignorance,
                 time: d
             }
             scrollDown()

@@ -109,7 +109,7 @@ const ChatWindow = () => {
             let d = new Date()
             const newMessage = {
                 parent: "user",
-                content: newMsg,
+                content: newMsg.trim(),
                 time: d
             }
             learnStuff(chatHistory.concat(newMessage), newMsg)

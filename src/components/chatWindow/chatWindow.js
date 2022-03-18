@@ -112,7 +112,7 @@ const ChatWindow = () => {
                 content: newMsg.trim(),
                 time: d
             }
-            learnStuff(chatHistory.concat(newMessage), newMsg)
+            learnStuff(chatHistory.concat(newMessage), newMsg.trim())
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()

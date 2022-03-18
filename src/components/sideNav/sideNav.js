@@ -15,7 +15,6 @@ const SideNav = () => {
             <img className="sideNavLogo" src={logo} alt="logo" />
             <div className="sideNavButtonGallery">
                 <hr />
-                <h3 className="sideNavMenuOption">Settings</h3>
                 <h3 className="sideNavMenuOption" onClick={() => {setInfoBoxOpen(true)}}>Info</h3>
                 <hr />
                 <h3 className="sideNavTitle">Zeus</h3>

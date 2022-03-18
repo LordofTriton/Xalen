@@ -14,7 +14,7 @@
 .topNavLogo {
     height: 70%;
     aspect-ratio: 1;
-    margin: 4% 0px 0px 15px;
+    margin: 2% 0px 0px 15px;
     padding: 0px;
     animation: strobe 5s infinite;
     pointer-events: none;
@@ -28,13 +28,13 @@
     padding: 0px;
     animation: title_anim 5s infinite;
     float: left;
-    margin: 8px 0px 0px 30px;
+    margin: 8px 0px 0px 20px;
 }
 
 .topNavStatus {
     color: var(--orange-peel);
     font-weight: 400;
-    margin: 0px 50px 0px 30px;
+    transform: translate(-80px, 20px);
     padding: 0px;
     float: left;
 }

@@ -14,6 +14,12 @@ const defaultMessage = {
     content: ["Hello!", "Hi.", "Hello! How are you?", `Good ${DateTime.dayPeriod()}.`][Math.floor(Math.random() * 4)],
     time: d
 }
+// const stripMessage = ({text}) => {
+//     let returnText = text;
+//     returnText = returnText.replace(/[^\p{L}\s]/gu, "")
+//     returnText = returnText.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, "")
+//     return returnText;
+// }
 
 const ChatWindow = () => {
     const [chatHistory, setChatHistory] = useState([defaultMessage])
@@ -50,9 +56,7 @@ const ChatWindow = () => {
                 }
             }
             setTyping(true)
-            if (currentMessage.content.split(" ")[0].toLowerCase() !== "say") {
-                setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
-            }
+            setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
         }
     }, [currentMessage])
 
@@ -60,45 +64,29 @@ const ChatWindow = () => {
         let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
         lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
 
-        if (lastUserMsg.split(" ")[0].toLowerCase() === "say") {
-            let previousUserMsg = learningMaterial.filter(msg => msg.parent === "user")
-            previousUserMsg = previousUserMsg[previousUserMsg.length - 2]
-            previousUserMsg = previousUserMsg.content;
+        if (lastZeusMsg) {
+            lastZeusMsg = lastZeusMsg.content;
 
-            axios.get(baseAPIURL).then(re => {
-                let store = {...re.data, [previousUserMsg]: [lastUserMsg.split(" ").splice(1, lastUserMsg.split(" ").length).join(" ")]}
-                axios.post(baseAPIURL, store).then(re => {
-                    axios.get(baseAPIURL).then(re => {
-                        setResponseStore(re.data)
+            let keys = Object.keys(responseStore)
+            if (!keys.includes(lastZeusMsg)) {
+                axios.get(baseAPIURL).then(re => {
+                    let store = {...re.data, [lastZeusMsg]: [lastUserMsg]}
+                    axios.post(baseAPIURL, store).then(re => {
+                        axios.get(baseAPIURL).then(re => {
+                            setResponseStore(re.data)
+                        })
                     })
                 })
-            })
-        }
-        else {
-            if (lastZeusMsg) {
-                lastZeusMsg = lastZeusMsg.content
-
-                let keys = Object.keys(responseStore)
-                if (!keys.includes(lastZeusMsg)) {
-                    axios.get(baseAPIURL).then(re => {
-                        let store = {...re.data, [lastZeusMsg]: [lastUserMsg]}
-                        axios.post(baseAPIURL, store).then(re => {
-                            axios.get(baseAPIURL).then(re => {
-                                setResponseStore(re.data)
-                            })
+            }
+            else {
+                axios.get(baseAPIURL).then(re => {
+                    let store = {...re.data, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
+                    axios.post(baseAPIURL, store).then(re => {
+                        axios.get(baseAPIURL).then(re => {
+                            setResponseStore(re.data)
                         })
                     })
-                }
-                else {
-                    axios.get(baseAPIURL).then(re => {
-                        let store = {...re.data, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
-                        axios.post(baseAPIURL, store).then(re => {
-                            axios.get(baseAPIURL).then(re => {
-                                setResponseStore(re.data)
-                            })
-                        })
-                    })
-                }
+                })
             }
         }
     }
@@ -143,19 +131,24 @@ const ChatWindow = () => {
             }
         }
         else {
-            const ignorance = [
+            let ignorance = [
                 "...+I've forgotten what I wanted to say...", 
                 "Not sure how exactly to reply to that lol", 
                 "Hmmmm...", 
-                "I.. totally forgot what I was about to say lol"
+                "I..+I totally forgot what I was about to say lol"
             ][Math.floor(Math.random() * 4)]
-            const newZeusMessage = {
-                parent: "zeus",
-                content: ignorance,
-                time: d
+            ignorance = ignorance.split("+")
+            let ignoranceList = []
+            for (let i = 0; i < ignorance.length; i++) {
+                const newZeusMessage = {
+                    parent: "zeus",
+                    content: ignorance[i].trim(),
+                    time: d
+                }
+                ignoranceList.push(newZeusMessage)
+                scrollDown()
             }
-            scrollDown()
-            setChatHistory(chatHistory.concat(newZeusMessage))
+            setChatHistory(chatHistory.concat(ignoranceList))
             setTyping(false)
         }
     }

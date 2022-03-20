@@ -1,9 +1,9 @@
 @keyframes logoAnim {
-    0% {transform: scale(0.1, 0.1);}    
-    25% {transform: scale(1.9,1.9);}    
-    50% {transform: scale(0.5,0.5);}    
-    75% {transform: scale(1.3,1.3);}    
-    100% {transform: scale(1,1);}    
+    0% {transform: translate(0px, -50%) scale(0.1, 0.1);}    
+    25% {transform: translate(0px, -50%) scale(1.9,1.9);}    
+    50% {transform: translate(0px, -50%) scale(0.5,0.5);}    
+    75% {transform: translate(0px, -50%) scale(1.3,1.3);}    
+    100% {transform: translate(0px, -50%) scale(1,1);}    
 }
 
 @keyframes titleEmerge {
@@ -26,9 +26,12 @@
 .titleLogo {
     width: 50%;
     aspect-ratio: 1;
-    margin: 120px 25% 50px 25%;
+    margin: 0px 25% 0px 25%;
+    position: absolute;
+    top: 50%;
     animation: logoAnim 1s ease-in-out;
     pointer-events: none;
+    transform: translate(0px, -50%) scale(1,1);
 }
 
 .titleTitle {
@@ -57,15 +60,15 @@
     width: 100vw;
     border-radius: 0px 30px 30px 0px;
     position: fixed;
-    bottom: 0px;
-    left: 0px;
+    bottom: 30px;
+    left: 25vw;
     background-color: var(--orange-peel);
 }
 
 @media screen and (min-width: 1125px) {
     .titleLogo {
         width: 20%;
-        margin: 70px 40% 50px 40%;
+        margin: 0px 40% 0px 40%;
     }
     .titleTitle p {
         font-size: 120px !important;

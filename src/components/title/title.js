@@ -13,14 +13,14 @@ const Title = ({toggle, control}) => {
     return(
         <div className="titleContainer" style={{marginLeft: toggle ? "0px" : "-100vw"}}>
             <img className="titleLogo" src={logo} alt="logo" />
-            <h3 className="titleTitle">
+            {/* <h3 className="titleTitle">
                 <p style={{animationDuration: "0.5s"}}>Z</p>
                 <p style={{animationDuration: "2s"}}>E</p>
                 <p style={{animationDuration: "1s"}}>U</p>
                 <p style={{animationDuration: "1.5s"}}>S</p>
                 <h3 className="titleMark">TM</h3>
-            </h3>
-            <div className="titleLoader" style={{width: ((loader / 10) * 100) + "vw", display: toggle ? "block" : "none"}}></div>
+            </h3> */}
+            <div className="titleLoader" style={{width: ((loader / 10) * 50) + "vw", display: toggle ? "block" : "none"}}></div>
         </div>
     )
 }

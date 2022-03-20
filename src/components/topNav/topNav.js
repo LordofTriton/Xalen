@@ -16,7 +16,9 @@ const TopNav = ({botState}) => {
             <div className="topNav">
                     <img className="topNavLogo" src={logo} alt="logo" />
                     <h3 className="topNavTitle">Zeus</h3>
-                    <h4 className="topNavStatus">{botState}</h4>
+                    <h4 className="topNavStatus" style={{color: botState === "Online" ? "#ff9e00ff" : "dimgray"}}>
+                        {botState}
+                    </h4>
                 <img className="topNavMenuButton" src={infopic} alt="pic" onClick={() => {setInfoBoxOpen(true)}} />
             </div>
 

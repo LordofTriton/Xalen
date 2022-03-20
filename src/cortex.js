@@ -19,7 +19,7 @@ const Cortex = () => {
             <Title toggle={titleDisplay} control={setTitleDisplay} />
             <TopNav botState={botState} />
             <SideNav botState={botState} />
-            <ChatWindow botState={botState} setOnline={setBotState} />
+            <ChatWindow botState={botState} setBotState={setBotState} />
         </div>
     )
 }

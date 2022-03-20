@@ -18,7 +18,9 @@ const SideNav = ({botState}) => {
                 <h3 className="sideNavMenuOption" onClick={() => {setInfoBoxOpen(true)}}>Info</h3>
                 <hr />
                 <h3 className="sideNavTitle">Zeus</h3>
-                <h4 className="sideNavStatus">{botState}</h4>
+                <h4 className="sideNavStatus" style={{color: botState === "Online" ? "#ff9e00ff" : "dimgray"}}>
+                    {botState}
+                </h4>
             </div>
 
             <InfoBox toggle={infoBoxOpen} control={setInfoBoxOpen} />

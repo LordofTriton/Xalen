@@ -21,7 +21,7 @@ const defaultMessage = {
 //     return returnText;
 // }
 
-const ChatWindow = () => {
+const ChatWindow = ({botState, setBotState}) => {
     const [chatHistory, setChatHistory] = useState([defaultMessage])
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
@@ -46,7 +46,7 @@ const ChatWindow = () => {
     useEffect(() => {
         let keys = Object.keys(responseStore)
         if (keys.length > 0) {
-            let index = -1
+            let index = -1;
             let match = 0.3
             for (let i = 0; i < keys.length; i++) {
                 let difference = stringSimilarity.compareTwoStrings(currentMessage.content, keys[i])
@@ -55,8 +55,15 @@ const ChatWindow = () => {
                     match = difference;
                 }
             }
-            setTyping(true)
-            setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
+
+            if (botState === "Online") {
+                setTyping(true)
+                setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
+            }
+
+            axios.get(baseAPIURL).then(re => {
+                re.data ? setBotState("Online") : setBotState("Offline");
+            })
         }
     }, [currentMessage])
 

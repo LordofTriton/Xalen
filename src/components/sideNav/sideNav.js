@@ -7,7 +7,7 @@ import InfoBox from '../infoBox/infoBox'
 //Images
 import logo from '../../images/logo1.png'
 
-const SideNav = () => {
+const SideNav = ({botState}) => {
     const [infoBoxOpen, setInfoBoxOpen] = useState(false)
 
     return(
@@ -18,7 +18,7 @@ const SideNav = () => {
                 <h3 className="sideNavMenuOption" onClick={() => {setInfoBoxOpen(true)}}>Info</h3>
                 <hr />
                 <h3 className="sideNavTitle">Zeus</h3>
-                <h4 className="sideNavStatus">Online</h4>
+                <h4 className="sideNavStatus">{botState}</h4>
             </div>
 
             <InfoBox toggle={infoBoxOpen} control={setInfoBoxOpen} />

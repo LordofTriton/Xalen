@@ -60,11 +60,8 @@ const ChatWindow = ({botState, setBotState}) => {
                 setTyping(true)
                 setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
             }
-
-            axios.get(baseAPIURL).then(re => {
-                Object.keys(re.data).length > 1 ? setBotState("Online") : setBotState("Offline");
-            })
         }
+        window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
     }, [currentMessage])
 
     function learnStuff(learningMaterial, lastUserMsg) {

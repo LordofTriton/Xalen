@@ -62,7 +62,7 @@ const ChatWindow = ({botState, setBotState}) => {
             }
 
             axios.get(baseAPIURL).then(re => {
-                re.data ? setBotState("Online") : setBotState("Offline");
+                Object.keys(re.data).length < 1 ? setBotState("Online") : setBotState("Offline");
             })
         }
     }, [currentMessage])

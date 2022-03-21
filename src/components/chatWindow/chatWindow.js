@@ -136,11 +136,15 @@ const ChatWindow = ({botState, setBotState}) => {
         }
         else {
             let ignorance = [
-                "...+I've forgotten what I wanted to say...", 
-                "Not sure how exactly to reply to that lol", 
-                "Hmmmm...", 
-                "I..+I totally forgot what I was about to say lol"
-            ][Math.floor(Math.random() * 4)]
+                "...+I've forgotten what I wanted to say... 😩", 
+                "Not sure how exactly to reply to that lol 😅", 
+                "Hmmmm... 😕", 
+                "...+Let's talk about something else... 🙄",
+                "Can we talk about something else? 😃",
+                "Yeah. Okay, time to change topic.+You're boring me. 🙄",
+                "Okay, can we please talk about something else? 😃",
+                "Lmao 🤣🤣+Let's talk about something else. I'm bored. 🙄"
+            ][Math.floor(Math.random() * 7)]
             ignorance = ignorance.split("+")
             let ignoranceList = []
             for (let i = 0; i < ignorance.length; i++) {

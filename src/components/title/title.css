@@ -58,7 +58,7 @@
 .titleLoader {
     height: 5px;
     width: 100vw;
-    border-radius: 0px 30px 30px 0px;
+    border-radius: 30px;
     position: fixed;
     bottom: 30px;
     left: 25vw;

@@ -1,6 +1,6 @@
 {
-  "short_name": "Z.E.U.S Mobile",
-  "name": "Zenith Emergent Uplifting Software",
+  "short_name": "Zeus",
+  "name": "Zeus Mobile",
   "icons": [
     {
       "src": "logo.ico",
@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo1.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logo2.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ff9e00ff",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }

@@ -6,20 +6,44 @@ import SideNav from './components/sideNav/sideNav';
 import TopNav from './components/topNav/topNav';
 import ChatWindow from './components/chatWindow/chatWindow';
 
+//Images
+import lightBckg from './images/lightThemeBckg.jpeg'
+import darkBckg from './images/darkThemeBckg.png'
+import PopMenu from './components/popMenu/popMenu';
+
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)
     const [botState, setBotState] = useState("Online");
+    const [theme, setTheme] = useState(localStorage.getItem("ZEUSTheme") ? localStorage.getItem("ZEUSTheme") : "Dark")
+    const [popMenuState, setPopMenuState] = useState(false)
+
+    function toggleTheme() {
+        if (theme === "Light") {
+            setTheme("Dark")
+            localStorage.setItem("ZEUSTheme", "Dark")
+        }
+        else {
+            setTheme("Light")
+            localStorage.setItem("ZEUSTheme", "Light")
+        }
+    }
+
+    function togglePopMenu() {
+        setPopMenuState(!popMenuState)
+    }
 
     useEffect(() => {
         document.title = "Zeus";
     })
 
     return(
-        <div className="displayContent">
-            <Title toggle={titleDisplay} control={setTitleDisplay} />
-            <TopNav botState={botState} />
-            <SideNav botState={botState} />
-            <ChatWindow botState={botState} setBotState={setBotState} />
+        <div className="displayContent" 
+            style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
+            <Title toggle={titleDisplay} control={setTitleDisplay} theme={theme} />
+            <TopNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} popMenuState={popMenuState} />
+            <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} />
+            <ChatWindow botState={botState} setBotState={setBotState} theme={theme} />
+            <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} />
         </div>
     )
 }

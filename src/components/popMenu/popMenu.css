@@ -1,0 +1,81 @@
+.popMenuContainer {
+    width: 90%;
+    height: calc(100vh - 90px);
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    z-index: 19;
+    transition: all 0.5s;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.popMenuLogo {
+    width: 20%;
+    aspect-ratio: 1;
+    margin: 30px 40% 20px 40%;
+    padding: 0px;
+    animation: strobe 5s infinite;
+    pointer-events: none;
+}
+
+.popMenuTitle {
+    font-family: Lightning;
+    color: var(--persian-indigo);
+    font-size: 50px;
+    padding: 0px;
+    text-align: center;
+    animation: title_anim 5s infinite;
+    margin: 70px 0px 0px 0px;
+}
+
+.themeButton {
+    width: 90%;
+    height: 60px;
+    margin: 0px 5%;
+    background-color: whitesmoke;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.themeButton:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.themeCurrent {
+    color: var(--orange-peel);
+    font-weight: 400;
+    padding: 18px 25px;
+}
+
+.themeCurrent span {
+    float: right;
+}
+
+.themeCurrent span img {
+    width: 70px;
+    transform: translate(0px, -23px);
+}
+
+.popMenuCopy {
+    color: var(--orange-peel);
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, 0px);
+    text-align: center;
+    font-weight: 200;
+}
+
+@media screen and (min-width: 1125px) {
+    .popMenuContainer {
+        width: 500px;
+        height: 80vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

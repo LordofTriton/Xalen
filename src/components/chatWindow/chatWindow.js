@@ -21,7 +21,7 @@ const defaultMessage = {
 //     return returnText;
 // }
 
-const ChatWindow = ({botState, setBotState}) => {
+const ChatWindow = ({botState, setBotState, theme}) => {
     const [chatHistory, setChatHistory] = useState([defaultMessage])
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
@@ -186,7 +186,8 @@ const ChatWindow = ({botState, setBotState}) => {
             }
             <div className="chatInputDock">
                 <form onSubmit={handleSubmit}>
-                    <input type="text" className="chatInputDockField" value={newMsg} onChange={(el) => setNewMsg(el.target.value)} />
+                    <input type="text" className="chatInputDockField" value={newMsg} onChange={(el) => setNewMsg(el.target.value)} 
+                        style={{backgroundColor: theme === "Light" ? "white" : "#121212", color: theme === "Light" ? "#121212" : "white"}} />
                     <input type="submit" className="chatInputDockSubmit" value="Send" />
                 </form>
             </div>

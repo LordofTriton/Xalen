@@ -44,6 +44,7 @@
 .body {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .dimmer {
@@ -61,7 +62,6 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url(images/chatBckg2.jpeg);
   background-size: cover;
   box-sizing: border-box;
 }

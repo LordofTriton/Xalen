@@ -26,7 +26,6 @@
     color: var(--orange-peel);
     font-size: 30px;
     padding: 0px;
-    animation: title_anim 5s infinite;
     float: left;
     margin: 8px 0px 0px 20px;
 }

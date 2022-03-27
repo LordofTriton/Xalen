@@ -4,14 +4,14 @@ import './title.css'
 //Images
 import logo from '../../images/logo1.png';
 
-const Title = ({toggle, control}) => {
+const Title = ({toggle, control, theme}) => {
     const [loader, setLoader] = useState(0)
 
 
     setTimeout(() => loader <= 10 ? setLoader(loader + 0.01) : control(false), 10)
     
     return(
-        <div className="titleContainer" style={{marginLeft: toggle ? "0px" : "-100vw"}}>
+        <div className="titleContainer" style={{marginLeft: toggle ? "0px" : "-100vw", backgroundColor: theme === "Light" ? "white" : "#121212"}}>
             <img className="titleLogo" src={logo} alt="logo" />
             {/* <h3 className="titleTitle">
                 <p style={{animationDuration: "0.5s"}}>Z</p>

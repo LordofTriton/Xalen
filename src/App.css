@@ -37,12 +37,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--heat-wave);
+  background: var(--dark);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: var(--orange-peel);
+  background: var(--medium);
 }
 
 .body {

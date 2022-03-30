@@ -9,7 +9,6 @@
     right: 0px;
     /* overflow: hidden; */
     z-index: 20;
-    padding-top: 5px;
 }
 
 .topNavLogo {
@@ -42,7 +41,7 @@
 .topNavMenuButton {
     height: 50%;
     aspect-ratio: 1;
-    margin: 3.5% 20px 0px 0px;
+    margin: 4% 20px 0px 0px;
     cursor: pointer;
     transition: all 0.5s;
     float: right;

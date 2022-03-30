@@ -11,7 +11,7 @@
     25% {transform: rotate(0deg) scale(1,1);}
     50% {transform: rotate(0deg) scale(1,1);}
     65% {transform: rotate(30deg) scale(1.1,1.1);}
-    85% {transform: rotate(-30deg) scale(1.1,1.1);}
+    85% {transform: rotate(0deg) scale(1.1,1.1);}
     100% {transform: rotate(0deg) scale(1,1);}
 }
 

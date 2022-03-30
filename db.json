@@ -90,7 +90,8 @@
       "1648462010368_Hi!",
       "1648463752043_Hello!",
       "1648592963965_What's up?",
-      "1648614942807_Hey. What's up?"
+      "1648614942807_Hey. What's up?",
+      "1648673925769_What's up?"
     ],
     "1648440224308_Hi. How are you doing?": [],
     "1648440224308_Hello! How are you?": [],
@@ -202,7 +203,8 @@
     ],
     "1648592967003_Nothing much. You?": [
       "1648592982230_I'm good. Just ate.",
-      "1648649121133_I'm good. Getting a bit hungry..."
+      "1648649121133_I'm good. Getting a bit hungry...",
+      "1648672928572_Same."
     ],
     "1648592982230_I'm good. Just ate.": [
       "1648592984020_Would you rather time travel to the past or the future?"
@@ -456,7 +458,39 @@
     "1648649493874_I'm guessing you have...": [
       "1648649496903_Hmmmm... 😕"
     ],
-    "1648649496903_Hmmmm... 😕": []
+    "1648649496903_Hmmmm... 😕": [],
+    "1648672928572_Same.": [
+      "1648672931584_Everyone's entitled to their opinion...+No matter how stupid it is."
+    ],
+    "1648672931584_Everyone's entitled to their opinion...+No matter how stupid it is.": [
+      "1648672986518_Oh, great!"
+    ],
+    "1648672986518_Oh, great!": [
+      "1648672989532_What is your favorite joke?"
+    ],
+    "1648672989532_What is your favorite joke?": [
+      "1648673035252_I tried to catch fog yesterday. Mist."
+    ],
+    "1648673035252_I tried to catch fog yesterday. Mist.": [
+      "1648673038266_Lmao 🤣🤣+Let's change topic. I'm bored. 🙄"
+    ],
+    "1648673038266_Lmao 🤣🤣+Let's change topic. I'm bored. 🙄": [
+      "1648673191490_What do you wanna talk about?"
+    ],
+    "1648673191490_What do you wanna talk about?": [
+      "1648673194502_Did you know that by human standards, I'm very very smart?"
+    ],
+    "1648673194502_Did you know that by human standards, I'm very very smart?": [
+      "1648673233312_Are you?"
+    ],
+    "1648673233312_Are you?": [
+      "1648673235253_What? NO."
+    ],
+    "1648673235253_What? NO.": [],
+    "1648673925769_What's up?": [
+      "1648673928725_Nothing much. You?"
+    ],
+    "1648673928725_Nothing much. You?": []
   },
   "Atheneum": {
     "Hi!": [

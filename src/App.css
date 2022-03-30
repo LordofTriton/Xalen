@@ -9,6 +9,10 @@
 
 :root {
   --white: #FFFFFF;
+  --light: #CAD9FC;
+  --medium: #7FACFA;
+  --dark: #428DFF;
+  
   --black: #000000;
   --platinum: #E5E5E5;
   --pumpkin: #ff6d00ff;

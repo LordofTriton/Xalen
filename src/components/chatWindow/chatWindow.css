@@ -62,7 +62,7 @@
 }
 
 .chatContentTyping {
-    background-color: var(--heat-wave);
+    background-color: var(--dark);
     padding: 10px 20px 10px 20px;
     margin: 0px;
     color: var(--white);
@@ -106,7 +106,7 @@
     height: 50px;
     margin: 10px 0px 10px 2%;
     float: left;
-    background-color: var(--heat-wave);
+    background-color: var(--dark);
     color: var(--white);
     border: 0px;
     outline: 0px;
@@ -117,7 +117,7 @@
 }
 
 .chatInputDockSubmit:hover {
-    background-color: var(--orange-peel);
+    background-color: var(--medium);
     transform: scale(1.1,1.1);
 }
 

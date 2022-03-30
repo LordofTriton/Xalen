@@ -6,6 +6,15 @@
     100% {transform: scale(1,1);}
 }
 
+@keyframes wiggle {
+    0% {transform: rotate(0deg) scale(1,1);}
+    25% {transform: rotate(0deg) scale(1,1);}
+    50% {transform: rotate(0deg) scale(1,1);}
+    65% {transform: rotate(30deg) scale(1.1,1.1);}
+    85% {transform: rotate(-30deg) scale(1.1,1.1);}
+    100% {transform: rotate(0deg) scale(1,1);}
+}
+
 @keyframes title_anim {
     0% {color: var(--heat-wave);}
     25% {color: var(--dark-orange);}
@@ -34,21 +43,22 @@
     aspect-ratio: 1;
     margin: 30px 25% 20px 25%;
     padding: 0px;
-    animation: strobe 5s infinite;
+    animation: wiggle 5s infinite;
     pointer-events: none;
 }
 
 .sideNavTitle {
+    color: var(--dark);
     font-family: Lightning;
     font-size: 50px;
     padding: 0px;
     text-align: center;
-    animation: title_anim 5s infinite;
+    /* animation: title_anim 5s infinite; */
     margin: 70px 0px 0px 0px;
 }
 
 .sideNavStatus {
-    color: var(--orange-peel);
+    color: var(--medium);
     font-weight: 400;
     padding: 0px;
     text-align: center;

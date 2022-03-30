@@ -4,16 +4,16 @@ import axios from 'axios';
 
 //Services
 import DateTime from '../../services/dateTime';
+import MatchService from '../../services/matcher';
 
 //Defaults
-const stringSimilarity = require("string-similarity");
-const baseAPIURL = "https://zeuschat-server.herokuapp.com/responseStore";
 let d = new Date()
-const defaultMessage = {
-    parent: "zeus",
-    content: ["Hello!", "Hi.", "Hello! How are you?", `Good ${DateTime.dayPeriod()}.`][Math.floor(Math.random() * 4)],
-    time: d
-}
+
+// const baseAPIURL = "https://zeuschat-server.herokuapp.com/";
+const baseAPIURL = "http://localhost:3001/";
+
+// const defaultMessage = [0, 8, 2, DateTime.dayPeriod() === "evening" ? 24 : DateTime.dayPeriod() === "morning" ? 16 : 20][Math.floor(Math.random() * 4)]
+
 // const stripMessage = ({text}) => {
 //     let returnText = text;
 //     returnText = returnText.replace(/[^\p{L}\s]/gu, "")
@@ -21,8 +21,13 @@ const defaultMessage = {
 //     return returnText;
 // }
 
+function spreadResponse(array) {
+    if (array) return array;
+    else return []
+}
+
 const ChatWindow = ({botState, setBotState, theme}) => {
-    const [chatHistory, setChatHistory] = useState([defaultMessage])
+    const [chatHistory, setChatHistory] = useState([])
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
     const [currentMessage, setCurrentMessage] = useState({
@@ -30,13 +35,31 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         content: "",
         time: d
     })
-    const [responseStore, setResponseStore] = useState({})
+    const [atheneum, setAtheneum] = useState({})
+    const [yggdrasil, setYggdrasil] = useState({})
+    const [context, setContext] = useState([
+        "1648440119398_Hello!",
+        "1648440211596_Hi!",
+        "1648443193203_Hola!",
+        "1648443203671_Konnichiwa!",
+        "1648443214329_Howdy! How do you do?"
+    ])
 
-    if (Object.keys(responseStore).length < 1) {
-        axios.get(baseAPIURL).then(re => {
-            setResponseStore(re.data)
+    useEffect(() => {
+        axios.get(`${baseAPIURL}Atheneum`).then(re => {
+            setAtheneum(re.data);
         })
-    }
+        axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+            setYggdrasil(re.data);
+        })
+    }, [])
+
+    // if (Object.keys(atheneum).length < 1) {
+    //     setAtheneum(APIService.getAtheneum())
+    // }
+    // if (Object.keys(yggdrasil).length < 1) {
+    //     setYggdrasil(APIService.getYggdrasil())
+    // }
 
     const scrollDown = () => {
         let chatWindowEl = document.getElementById("chatWindow")
@@ -44,50 +67,52 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     }
 
     useEffect(() => {
-        let keys = Object.keys(responseStore)
-        if (keys.length > 0) {
-            let index = -1;
-            let match = 0.3
-            for (let i = 0; i < keys.length; i++) {
-                let difference = stringSimilarity.compareTwoStrings(currentMessage.content, keys[i])
-                if (difference > match) {
-                    index = i;
-                    match = difference;
+        if (chatHistory.length < 1 && Object.keys(yggdrasil).length > 0) {
+            replyMessage(0, yggdrasil, "Yggdrasil")
+        }
+    }, [yggdrasil])
+
+    useEffect(() => {
+        let matchIndex = -1;
+        matchIndex = MatchService.GetMatch(context, currentMessage)
+        if (chatHistory.length > 0) {
+            if (context.length > 0 && matchIndex >= 0) {
+                // if (botState === "Online") {
+                if (true) {
+                    let keys = Object.keys(yggdrasil)
+                    setTyping(true)
+                    setTimeout(() => replyMessage(keys.indexOf(context[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
                 }
             }
-
-            if (botState === "Online") {
-                setTyping(true)
-                setTimeout(() => replyMessage(index), Math.min(2000, Math.floor(Math.random() * 5000)))
+            else {
+                matchIndex = MatchService.GetMatch(Object.keys(atheneum), currentMessage)
+                // if (botState === "Online") {
+                if (true) {
+                    let keys = Object.keys(atheneum)
+                    setTyping(true)
+                    setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                }
             }
         }
         window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
     }, [currentMessage])
 
-    function learnStuff(learningMaterial, lastUserMsg) {
-        let lastZeusMsg = learningMaterial.filter(msg => msg.parent === "zeus")
-        lastZeusMsg = lastZeusMsg[lastZeusMsg.length - 1]
+    function learnStuff(subject, learningMaterial, newMessage) {
+        let parentMessage = learningMaterial.filter(msg => msg.parent === subject)
+        parentMessage = parentMessage[parentMessage.length - 1]
 
-        if (lastZeusMsg) {
-            lastZeusMsg = lastZeusMsg.content;
+        if (parentMessage) {
+            parentMessage = parentMessage.content;
 
-            let keys = Object.keys(responseStore)
-            if (!keys.includes(lastZeusMsg)) {
-                axios.get(baseAPIURL).then(re => {
-                    let store = {...re.data, [lastZeusMsg]: [lastUserMsg]}
-                    axios.post(baseAPIURL, store).then(re => {
-                        axios.get(baseAPIURL).then(re => {
-                            setResponseStore(re.data)
-                        })
-                    })
-                })
-            }
-            else {
-                axios.get(baseAPIURL).then(re => {
-                    let store = {...re.data, [lastZeusMsg]: [...responseStore[lastZeusMsg], lastUserMsg]}
-                    axios.post(baseAPIURL, store).then(re => {
-                        axios.get(baseAPIURL).then(re => {
-                            setResponseStore(re.data)
+            if (MatchService.GetArrayMatch(context, newMessage) < 0) {
+                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                    console.log("Parent Message:", parentMessage)
+                    console.log("Yggdrasil:", re.data[parentMessage])
+                    let store = {...re.data, [parentMessage]: [...re.data[parentMessage], newMessage]}
+                    store = {...store, [newMessage]: []}
+                    axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
+                        axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                            setYggdrasil(re.data);
                         })
                     })
                 })
@@ -101,10 +126,10 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             let d = new Date()
             const newMessage = {
                 parent: "user",
-                content: newMsg.trim(),
+                content: DateTime.addStamp(newMsg.trim()),
                 time: d
             }
-            learnStuff(chatHistory.concat(newMessage), newMsg.trim())
+            learnStuff("zeus", chatHistory.concat(newMessage), newMessage.content)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()
@@ -113,62 +138,82 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         }
     }
 
-    function replyMessage(index) {
+    function fallbackMessage(store) {
+        let keys = Object.keys(yggdrasil)
+        let ignorance = [
+            "...+I've forgotten what I wanted to say... 😩", 
+            "Not sure how exactly to reply to that lol 😅", 
+            "Hmmmm... 😕", 
+            "...+Let's talk about something else... 🙄",
+            "Yeah. Okay, time to change topic.+You're boring me. 🙄",
+            "Okay, can we please talk about something else? 😃",
+            "Lmao 🤣🤣+Let's change topic. I'm bored. 🙄",
+            "*sigh*+🥺",
+            "...+I'm tired 😩",
+            "😕😕😕",
+            "Lmao 🤣🤣"
+        ][Math.floor(Math.random() * 11)]
+        const ignoranceList = ignorance.split("+")
+        let fallbackMessages = []
+        for (let i = 0; i < ignoranceList.length; i++) {
+            const newZeusMessage = {
+                parent: "zeus",
+                content: DateTime.addStamp(ignoranceList[i].trim()),
+                time: d
+            }
+            fallbackMessages.push(newZeusMessage)
+            scrollDown()
+        }
+
+        let lastMessage = chatHistory[chatHistory.length - 1]
+        setContext(yggdrasil[keys[keys.indexOf(lastMessage.content)]])
+        learnStuff("user", chatHistory.concat(fallbackMessages), fallbackMessages[fallbackMessages.length - 1].content)
+
+        setChatHistory(chatHistory.concat(fallbackMessages))
+        setTyping(false)
+    }
+
+    function replyMessage(index, responseStore, storeID) {
         if (index >= 0) {
             let keys = Object.keys(responseStore)
             if (keys.length > 0) {
                 let d = new Date()
+                setContext(responseStore[keys[index]])
                 let reply = responseStore[keys[index]]
-                reply = reply[Math.floor(Math.random() * reply.length)].split("+")
-                let replyList = []
-                for (let i = 0; i < reply.length; i++) {
-                    const newZeusMessage = {
-                        parent: "zeus",
-                        content: reply[i].trim(),
-                        time: d
+                if (reply.length > 0) {
+                    reply = reply[Math.floor(Math.random() * reply.length)]
+                    let replyMessages = reply.split("+")
+                    let replyList = []
+                    for (let i = 0; i < replyMessages.length; i++) {
+                        const newZeusMessage = {
+                            parent: "zeus",
+                            content: DateTime.addStamp(replyMessages[i].trim()),
+                            time: d
+                        }
+                        replyList.push(newZeusMessage)
+                        scrollDown()
                     }
-                    replyList.push(newZeusMessage)
-                    scrollDown()
+                    if (storeID === "Atheneum") {
+                        alert("Looked it up!")
+                        learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1].content)
+                    }
+                    setChatHistory(chatHistory.concat(replyList))
+                    setTyping(false)
                 }
-                setChatHistory(chatHistory.concat(replyList))
-                setTyping(false)
+                else fallbackMessage(storeID)
             }
         }
-        else {
-            let ignorance = [
-                "...+I've forgotten what I wanted to say... 😩", 
-                "Not sure how exactly to reply to that lol 😅", 
-                "Hmmmm... 😕", 
-                "...+Let's talk about something else... 🙄",
-                "Can we talk about something else? 😃",
-                "Yeah. Okay, time to change topic.+You're boring me. 🙄",
-                "Okay, can we please talk about something else? 😃",
-                "Lmao 🤣🤣+Let's talk about something else. I'm bored. 🙄"
-            ][Math.floor(Math.random() * 7)]
-            ignorance = ignorance.split("+")
-            let ignoranceList = []
-            for (let i = 0; i < ignorance.length; i++) {
-                const newZeusMessage = {
-                    parent: "zeus",
-                    content: ignorance[i].trim(),
-                    time: d
-                }
-                ignoranceList.push(newZeusMessage)
-                scrollDown()
-            }
-            setChatHistory(chatHistory.concat(ignoranceList))
-            setTyping(false)
-        }
+        else fallbackMessage(storeID)
     }
 
     return(
         <div className="chatWindow" id="chatWindow">
-            <h3 className="dateTimeDisplay">{DateTime.getDateFormatOne()}</h3>
+            <h3 className="dateTimeDisplay" style={{color: theme === "Light" ? "#121212" : "white"}}>{DateTime.getDateFormatOne()}</h3>
             {
                 chatHistory.map((message) =>
                     <div className="chatMessage">
-                        <h3 className="chatContent" style={{float: message.parent === "zeus" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white" : "var(--orange-peel)", color: message.parent === "user" ? "var(--orange-peel)" : "var(--white)"}}>
-                            {message.content}
+                        <h3 className="chatContent" style={{float: message.parent === "zeus" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white" : "var(--medium)", color: message.parent === "user" ? "var(--medium)" : "var(--white)"}}>
+                            {DateTime.removeStamp(message.content)}
                         </h3>
                         <h4 className="chatMessageTime" style={{
                             textAlign: message.parent === "zeus" ? "left" : "right",

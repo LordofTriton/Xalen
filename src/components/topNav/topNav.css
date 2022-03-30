@@ -16,14 +16,14 @@
     aspect-ratio: 1;
     margin: 2% 0px 0px 15px;
     padding: 0px;
-    animation: strobe 5s infinite;
+    animation: wiggle 5s infinite;
     pointer-events: none;
     float: left;
 }
 
 .topNavTitle {
     font-family: Lightning;
-    color: var(--orange-peel);
+    color: var(--dark);
     font-size: 30px;
     padding: 0px;
     float: left;

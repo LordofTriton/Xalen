@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './title.css'
 
 //Images
-import logo from '../../images/logo1.png';
+import logo from '../../images/Bot/bot.png';
 
 const Title = ({toggle, control, theme}) => {
     const [loader, setLoader] = useState(0)

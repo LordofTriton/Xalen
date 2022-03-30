@@ -41,6 +41,19 @@ function formatTime(d) {
     return endTime
 }
 
-const DateTime = {getDateFormatOne, dayPeriod, formatTime}
+function removeStamp(text) {
+    if (text.includes("_")) {
+        let newText = text.split("_");
+        return newText[1]
+    }
+    else return text;
+}
+
+function addStamp(text) {
+    if (text.includes("_")) return text;
+    else return `${Date.now()}_${text}`
+}
+
+const DateTime = {getDateFormatOne, dayPeriod, formatTime, removeStamp, addStamp}
 
 export default DateTime

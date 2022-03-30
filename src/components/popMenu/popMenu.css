@@ -46,7 +46,7 @@
 }
 
 .themeCurrent {
-    color: var(--orange-peel);
+    color: var(--dark);
     font-weight: 400;
     padding: 18px 25px;
 }
@@ -61,7 +61,7 @@
 }
 
 .popMenuCopy {
-    color: var(--orange-peel);
+    color: var(--dark);
     position: absolute;
     left: 50%;
     bottom: 10px;

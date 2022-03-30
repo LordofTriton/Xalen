@@ -62,7 +62,7 @@
     position: fixed;
     bottom: 30px;
     left: 25vw;
-    background-color: var(--orange-peel);
+    background-color: var(--medium);
 }
 
 @media screen and (min-width: 1125px) {

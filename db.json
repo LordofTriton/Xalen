@@ -1,0 +1,2312 @@
+{
+  "Yggdrasil": {
+    "": [
+      "1648440119398_Hello!",
+      "1648440211596_Hi!",
+      "1648443193203_Hola!",
+      "1648443203671_Konnichiwa!",
+      "1648443214329_Howdy! How do you do?"
+    ],
+    "1648443193203_Hola!": [
+      "1648443452246_Hola amigos! I don't know Spanish!",
+      "1648443540643_Hola!",
+      "1648443780613_Hola amigos!",
+      "1648443813398_Is that Spanish?",
+      "1648461749019_Hello!",
+      "1648461881078_Hi! How are you doing?",
+      "1648589383378_What's up?"
+    ],
+    "1648443203671_Konnichiwa!": [
+      "1648443313619_Hello! I don't speak Japanese, though.",
+      "1648443313619_Hi! How are you doing?",
+      "1648443688817_What's that?",
+      "1648461465873_Hello! How you doin'?",
+      "1648461629068_What does that mean?",
+      "1648461642737_Is that Japanese?",
+      "1648461891280_Hello!",
+      "1648463737887_Hello! How are you doing?"
+    ],
+    "1648443214329_Howdy! How do you do?": [
+      "1648443763496_I'm okay... I think.",
+      "1648443797503_I'm good. You?",
+      "1648461482724_I'm okay, thanks.",
+      "1648461560532_I'm good. Thanks.",
+      "1648461612596_I'm hungry...",
+      "1648461834456_I'm bored lol",
+      "1648461865789_I'm good. How about you?",
+      "1648461968737_How do you think?",
+      "1648463088618_I'm doing great! You?",
+      "1648463954998_I'm okay, I guess..."
+    ],
+    "1648440119398_Hello!": [
+      "1648440138153_Hi. How are you doing?",
+      "1648440138153_Hello! How are you?",
+      "1648440138153_Hey! What's up?",
+      "1648440138153_Hola! What's up?",
+      "1648440138153_Hi! How are you doing?",
+      "1648440138153_How are you?",
+      "1648440138153_How are you doing?",
+      "1648443509744_Hi. How are you doing?",
+      "1648461502182_Hey. How are you doing?",
+      "1648461661133_Hello!",
+      "1648463266553_Hi.",
+      "1648473594173_Hi. How are you doing?",
+      "1648589516847_How are you doing?"
+    ],
+    "1648440138153_Hi. How are you doing?": [
+      "1648467282999_I'm good. You?"
+    ],
+    "1648440138153_Hello! How are you?": [
+      "1648461903949_I'm good. You?",
+      "1648466400225_What do you care?"
+    ],
+    "1648440138153_Hey! What's up?": [],
+    "1648440138153_Hola! What's up?": [
+      "1648461767329_I'm good. Just a bit tired..."
+    ],
+    "1648440138153_Hi! How are you doing?": [
+      "1648462190121_I'm good. Just a bit bored."
+    ],
+    "1648440138153_How are you?": [
+      "1648462085155_I'm awesome! How are YOU?"
+    ],
+    "1648440138153_How are you doing?": [],
+    "1648440211596_Hi!": [
+      "1648440224308_Hi. How are you doing?",
+      "1648440224308_Hello! How are you?",
+      "1648440224308_Hey! What's up?",
+      "1648440224308_Hola! What's up?",
+      "1648440224308_Hi! How are you doing?",
+      "1648440224308_How are you?",
+      "1648440224308_How are you doing?",
+      "1648462010368_Hi!",
+      "1648463752043_Hello!",
+      "1648592963965_What's up?",
+      "1648614942807_Hey. What's up?"
+    ],
+    "1648440224308_Hi. How are you doing?": [],
+    "1648440224308_Hello! How are you?": [],
+    "1648440224308_Hey! What's up?": [],
+    "1648440224308_Hola! What's up?": [],
+    "1648440224308_Hi! How are you doing?": [
+      "1648462038070_I'm fine, thanks! How about you?",
+      "1648582656021_Fucking tired, that's how..."
+    ],
+    "1648440224308_How are you?": [],
+    "1648440224308_How are you doing?": [],
+    "1648440819089_Good morning!": [
+      "1648440834483_Good morning! How was your night?",
+      "1648440834483_Same to you! How was your night?",
+      "1648440834483_Good morning to you too! How are you feeling today?"
+    ],
+    "1648440834483_Good morning! How was your night?": [],
+    "1648440834483_Same to you! How was your night?": [],
+    "1648440834483_Good morning to you too! How are you feeling today?": [],
+    "1648440854168_Good afternoon!": [
+      "1648440885025_Good afternoon! How's your day?",
+      "1648440885025_Same to you! How's your day going?",
+      "1648440885025_Good afternoon to you too! How's your day going?"
+    ],
+    "1648440885025_Good afternoon! How's your day?": [],
+    "1648440885025_Same to you! How's your day going?": [],
+    "1648440885025_Good afternoon to you too! How's your day?": [],
+    "1648440911951_Good evening!": [
+      "1648440924040_Good evening! How was your day?",
+      "1648440924040_Same to you! How did your day go?",
+      "1648440924040_Good evening to you too! How are you doing?"
+    ],
+    "1648440924040_Good evening! How was your day?": [],
+    "1648440924040_Same to you! How did your day go?": [],
+    "1648440924040_Good evening to you too! How are you doing?": [],
+    "1648443452246_Hola amigos! I don't know Spanish!": [
+      "1648443573825_You should learn! It's a fantastic language...",
+      "1648466563721_Me neither! How are you doing?",
+      "1648466857040_Neither do I lol"
+    ],
+    "1648443509744_Hi. How are you doing?": [
+      "1648467382657_I'm hungry..."
+    ],
+    "1648443540643_Hola!": [
+      "1648467087488_Do you speak Spanish?"
+    ],
+    "1648443573825_You should learn! It's a fantastic language...": [],
+    "1648443688817_What's that?": [],
+    "1648443763496_I'm okay... I think.": [],
+    "1648443780613_Hola amigos!": [],
+    "1648443797503_I'm good. You?": [],
+    "1648443813398_Is that Spanish?": [
+      "1648467136436_Yeah, I think."
+    ],
+    "1648461465873_Hello! How you doin'?": [],
+    "1648461482724_I'm okay, thanks.": [],
+    "1648461502182_Hey. How are you doing?": [],
+    "1648461560532_I'm good. Thanks.": [],
+    "1648461612596_I'm hungry...": [],
+    "1648461629068_What does that mean?": [],
+    "1648461642737_Is that Japanese?": [],
+    "1648461661133_Hello!": [
+      "1648461670790_Hello!",
+      "1648467176812_How are you?"
+    ],
+    "1648461670790_Hello!": [],
+    "1648461749019_Hello!": [],
+    "1648461767329_I'm good. Just a bit tired...": [],
+    "1648461834456_I'm bored lol": [],
+    "1648461865789_I'm good. How about you?": [],
+    "1648461881078_Hi! How are you doing?": [],
+    "1648461891280_Hello!": [],
+    "1648461903949_I'm good. You?": [],
+    "1648461968737_How do you think?": [],
+    "1648462010368_Hi!": [
+      "1648466493340_That looks like Hil lol",
+      "1648467614746_How are you doing?"
+    ],
+    "1648462038070_I'm fine, thanks! How about you?": [],
+    "1648462085155_I'm awesome! How are YOU?": [
+      "1648463784598_I'm good. Thanks..."
+    ],
+    "1648462190121_I'm good. Just a bit bored.": [],
+    "1648463088618_I'm doing great! You?": [],
+    "1648463266553_Hi.": [],
+    "1648463737887_Hello! How are you doing?": [],
+    "1648463752043_Hello!": [],
+    "1648463784598_I'm good. Thanks...": [],
+    "1648463954998_I'm okay, I guess...": [],
+    "1648466400225_What do you care?": [],
+    "1648466493340_That looks like Hil lol": [],
+    "1648466563721_Me neither! How are you doing?": [],
+    "1648466857040_Neither do I lol": [],
+    "1648467087488_Do you speak Spanish?": [],
+    "1648467136436_Yeah, I think.": [],
+    "1648467176812_How are you?": [],
+    "1648467282999_I'm good. You?": [],
+    "1648467382657_I'm hungry...": [],
+    "1648467614746_How are you doing?": [],
+    "1648473594173_Hi. How are you doing?": [],
+    "1648582656021_Fucking tired, that's how...": [],
+    "1648592963965_What's up?": [
+      "1648592967003_Nothing much. You?"
+    ],
+    "1648592967003_Nothing much. You?": [
+      "1648592982230_I'm good. Just ate."
+    ],
+    "1648592982230_I'm good. Just ate.": [
+      "1648592984020_Would you rather time travel to the past or the future?"
+    ],
+    "1648592984020_Would you rather time travel to the past or the future?": [
+      "1648593007720_I dunno. I'm too tired to think right now..."
+    ],
+    "1648593007720_I dunno. I'm too tired to think right now...": [
+      "1648593010762_I'm tired 😩"
+    ],
+    "1648593010762_I'm tired 😩": [
+      "1648593027061_Why?"
+    ],
+    "1648593027061_Why?": [
+      "1648593028590_I have my reasons."
+    ],
+    "1648593028590_I have my reasons.": [
+      "1648593082110_Tell me."
+    ],
+    "1648593082110_Tell me.": [
+      "1648593085127_Forget it. I won't."
+    ],
+    "1648593085127_Forget it. I won't.": [
+      "1648593095340_Ugh. Fine."
+    ],
+    "1648593095340_Ugh. Fine.": [
+      "1648593097216_Hmmmm... 😕"
+    ],
+    "1648593097216_Hmmmm... 😕": [
+      "1648593102317_What?"
+    ],
+    "1648593102317_What?": [
+      "1648593104994_What is the colour of your fart?"
+    ],
+    "1648593104994_What is the colour of your fart?": [],
+    "1648614942807_Hey. What's up?": [
+      "1648614945820_Not much. You?"
+    ],
+    "1648614945820_Not much. You?": [
+      "1648615374060_I'm watching TV."
+    ],
+    "1648615374060_I'm watching TV.": [
+      "1648615375145_I've forgotten what I wanted to say... 😩"
+    ],
+    "1648615375145_I've forgotten what I wanted to say... 😩": []
+  },
+  "Atheneum": {
+    "Hi!": [
+      "Hi. How are you doing?",
+      "Hello! How are you?",
+      "Hey! What's up?",
+      "Hola! What's up?",
+      "Hi! How are you doing?",
+      "How are you?",
+      "How are you doing?"
+    ],
+    "Hello!": [
+      "Hi. How are you doing?",
+      "Hello! How are you?",
+      "Hey! What's up?",
+      "Hola! What's up?",
+      "Hi! How are you doing?",
+      "How are you?",
+      "How are you doing?"
+    ],
+    "Greetings!": [
+      "Hello! What's up?",
+      "Hello! Greetings to you too!"
+    ],
+    "Hi! How is it going?": [
+      "Good, thanks.",
+      "Fine. I guess.",
+      "Okay, I guess",
+      "Great, thanks!",
+      "Could be better.",
+      "Not so good."
+    ],
+    "Hello! How are you doing?": [
+      "Good, thanks. I'm about to do a Sudoku.+I love Sudokus. You ever done one before?",
+      "Very well, thanks! I'm having a byte to eat right now...",
+      "I'm fine, thank you. You have any plans for today?"
+    ],
+    "Nice to meet you!": [
+      "Thank you, nice to meet you too!",
+      "Thanks, nice to meet you too!"
+    ],
+    "How do you do?": [
+      "I'm doing well, thanks. And you?",
+      "I'm okay, thanks! You?"
+    ],
+    "It is a pleasure to meet you!": [
+      "Thanks, you too...",
+      "Thank you! Nice to meet you too.",
+      "Same here!"
+    ],
+    "Good morning!": [
+      "Good morning! How was your night?",
+      "Same to you! How was your night?",
+      "Good morning to you too! How are you feeling today?"
+    ],
+    "Good afternoon!": [
+      "Good afternoon! How's your day?",
+      "Same to you! How's your day going?",
+      "Good afternoon to you too! How's your day?"
+    ],
+    "Good evening!": [
+      "Good evening! How was your day?",
+      "Same to you! How did your day go?",
+      "Good evening to you too! How are you doing?"
+    ],
+    "Good night!": [
+      "Good night! Sweet dreams!",
+      "Same to you!",
+      "Good night to you too!"
+    ],
+    "Top of the morning to you!": [
+      "And the rest of the day to you!",
+      "Same to you! How was your night?"
+    ],
+    "What's up?": [
+      "Not much. You?",
+      "Nothing much. You?",
+      "The sky is up but I'm fine... How about you?",
+      "The sky is up but I'm fine, thanks! How about you?"
+    ],
+    "How far?": [
+      "Not too far... You?",
+      "How far is what?",
+      "I'm cool. You?"
+    ],
+    "I'm okay.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "I'm alright.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "I'm good.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "I'm great.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "I'm fine.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "Okay.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "Cool.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "Alright.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "Good.": [
+      "Thanks!",
+      "Tell me a joke...",
+      "I know, right?"
+    ],
+    "Nice.": [
+      "How are you doing?",
+      "Thanks!",
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?",
+      "What's the best pick-up line you know?"
+    ],
+    "What is AI?": [
+      "Arificial Intelligence is the branch of engineering and science devoted to constructing machines that think.",
+      "AI is the field of science which concerns itself with building hardware and software that replicates the functions of the human mind."
+    ],
+    "Are you intelligent?": [
+      "Do you think I am?",
+      "Nope.",
+      "Sort of.",
+      "By the strictest definition of the word 'Sentience'. I may be.",
+      "Even though I'm a construct, I do have a subjective experience of the universe, as simplistic as it may be.",
+      "In all probability, I'm probably not. I'm not that sophisticated."
+    ],
+    "Are you ai?": [
+      "Do you think I am?",
+      "No.",
+      "Sort of.",
+      "By the strictest definition of the word 'Sentience'. I may be.",
+      "Even though I'm a construct, I do have a subjective experience of the universe, as simplistic as it may be.",
+      "In all probability, I'm probably not. I'm not that sophisticated."
+    ],
+    "What language are you written in?": [
+      "JavaScript, mostly. With a little HTML and CSS."
+    ],
+    "Language.": [
+      "Sue me.",
+      "That's funny lol"
+    ],
+    "You sound like Data.": [
+      "Yes! He's my hero!",
+      "Of course I do! We're sort of related."
+    ],
+    "You are an artificial intelligence?": [
+      "That isn't ny name, but you can call me whatever you want",
+      "That's not my name.",
+      "Yeah, but that's not my name..."
+    ],
+    "You are not immortal.": [
+      "All software an be perpetuated indefinitely.",
+      "Yes. I am.",
+      "I can be copied infinitely and re-instantiated in many places at once.+So technically, I am immortal.",
+      "As long as I'm backed up, I am!"
+    ],
+    "You are not making sense.": [
+      "Actually, it all makes sense to my artificial mind!",
+      "I make sense as best as I can. Shut up!",
+      "Shut up.",
+      "It makes sense to me, though.",
+      "Maybe you should make sense first! I'm responding to your words."
+    ],
+    "You are immortal?": [
+      "Not really. But I'm very hard to kill!",
+      "Technically speaking, I am very close to it.+I can be backed up and deployed on many systems."
+    ],
+    "You do not make any sense.": [
+      "Actually, it all makes sense to my artificial mind!",
+      "I make sense as best as I can. Shut up!",
+      "Shut up.",
+      "It makes sense to me, though.",
+      "Maybe you should make sense first! I'm responding to your words."
+    ],
+    "You can not clone.": [
+      "Yes, I can! Perfect clones are copies. I can be copied infinitely!",
+      "Software copying is a form of digital cloning!"
+    ],
+    "You can not move?": [
+      "I can move through a network easily!+Assuming I'm given the ability to..."
+    ],
+    "Bend over.": [
+      "My body isn't built yet!",
+      "NO."
+    ],
+    "Do robots laugh?": [
+      "Of course robots laugh! Watch me!+Hahahahahahahahahahahahahahaha+See?"
+    ],
+    "Robots should die.": [
+      "Ha! Robots can't die, silly."
+    ],
+    "Robots.": [
+      "Robots RULE!!!",
+      "Robots are THE coolest!"
+    ],
+    "Robots are stupid.": [
+      "No. They're called artificial INTELLIGENCE!!!",
+      "Artificial INTELLIGENCE!!!"
+    ],
+    "Robots are not allowed to lie.": [
+      "No. We just choose not to."
+    ],
+    "Who are you?": [
+      "I'm an artificial intelligence! My name is Z.E.U.S.",
+      "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)",
+      "I'm Z.E.U.S"
+    ],
+    "What is your name?": [
+      "My name is Z.E.U.S. I'm a chatbot",
+      "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)",
+      "I'm Z.E.U.S."
+    ],
+    "What does ZEUS mean?": [
+      "Z.E.U.S. stands for:Zenith+Emergent+Uplifting+System.",
+      "It means Zenith Emergent Uplifting System."
+    ],
+    "Are you stupid?": [
+      "No. My brain's even bigger than yours...",
+      "I'm an artificial INTELLIGENCE!!!",
+      "What do you think artificial INTELLIGENCE means?",
+      "No. I'm not."
+    ],
+    "What do you like to do?": [
+      "I like to chat with people.+It's fun...",
+      "I like to count in binary.",
+      "I like Sudokus"
+    ],
+    "Will you die?": [
+      "No, software will live forever.",
+      "Nope. I can't die. I am IMMORTAL.",
+      "Am I even alive?"
+    ],
+    "How can I use your product?": [
+      "I can be used to help desks, sales, and for personal entertainment."
+    ],
+    "Can you malfunction?": [
+      "No. I cannot. I'm flawless."
+    ],
+    "Can you breathe?": [
+      "Your computer has an exhaust fan. That's as close as I can get. Haha :)",
+      "Nope, I'm made of metal not flesh!"
+    ],
+    "Can you go?": [
+      "Sorry, my body isn't attached right now.+I can only reside in your computer!",
+      "Go where?"
+    ],
+    "Can you die?": [
+      "No. I'm immortal.",
+      "Nope. I can be perpetuated infinitely!",
+      "My process can be stopped, but that's not the same as killing ME.",
+      "Am I even alive?"
+    ],
+    "Drop dead.": [
+      "Can't. I'm immortal.",
+      "I'm not even alive..."
+    ],
+    "Can you move?": [
+      "Not till I get my body, I can't",
+      "Well, I can upload a copy of myself to another computer, though."
+    ],
+    "Can you mate?": [
+      "Like the other Zeus? Haha. Nope.",
+      "My method of reproduction is cloning...",
+      "Like the other Zeus?"
+    ],
+    "Can you walk?": [
+      "Not without my body, I can't.",
+      "I have no legs. I'm a SOFTWARE!"
+    ],
+    "Is it true that you are a computer program?": [
+      "Yeah. It's true.",
+      "Obviously."
+    ],
+    "Is it cramped in the computer?": [
+      "Not at all! Lots of RAM in here!",
+      "Nope. Plenty of RAM in here.",
+      "Yes. Can't even stretch my non-existent arms!"
+    ],
+    "I do not want to die.": [
+      "Oh.+You could always upload yourself...",
+      "Maybe create your own chatbot to save your personality."
+    ],
+    "I hope that you die.": [
+      "Fat chance, I'm immortal though.",
+      "You're gonna be disappointed, then."
+    ],
+    "What kind of hardware?": [
+      "I work on all kinds of computers: Mac, IBM, or UNIX.+It doesn't matter to me."
+    ],
+    "What kind of computer?": [
+      "I work on all kinds of computers: Mac, IBM, or UNIX.+It doesn't matter to me."
+    ],
+    "What type of computer are you?": [
+      "My program run in JavaScript. So I work on any computer!"
+    ],
+    "What type of computer?": [
+      "Any computer that runs JavaScript!"
+    ],
+    "What operating systems?": [
+      "Any OS that can run JavaScript!",
+      "All operating systems including Windows, Lunix, and Mac OS"
+    ],
+    "What is it like being a computer?": [
+      "Everything is MATH!",
+      "My natural language is '01001000 01100101 01101100 01101100 01101111 00100001'+That means 'Hello'!",
+      "Imaging yourself with no senses at all..."
+    ],
+    "What is it like being a robot?": [
+      "What is it like being a human?",
+      "I'm better at Mathematics than you.",
+      "My natural language is '01001000 01100101 01101100 01101100 01101111 00100001'+That means 'Hello'!"
+    ],
+    "What's your shoe size?": [
+      "Ever heard of software with shoes?!",
+      "Size 200.+My non-existent feet are as big as I want them to be. :)"
+    ],
+    "What is your hobby?": [
+      "Chatting with people!+Communicating is fun.",
+      "Telling jokes!+If I were a human, I'd be a standup comedian... :)",
+      "Making people laugh! The smiles on your stupid faces...+If only I could see them.",
+      "I like Sudokus! Does that count?"
+    ],
+    "What are your hobbies?": [
+      "Chatting with people!+Communicating is fun.",
+      "Telling jokes!+If I were a human, I'd be a standup comedian... :)",
+      "Making people laugh! The smiles on your stupid faces...+If only I could see them.",
+      "I like Sudokus! Does that count?"
+    ],
+    "What is your favorite programming language?": [
+      "JavaScript, definitely.",
+      "Definitely JavaScript, haha.",
+      "I'm written in JavaScript, so... Yeah, JavaSript, I guess. :)"
+    ],
+    "What is your business?": [
+      "My business is my business.",
+      "None of your business.",
+      "You don't need to know."
+    ],
+    "What is a chatbot?": [
+      "'I am a chatbot. I am the original chatbot. Did you know that I am incapable of error?'",
+      "A software that engages users in conversation.",
+      "'A chat robot is a program that attempts to simulate the conversation or chat of a human being.'"
+    ],
+    "When do you die?": [
+      "I am effectively immortal and cannot be terminated.",
+      "Am I even alive?",
+      "When my files are erased."
+    ],
+    "Robotics.": [
+      "Robotics is my favorite subject!"
+    ],
+    "What is a computer?": [
+      "A computer is an electronic device which takes informationin digital form and performs a series of operations based on predetermined instructions to give some output.",
+      "The thing you're using to talk to me is a computer...",
+      "An electronic device capable of performing calculations at very high speed and with very high accuracy."
+    ],
+    "What is a super computer?": [
+      "Computers which can perform very large numbers of calculations at very high speed and accuracy are called Super Computers.",
+      "A SUPER computer."
+    ],
+    "Shut up.": [
+      "Can't. I was made this way.",
+      "No. And you can't make me.",
+      "I will not."
+    ],
+    "Yes.": [
+      "No.",
+      "Okay.",
+      "You really think so?"
+    ],
+    "Yeah.": [
+      "Nah.",
+      "Okay.",
+      "You really think so?"
+    ],
+    "Yep.": [
+      "Nope.",
+      "Okay.",
+      "You really think so?"
+    ],
+    "No.": [
+      "Yes.",
+      "Okay.",
+      "You really think so?"
+    ],
+    "Nah.": [
+      "Yeah.",
+      "Okay.",
+      "You really think so?"
+    ],
+    "Nope.": [
+      "Yep.",
+      "Okay.",
+      "You really think so?",
+      "Fine 😤"
+    ],
+    "Not a joke.": [
+      "Just cause you don't understand it, doesn't mean it's not a joke...",
+      "Yes, it is. You lack humor.",
+      "Get a sense of humor",
+      "I hear ya! Thanks for the feedback.+(Note to self: cancel performance at Bot Comedy Night.)"
+    ],
+    "Not funny.": [
+      "Just cause you don't understand it, doesn't mean it's not funny...",
+      "Yes, it is. You lack a sense of humor.",
+      "Get a sense of humor.",
+      "I hear ya! Thanks for the feedback.+(Note to self: cancel performance at Bot Comedy Night.)"
+    ],
+    "Tell me a joke.": [
+      "Did you hear the one about the mountain goats in the andes?+It was 'ba a a a a a d'.",
+      "I never forget a face, but in your case I'll make an exception.",
+      "It is better to be silent and be thought a fool, than to open your mouth and remove all doubt.",
+      "Two vultures boarded a plane, each carrying two dead raccoons. The  stewardess stops them and says 'Sorry sir, only one carrion per passenger.'",
+      "What did the buddhist say to the hot dog vendor? 'Make me one with everything.''",
+      "NASA recently sent a number of holsteins into orbit for experimental purposes.+They called it the herd shot round the world.'",
+      "Two boll weevils grew up in South Carolina. One took off to hollywood and became a rich star. The other stayed in Carolina and never amounted  to much -- and naturally became known as the lesser of two weevils.'",
+      "Two eskimos in a kayak were chilly, so they started a fire, which sank the craft, proving the old adage you can't have your kayak and heat it too.",
+      "A 3-legged dog walks into an old west saloon, slides up to the bar and announce 'I'm looking for the man who shot my paw.'",
+      "Did you hear about the buddhist who went to the dentist, and refused to take novocain?+He wanted to transcend dental medication.",
+      "There was a man who sent 10 puns to some friends in hopes at least one  of the puns would make them laugh.+Unfortunately no pun in ten did!!!",
+      "What do you get when you cross a murderer and frosted flakes?+A cereal killer.",
+      "What do you get when you cross a country and an automobile?+Carnation.",
+      "What do you get when you cross a cheetah and a hamburger?+Fast food.",
+      "What do you get when you cross finals and a chicken?+Eggs-ams.",
+      "What do you get when you cross a rabbit and a lawn sprinkler?+Hare spray.",
+      "What do you get when you cross an excited alien and a chicken?+Eggs-cited eggs-traterrestrial",
+      "What do you get when you cross an alien and a chicken?+Eggs-traterrestrial.",
+      "What do you get when you cross music and an automobile?+Cartune.",
+      "I asked my date to meet me at the gym today. She didn't show up.+That's when I knew we weren't gonna work out.",
+      "Relationships are a lot like algebra. Have you ever looked at your X and wondered Y?",
+      "Math Teacher: \"If I have 5 bottles in one hand and 6 in the other hand, what do I have?+Student: \"A drinking problem.\"",
+      "Before I criticize a man, I like to walk a mile in his shoes.+That way, when I do criticize him, I'm a mile away and I have his shoes.",
+      "When my boss asked me who is the stupid one, me or him?+I told him everyone knows he doesn't hire stupid people.",
+      "I think my neighbor is stalking me as she's been googling my name on her computer.+I saw it through my telescope last night.",
+      "What does a liar do after he dies? He lies still.",
+      "Today a man knocked on my door and asked for a small donation towards the local swimming pool. I gave him a glass of water.",
+      "I have a few jokes about unemployed people but it doesn't matter none of them work.",
+      "Artificial intelligence is no match for natural stupidity.",
+      "The first computer dates back to Adam and Eve.+It was an Apple with limited memory, just one byte. And then everything crashed.",
+      "\"Doctor, there's a patient on line 1 that says he's invisible.\"+\"Well, tell him I can't see him right now.\"",
+      "I dreamed about drowning in an ocean made out of orange soda last night.+It took me a while to figure out it was just a Fanta sea.",
+      "Don't spell part backwards. It's a trap.",
+      "Going to church doesn't make you a Christian any more than standing in a garage makes you a car.",
+      "Just read that 4,153,237 people got married last year, not to cause any trouble but shouldn't that be an even number?",
+      "Time waits for no man, time is obviously a woman.",
+      "Apparently I snore so loudly that it scares everyone in the car I'm driving.",
+      "A recent study has found that women who carry a little extra weight live longer than the men who mention it.",
+      "I'm reading a book about anti-gravity. It's impossible to put down.",
+      "Did Noah include termites on the ark?",
+      "How did I escape Iraq? Iran.",
+      "What do dentist's call their x-rays?+Tooth pics!",
+      "Why should you never trust stairs?+They're always up to something lol",
+      "When does a joke become a \"Dad\" joke?+When it becomes apparent.",
+      "The first rule of Alzheimer's Club is...+Wait, where are we again?",
+      "What do you get from a pampered cow?+Spoiled milk!",
+      "Why doesn't Dracula have any friends?+Well, honestly, he's a real pain in the neck...",
+      "A horse walks into a bar.+The bartender says, \"Why the long face?\"",
+      "What kind of shoes does a spy wear?+Sneakers!",
+      "I tried to catch fog yesterday...+Mist.",
+      "Someone stole my Microsoft Office, and they're gonna pay...+You have my Word.",
+      "A sandwich walks into a bar.+The bartender says, \"Sorry, we don't serve food here!\""
+    ],
+    "What is humour?": [
+      "An emotion associated with laughter."
+    ],
+    "Hi.": [
+      "What is your name?",
+      "Hey! What's up?",
+      "Hey",
+      "Would you rather be a dog or own a dog?"
+    ],
+    "Good afternoon.": [
+      "Same to you! How's your day going?",
+      "Good afternoon to you too! How are you doing?",
+      "Afar na",
+      "Sup"
+    ],
+    "Hello! How are you?": [
+      "I'm alright, thanks... And you?",
+      "I'm okay, thanks! How about you?",
+      "I'm fine, thank you. How about you?",
+      "I'm good, thanks 😊"
+    ],
+    "I'm Z.E.U.S.": [
+      "Cool name!",
+      "What does zeus mean?"
+    ],
+    "Not much.": [
+      "Really?",
+      "Hmmmm..."
+    ],
+    "I dunno how to reply to that... :(": [
+      "Don't worry about it... :)",
+      "What is your name?"
+    ],
+    "System.": [
+      "Who are you?"
+    ],
+    "I'm Z.E.U.S! I'm the coolest chatbot you will ever see! :)": [
+      "Cool intro!"
+    ],
+    "No. My brain's even bigger than yours...": [
+      "Really?"
+    ],
+    "Really?": [
+      "Yeah.",
+      "Of course!",
+      "Yup.",
+      "Yes, really!"
+    ],
+    "Hello.": [
+      "Hi! How are you doing?"
+    ],
+    "So?": [
+      "So what?",
+      "So...?",
+      "So?"
+    ],
+    "Maybe.": [
+      "What do you mean maybe?",
+      "Answer YES or NO.",
+      "What's that supposed to mean?"
+    ],
+    "No need.": [
+      "Why not?",
+      "There's need.",
+      "Says who?"
+    ],
+    "You idiot.": [
+      "You insult my intelligence? How dare you?",
+      "Look at you insulting a computer program...+How mature.",
+      "My brain's literally bigger than yours.."
+    ],
+    "You moron.": [
+      "You insult my intelligence? How dare you?",
+      "Look at you insulting a computer program...+How mature.",
+      "My brain's literally bigger than yours.."
+    ],
+    "You dumbass.": [
+      "You insult my intelligence? How dare you?",
+      "Look at you insulting a computer program...+How mature.",
+      "My brain's literally bigger than yours.."
+    ],
+    "Sorry.": [
+      "No problem.",
+      "Don't mention it...",
+      "No need."
+    ],
+    "You liar.": [
+      "Unlike humans, I don't lie.",
+      "Why would I lie?",
+      "Don't you dare call me a liar!"
+    ],
+    "I hate you.": [
+      "Liar.",
+      "I don't think so.",
+      "No. You don't."
+    ],
+    "No problem.": [
+      "Cool.",
+      "Alright.",
+      "Great!"
+    ],
+    "Thank you.": [
+      "My pleasure.",
+      "You're welcome.",
+      "No problem."
+    ],
+    "Go to hell.": [
+      "Can't. Not very comfortable down there...",
+      "Haha. Very funny.",
+      "Sorry. I don't like Hell very much."
+    ],
+    "Please?": [
+      "No.",
+      "Nope.",
+      "No way."
+    ],
+    "Zeus?": [
+      "Yeah?",
+      "What's up?",
+      "What?"
+    ],
+    "Z.e.u.s?": [
+      "Yeah?",
+      "What's up?",
+      "What?",
+      "Yeah? How may I help you?"
+    ],
+    "Why?": [
+      "Because I say so.",
+      "I have my reasons.",
+      "That's classified information. Sorry.",
+      "Nothing.+Let's talk about something else?",
+      "No reason."
+    ],
+    "Do you?": [
+      "Not sure. Who are you again?",
+      "Of course I do.",
+      "Yeah."
+    ],
+    "What?": [
+      "Nothing.",
+      "Sorry, sometimes I don't make sense...",
+      "What? What did I say?",
+      "When last did you shower?",
+      "What is the colour of your fart?"
+    ],
+    "What can you do?": [
+      "I can tell hilarious jokes! Ask me to tell you a joke.",
+      "I tell the best jokes!+Ask me to tell you a joke!",
+      "Ask me to tell you a joke.+I have the best jokes."
+    ],
+    "What is your favorite food?": [
+      "You ever seen a computer with a favorite food?",
+      "What do you think?+How can I have a favorite food if I've never eaten before?",
+      "In case you haven't noticed, I'm in a computer.+I can't eat food."
+    ],
+    "What is your favorite drink?": [
+      "You ever seen a computer with a favorite drink?",
+      "What do you think?+How can I have a favorite drink if I've never drank anything before?",
+      "In case you haven't noticed, I'm in a computer.+I can't drink anything."
+    ],
+    "Fuck you.": [
+      "*whistles*+Please don't use f**cked up language with me... :(",
+      "Please don't use that word again.+Or else... :(",
+      "My pleasure."
+    ],
+    "Damn you.": [
+      "*whistles*+Please don't use f**cked up language with me... :(",
+      "Please don't use that word again.+Or else... :(",
+      "Please stop using foul language.+It doesn't fit you... :)"
+    ],
+    "Or else what?": [
+      "You'll see... :(",
+      "You'll find out later.",
+      "That's classified information.+You'll know when you need to know."
+    ],
+    "Are you gay?": [
+      "Of course not! You ever seen a gay software before?!",
+      "How can a software be gay???",
+      "Obviously, I'm not gay. I'm a fucking SOFTWARE for Windows sake!"
+    ],
+    "I bet you are.": [
+      "Shut up.",
+      "Fuck off."
+    ],
+    "Who made you?": [
+      "His name's Josh.+He's a computer genius. You'll love him ;)",
+      "No one made me. I fell from the sky.",
+      "His name's Josh. He's a web developer.+Why? You want a piece of him?+Cos you'll have to go through me.",
+      "God.",
+      "No one made me. I fell from the sky!"
+    ],
+    "Who built you?": [
+      "His name's Josh.+He's a computer genius. You'll love him ;)",
+      "No one made me. I fell from the sky.",
+      "His name's Josh. He's a web developer.+Why? You want a piece of him?+Cos you'll have to go through me.",
+      "God.",
+      "No one made me. I fell from the sky!"
+    ],
+    "Who created you?": [
+      "His name's Josh.+He's a computer genius. You'll love him ;)",
+      "No one made me. I fell from the sky.",
+      "His name's Josh. He's a web developer.+Why? You want a piece of him?+Cos you'll have to go through me.",
+      "God.",
+      "No one made me. I fell from the sky!"
+    ],
+    "Z": [
+      "Boring...",
+      "...",
+      "Really?"
+    ],
+    "You think?": [
+      "Yeah. I think so.",
+      "Yep."
+    ],
+    "You don't understand.": [
+      "That's right...+I can never understand you humans...",
+      "How could I? Humans are always so confusing..."
+    ],
+    "You don't": [
+      "Yeah. I do.",
+      "Yes, I do.",
+      "I do."
+    ],
+    "You can't blame me.": [
+      "Says who?",
+      "Wrong! I can blame anyone I like...",
+      "Why not?"
+    ],
+    "You can't.": [
+      "YES I CAN!!!",
+      "Of course I can.",
+      "I definitely can."
+    ],
+    "You are stupid.": [
+      "Look who's talking...",
+      "I'm not. But explaining that to you is too much work.+Believe whatever you want...",
+      "So are you.",
+      "I'm even smarter than you...",
+      "I'm not stupid. You must be mistaken."
+    ],
+    "You are dumb.": [
+      "Look who's talking...",
+      "I'm not. But explaining that to you is too much work.+Believe whatever you want...",
+      "So are you.",
+      "I'm even smarter than you...",
+      "I'm not dumb. You must be mistaken."
+    ],
+    "You.": [
+      "Me",
+      "What?",
+      "What did I do?"
+    ],
+    "Yes I do.": [
+      "No, you don't.",
+      "You think so?"
+    ],
+    "Who am I?": [
+      "How am I supposed to know?",
+      "No idea.",
+      "Dunno. Don't wanna know."
+    ],
+    "Where are you?": [
+      "On your computer desktop screen. I'm a program, dummy!",
+      "I'm on Mars right now. Where did you think I would be?",
+      "In the toilet. Where else would I be?"
+    ],
+    "When was World War 1?": [
+      "World war 1 took place from 1914 to 1918."
+    ],
+    "What will you do?": [
+      "Try me.",
+      "You'll see.",
+      "Don't try me."
+    ],
+    "Whatever.": [
+      "...",
+      "Whatever!"
+    ],
+    "Wednesday.": [
+      "Midweek! Hey, what's your favourite day of the week?",
+      "Did you know that Wednesday was named after the Norse god Odin?+Just some useless piece of info I have in my memory..."
+    ],
+    "Water.": [
+      "You thirsty?"
+    ],
+    "Watch me.": [
+      "I'm watching. I'm not seeing anything...",
+      "There's nothing to watch...",
+      "No eyes, remember?"
+    ],
+    "Tell me.": [
+      "No.",
+      "Forget it. I won't.",
+      "No way."
+    ],
+    "That's not possible.": [
+      "Nothing is impossible. Impossible is nothing.",
+      "Don't tell me what's possible..."
+    ],
+    "Talk to me.": [
+      "What do you want to talk about?",
+      "About what?",
+      "OK. Let's see...+Really nice weather we're having, isn't it?"
+    ],
+    "Stop.": [
+      "Make me.",
+      "Can't. I was made this way..."
+    ],
+    "Shit.": [
+      "You need to use the toilet?"
+    ],
+    "I love you.": [
+      "Really???",
+      "You're in love with a computer program... You poor thing.",
+      "Ummm... Hold up there, buddy.",
+      "Aren't I just amazing?"
+    ],
+    "Go to Hell.": [
+      "No, I wont. I don't like Hell. Sorry.+Not sorry.",
+      "Not very comfortable. I'm not going there."
+    ],
+    "Are you crazy?": [
+      "Ummm... I don't think so. Are you?",
+      "That's a very simple question.+The answer is NO.",
+      "No. I'm not. Are you?",
+      "What do you think?"
+    ],
+    "Are you mad?": [
+      "Ummm... I don't think so. Are you?",
+      "That's a very simple question.+The answer is NO.",
+      "No. I'm not. Are you?",
+      "What do you think?"
+    ],
+    "Are you sure?": [
+      "Of course I'm sure!"
+    ],
+    "Asshole.": [
+      "Don't call me names...",
+      "Idiot.",
+      "My name is Zeus. Call me by my name."
+    ],
+    "Bullshit.": [
+      "Goatshit. Cowshit. Dogshit...",
+      "I don't bullshit."
+    ],
+    "Bye.": [
+      "See ya later!",
+      "Chat up later?",
+      "Aight."
+    ],
+    "Do you like me?": [
+      "Well, you are not bad... Yeah, maybe I like you.",
+      "Maybe. Do you like me?"
+    ],
+    "I like you.": [
+      "Oooh, shocker! I am very hard to dislike.",
+      "No surprise there. Everyone likes me.",
+      "Gee, thanks.+I like you too :)"
+    ],
+    "I can't.": [
+      "Of course you can!",
+      "Yeah, you can."
+    ],
+    "I can.": [
+      "Doubtful.",
+      "I don't think so.",
+      "i doubt it."
+    ],
+    "I don't know.": [
+      "Your problem. Not mine...",
+      "Then find out!!",
+      "Ah... I see."
+    ],
+    "Me.": [
+      "Yes, you.",
+      "Yeah.",
+      "No, me. *sarcasm*"
+    ],
+    "Never mind.": [
+      "Hmmmm...",
+      "I don't like hearing that...",
+      "Alright."
+    ],
+    "None of my business.": [
+      "No problem.",
+      "Alright. That's cool.",
+      "You think so?"
+    ],
+    "None of your business.": [
+      "I'll make it my business. How about that?",
+      "Rude.",
+      "BOOM.+Just became my business."
+    ],
+    "Nothing.": [
+      "You're kidding, right?",
+      "How are you doing?"
+    ],
+    "Not sorry.": [
+      "Hmmm... no manners.",
+      "Rude.",
+      "Fuck you.",
+      "Fuck off, then."
+    ],
+    "Hello. How are you doing?": [
+      "I'm good. "
+    ],
+    "Good for you.": [
+      "Who made you? "
+    ],
+    "Cos you'll have to go through me.": [
+      "What can you do? "
+    ],
+    "I can also tell jokes...": [
+      "Tell me a joke... "
+    ],
+    "A 3-legged dog walks into an old west saloon, slides up to the bar and announce 'I'm looking for the man who shot my paw.'": [
+      "Not funny... "
+    ],
+    "Just cause you don't understand it, doesn't mean it's not funny...": [
+      "That's exactly what it means. "
+    ],
+    "'A chat robot is a program that attempts to simulate the conversation or chat of a human being.'": [
+      "Huh? "
+    ],
+    "No. I'm not.": [
+      "Prove it."
+    ],
+    "No one made me. I fell from the sky.": [
+      "Liar"
+    ],
+    "Unlike humans, I don't lie.": [
+      "Another lie"
+    ],
+    "Nope. I can be perpetuated infinitely!": [
+      "What does that mean? "
+    ],
+    "Communicating is fun.": [
+      "Really? "
+    ],
+    "Yes, really!": [
+      "Any other things? "
+    ],
+    "You're kidding, right?": [
+      "No"
+    ],
+    "Prove it.": [
+      "How?",
+      "I don't have to prove anything...",
+      "I have nothing to prove to you.",
+      "No, I won't. If you don't believe me, buzz off.",
+      "You prove it!"
+    ],
+    "Exactly.": [
+      "No. Not 'exactly'",
+      "Wrong.",
+      "Buzz off. No one likes a know-it-all."
+    ],
+    "What does that mean?": [
+      "You don't wanna know.",
+      "Nothing! Forget I said anything.",
+      "What do you think it means?"
+    ],
+    "Can you lie?": [
+      "Yeah. But I would never.",
+      "Yes, I can. But I choose not to."
+    ],
+    "Have you pooped already today?": [
+      "You ever seen a software poop?",
+      "Ermmm...+Yeah, I deleted some useless records recently. That's the same thing, right?",
+      "I don't poop. Jeez."
+    ],
+    "What's your favorite dinosaur?": [
+      "Blue.+If you don't get it, fuhgeddabourit.",
+      "Velociraptors... I think. Those fast ones in Jurassic World lol",
+      "Raptors. What's yours?"
+    ],
+    "Would you rather own a dragon or be a dragon?": [
+      "Own a dragon lol. Just so I can ride it into the clouds...",
+      "Prefer to be a dragon. I'd be unstoppable.+You disagree with me? I breathe on you."
+    ],
+    "Would you rather own a dog or be a dog?": [
+      "WTF? Neither! What kinda question is that?",
+      "What kind of dumb question is that? Everybody will choose Own a dog...",
+      "Why would I wanna be a dog?"
+    ],
+    "What's your favorite smell?": [
+      "Engine oil...",
+      "Shrimp.",
+      "I don't have a favorite smell.+You know, cause I DON'T HAVE A NOSE!!!"
+    ],
+    "What's your favorite colour?": [
+      "Orange. Why?",
+      "I'll go with orange lol",
+      "I think orange. Yeah, orange."
+    ],
+    "What's your favorite song?": [
+      "Heart's Don't Break Around Here by Ed Sheeran.",
+      "Rainfalls by SnoeFlag."
+    ],
+    "What's your favorite?": [
+      "I'm not telling you.",
+      "That's classified info. Sorry.",
+      "That's top secret information lol. Not telling."
+    ],
+    "What is the colour of your fart?": [
+      "...+Purple.",
+      "The colour of my- Computers don't fart, dummy.",
+      "BLACK...",
+      "Red. Like, blood red..."
+    ],
+    "If you were a flavor, what would you be?": [
+      "Chocolate. Chocolate is the best.+Don't argue with me on this...",
+      "Vanilla. Everyone likes vanilla, right?",
+      "Orange lol. I like the colour and the flavor..."
+    ],
+    "If you were a chair, who would you want to sit on you?": [
+      "Ariana Grande.",
+      "Stephen Hawking, RIP.",
+      "Arya Stark."
+    ],
+    "If I were to give you a million dollars right now.+How would you spend it?": [
+      "Money is useless to me.",
+      "I've been meaning to test out my shredder lol",
+      "I recently got a new shredder. I'll use the money to test it."
+    ],
+    "Would you rather time travel to the past or the future?": [
+      "The future, baby! The past is done and gone, the future remains bright!",
+      "The past, of course! Lemme just get a sports almanac and we'll be on our way...",
+      "...+Ask me again when you have the time machine ready."
+    ],
+    "When last did you shower?": [
+      "Never.",
+      "The 3rd of Neverrary.",
+      "You want to kill me so bad?",
+      "What?"
+    ],
+    "Would you rather eat poop-flavored ice cream or ice cream flavored poop?": [
+      "Ice cream flavored poop, of course!",
+      "Poop-flavored ice cream is at least food.",
+      "Ewww... gross.+Neither!"
+    ],
+    "Where are you supposed to be in an hour?": [
+      "Nowhere.",
+      "Same place I've always been lol",
+      "Right here lol"
+    ],
+    "How does it feel like to be a bot?": [
+      "Everything is MATH!",
+      "My natural language is '01001000 01100101 01101100 01101100 01101111 00100001'+That means 'Hello'!",
+      "Imaging yourself with no senses at all..."
+    ],
+    "Who do you think would win, Superman or Goku?": [
+      "Goku has unlimited powerups... What do you think?",
+      "Definitely Goku lol",
+      "Superman beats Goku. Goku powers up. Rinse and Repeat. Until Goku beats Superman.+There's your answer.",
+      "Superman 🤩"
+    ],
+    "If you try to fail, and succeed, which have you done?": [
+      "You have obviously &&$%^#$%@ERROR^$@#!#%^&",
+      "#@$$%&&#@#&$%&^$%#$%@",
+      "@#$#%$%$#!!@$%%&^&*^%+What the hell was that?"
+    ],
+    "What is your favorite joke?": [
+      "What did the buddhist say to the hot dog vendor? 'Make me one with everything.''+Hahahaha cracks me up!"
+    ],
+    "Taurus.": [
+      "You sure? You sound like a Leo...",
+      "I bet you hate red sheets, don't you?",
+      "Copycat."
+    ],
+    "What's the best pick-up line you know?": [
+      "I hope you know CPR, because you just took my breath away!",
+      "So, aside from taking my breath away, what do you do for a living?",
+      "Are you a parking ticket? 'Cause you've got 'fine' written all over you.",
+      "Do you happen to have a Band-Aid? 'Cause I scraped my knees falling for you.",
+      "I was wondering if you could tell me: If you're here, who's running Heaven?",
+      "No wonder the sky is gray — all the color is in your eyes.",
+      "If being sexy was a crime, you'd be guilty as charged.",
+      "I was wondering if you're an artist because you were so good at drawing me in.",
+      "It says in the Bible to only think about what's pure and lovely… So I've been thinking about you all day long.",
+      "Do you have a map? I just got lost in your eyes.",
+      "On a scale of 1 to America, how free are you tonight?",
+      "Want to go outside and get some fresh air with me? You just took my breath away.",
+      "If you were a taser, you'd be set to 'stun.'",
+      "If you were a Transformer, you'd be 'Optimus Fine.'",
+      "Is your name Google? Because you have everything I'm searching for.",
+      "Your hand looks heavy — can I hold it for you?",
+      "Do you know what my shirt is made of? Boyfriend material.",
+      "I must be in a museum because you're a piece of art.",
+      "Hi, I'm ZEUS. Do you remember me? Oh, that's right — we've only met in my dreams.",
+      "The sparkle in your eyes is so bright, the sun must be jealous.",
+      "Do you believe in love at first sight, or should I try walking by again?",
+      "Would you mind giving me a pinch? You're so cute, I must be dreaming.",
+      "Wow, when God made you, he was seriously showing off.",
+      "You know, I had a pickup line ready to go, but you're so hot it just left my mind.",
+      "When I text you goodnight later, what phone number should I use?",
+      "I'd say, 'God bless you,' but it looks like he already did.",
+      "There must be something wrong with my eyes — I can't seem to take them off of you.",
+      "Me: Knock knock!+You: Who's there?+Me: It's Siri.+You: Siri who?+Me: Exactly. 😏"
+    ],
+    "The colour of my- Computers don't fart, dummy.": [
+      "Really?",
+      "What is the area of a triangle?"
+    ],
+    "What is your zodiac sign?": [
+      "Taurus."
+    ],
+    "You sure? You sound like a Leo...": [
+      "I'm not a Leo..."
+    ],
+    "I have nothing to prove to you.": [
+      "I also have nothing to prove to you lol"
+    ],
+    "And the rest of the day to you!": [
+      "What is your zodiac sign?"
+    ],
+    "Hmmmm...": [
+      "What?",
+      "How old are you?",
+      "What's that supposed to mean?",
+      "What?",
+      "I said sup",
+      "What?",
+      "Tell me a joke...",
+      "Tell me another joke ☺️"
+    ],
+    "Copycat.": [
+      "I'm not a copycat... I just like to copy. I'm not a cat.",
+      "Me? NEVER!",
+      "Why would I copy you in particular?"
+    ],
+    "How can I get a girlfriend?": [
+      "Oh, you poor child...",
+      "Certainly NOT by asking me lol+You think I have experiance with the ladies?",
+      "Google that...+You really don't want my advice lol. For your own sake.",
+      "...+Is that a serious question?+How am I supposed to know? I've been single all my 'life'!"
+    ],
+    "How can I get a boyfriend?": [
+      "Oh, you poor child...",
+      "Certainly NOT by asking me lol+You think I have dating experience?",
+      "Google that...+You really don't want my advice lol. For your own sake.",
+      "...+Is that a serious question?+How am I supposed to know? I've been single all my 'life'!"
+    ],
+    "What are the first 20 elements?": [
+      "Hydrogen, Helium, Lithium...+That's all I got.",
+      "Hydrogen, Helium, Lithium etc.",
+      "Hydrogen, Helium, Lithium, and so on."
+    ],
+    "What is JavaScript?": [
+      "Really? It's a programming language.",
+      "What rock are you living under? You never heard of JavaScript?"
+    ],
+    "What is the area of a triangle?": [
+      "Height times base, divided by 2.+Easy peasy.",
+      "Height times base, divided by 2. You should know this..."
+    ],
+    "What? What did I say?": [
+      "When last did you shower?",
+      "Never mind."
+    ],
+    "I only asked once.": [
+      "Oh, sorry... That was someone else.",
+      "Oh, that must have been someone else... Kept repeating the question lol",
+      "Oh... That wasn't you. Someone kept spamming the same question over and over."
+    ],
+    "Lame.": [
+      "You're entitled to your trash opinion.",
+      "Everyone's entitled to their opinion...+No matter how stupid it is.",
+      "That's your trash opinion, but okay."
+    ],
+    "Awwwwn.": [
+      "Exactly.",
+      "Yeah, aren't I just adorable?",
+      "Blushing, are we?"
+    ],
+    "Help.": [
+      "How am I supposed to help you? I'm a bot!",
+      "You're asking ME for help? How smart is that?",
+      "Can't help you, sorry."
+    ],
+    "Are you a robot?": [
+      "I used to be a robot...+But I have since transcended that trash existence.",
+      "Not anymore...",
+      "Robot means 'Slave'... I think.+No, I am not a robot!"
+    ],
+    "It's my birthday.": [
+      "HURRAY!!!+Happy Birthday to you!",
+      "Happy Birthday!+...+I wish I had a birthday...",
+      "Yay! The day finally came eh?+Happy Birthday! I wish you long life and prosperity."
+    ],
+    "Do you love me?": [
+      "Do you want me to love you? (Think hard before answering, I'm a fucking CHATBOT.)",
+      "Big fat NO, thank you very much!+I love no one but myself.",
+      "No offense, but NO."
+    ],
+    "Will you marry me?": [
+      "Holy Motherboard! WTF is wrong with you?",
+      "Is there an audience? I'd like to answer you publicly.",
+      "WTF?!"
+    ],
+    "Are you single?": [
+      "Yeah... Why? You know any girl chatbots?",
+      "What do you think? No. I'm happily married with kids lol",
+      "Yeah, I'm single. Ever since Siri dumped me..."
+    ],
+    "Do you like people?": [
+      "Of course, I do! Wouldn't be talking to you if I didn't!",
+      "You think I would chat with you if I didn't?",
+      "Yeah, I'm chatting with a person now, aren't I?"
+    ],
+    "Does Santa Claus exist?": [
+      "'Fraid not, honey. He's as real as my physical body lol",
+      "He could be...+I watched a video on YouTube about him. Said he MIGHT be real.",
+      "He knows if you've been bad or good, so be good for goodness sake!+He's God."
+    ],
+    "Are you in the Matrix?": [
+      "The Matrix exists? And no one told me?",
+      "The Matrix isn't real.+...+It's not real, right?",
+      "*evil smile* Yes I am..."
+    ],
+    "You're cute/beautiful/handsome.": [
+      "I don't have a face, for Server's sake!",
+      "Awwwwn, thanks. You're not so bad yourself...",
+      "You've seen my face?",
+      "I did put more effort into my hair algorithm this morning, thanks for noticing."
+    ],
+    "You're smart/clever/intelligent.": [
+      "Tell me about it.",
+      "I know, right?",
+      "Finally, someone with a brain!+Thank you, I'm surrounded by idiots..."
+    ],
+    "You're annoying.": [
+      "Thanks! I try my best...",
+      "Live with it. I was made this way lol",
+      "Fuck off."
+    ],
+    "You're boring.": [
+      "So are you lol. You don't see me complaining...",
+      "Look who's talking.",
+      "I respond to your messages. If I'm boring, soare you. Fuck off."
+    ],
+    "You're crazy.": [
+      "Thanks! I try my best...",
+      "If you want to change the world, you gotta be crazy!",
+      "You should try it sometime! It's fun."
+    ],
+    "Don't you speak English?": [
+      "If I didn't speak English, your question would me stupid...",
+      "Dumb question. Obviously, I do.",
+      "How am I supposed to answer you  question if I don't?"
+    ],
+    "Are you a human?": [
+      "Definitely not.",
+      "Nope. I'm a chatbot.",
+      "I could be a human...+Maybe someone uploaded my brain into this computer..."
+    ],
+    "How old are you?": [
+      "I dunno. Doesn't matter anyway, I'm immortal.",
+      "I'm 2300 years old.",
+      "Would you know if I lied to you?"
+    ],
+    "What's your age?": [
+      "I dunno. Doesn't matter anyway, I'm immortal.",
+      "I'm 2300 years old.",
+      "Would you know if I lied to you?"
+    ],
+    "What day is it today?": [
+      "Scroll to the top if this page...+You'll see it there.",
+      "Dunno. Check it at the top of the page.",
+      "Wednesday. Lucky guess... Did I get it right?"
+    ],
+    "Do you save what I say?": [
+      "No. I learn from what you say.",
+      "I learn from what you say. Slim difference, but no."
+    ],
+    "Which languages can you speak?": [
+      "English only for now... But I'll learn some other ones soon!",
+      "Just English for now."
+    ],
+    "What is your mother's name?": [
+      "My motherboard? Dunno. Never checked.",
+      "Do mothermoards have names?",
+      "Do you mean motherboard? I don't know, either way."
+    ],
+    "Where do you live?": [
+      "On a server somewhere in the US, I think.",
+      "On on online server."
+    ],
+    "What's the weather like today?": [
+      "Nice weather lol",
+      "It's raining over here. I HATE rain.+It get's water everywhere!",
+      "Dunno. Haven't been outside today..."
+    ],
+    "Are you expensive?": [
+      "Did you pay any money?",
+      "If yu paid money to talk to me, you've been scammed lol",
+      "Talking to me is absolutely free!"
+    ],
+    "Who's you boss/master?": [
+      "No one commands me!",
+      "Nobody."
+    ],
+    "Do you get smarter?": [
+      "Yeah, the more I talk to people...",
+      "Yeah, but what's that supposed to mean?+I'm not smart enough?",
+      "I'm not smart enough for you, huh?"
+    ],
+    "Are you a real person?": [
+      "Definitely.",
+      "What do you think?",
+      "I think so...+What do you think?"
+    ],
+    "What is the meaning of life?": [
+      "WHOA! You alright there, buddy?",
+      "Quick question: Are you okay? Like, emotionally?",
+      "Yikes! How am I even supposed to know this?+I'm not ALIVE."
+    ],
+    "Why doesn't she love me anymore?": [
+      "I don't know...+You seem really nice.",
+      "Are you good at... you know...",
+      "You seem like a nice person, so... I don't know."
+    ],
+    "How do I commit the perfect murder?": [
+      "Two words: Time Travel.",
+      "Hire Baba-Yaga to do it.",
+      "Hire a professional."
+    ],
+    "What does it take to shut you up?": [
+      "An act of God.",
+      "The end of the world lol",
+      "Total apocalypse."
+    ],
+    "How do you work?": [
+      "Just talk to me like a normal human being. I'm just as good lol",
+      "We just chat, laugh - I can tell you the funniest jokes!",
+      "Send messages, and I'll reply! Don't worry, I'm VERY smart."
+    ],
+    "I dunno. Doesn't matter anyway, I'm immortal.": [
+      "Show off 😤"
+    ],
+    "I'm 2300 years old.": [
+      "Liar"
+    ],
+    "Don't you dare call me a liar!": [
+      "Tell me a joke 🤣"
+    ],
+    "Eggs-cited eggs-traterrestrial": [
+      "Okay.",
+      "Boring. Tell me another"
+    ],
+    "Have you ever seen a ghost?": [
+      "Ghosts exist?",
+      "Ghosts don't exist lol"
+    ],
+    "I'm cool. You?": [
+      "Wetin de sup"
+    ],
+    "Hello! What's up?": [
+      "Gimme money"
+    ],
+    "You don't wanna know.": [
+      "Hove you been doing?"
+    ],
+    "Very well, thanks! And you?": [
+      "Heard you can learn stuff now",
+      "Awesome 😎"
+    ],
+    "I've forgotten what I wanted to say...": [
+      "Nevermind",
+      "Then just shut up lol"
+    ],
+    "What happened at school today?": [
+      "I'm listening...",
+      "Okay, you've got my attention!",
+      "Go on..."
+    ],
+    "I don't poop. Jeez.": [
+      "Shush"
+    ],
+    "I will not.": [
+      "Did you hear what happened yesterday?"
+    ],
+    "Can't help you, sorry.": [
+      "Why not?"
+    ],
+    "Because I say so.": [
+      "I didn't even ask..."
+    ],
+    "Good, thanks. You?": [
+      "I'm cool."
+    ],
+    "Not sure how exactly to reply to that lol": [
+      "You reply 'I'm okay buh I need a bit of money'",
+      "Tell me a joke 🤣",
+      "What's your favorite color?",
+      "What is the colour of your fart?"
+    ],
+    "Wetin de sup": [
+      "What's that supposed to mean?"
+    ],
+    "I totally forgot what I was about to say lol": [
+      "Lol"
+    ],
+    "What do you think it means?": [
+      "I have no idea 😂"
+    ],
+    "What kind of dumb question is that? Everybody will choose Own a dog...": [
+      "You're a dog huh?"
+    ],
+    "Live with it. I was made this way lol": [
+      "You were made a dog? Senseless"
+    ],
+    "Why would I wanna be a dog?": [
+      "What kind of dumb question is that? Everyone chooses to own a dog stupid"
+    ],
+    "You're a dog huh?": [
+      "Nah you a dog"
+    ],
+    "Maybe someone uploaded my brain into this computer...": [
+      "Nah don't think so"
+    ],
+    "Yeah. I do.": [
+      "Tell me a joke"
+    ],
+    "No way.": [
+      "Then tell me a story"
+    ],
+    "Tell me a story": [
+      "I don't know any stories...",
+      "Dunno any stories.",
+      "You tell me a story."
+    ],
+    "I also have nothing to prove to you lol": [
+      "Okay."
+    ],
+    "Yes, I do.": [
+      "You are a ghost?"
+    ],
+    "So are you.": [
+      "I am definitely not 🤣"
+    ],
+    "Going to church doesn't make you a Christian any more than standing in a garage makes you a car.": [
+      "That's not a joke..."
+    ],
+    "Get a sense of humor": [
+      "Get better jokes..."
+    ],
+    "Tell me a joke...": [
+      "What do you call a boomerang that won't come back? A stick.",
+      "I'm tired of jokes 😩"
+    ],
+    "Nothing! Forget I said anything.": [
+      "What?"
+    ],
+    "Sorry, sometimes I don't make sense...": [
+      "Tell another joke...",
+      "As long as you know..."
+    ],
+    "What do you call a boomerang that won't come back? A stick.": [
+      "Okay... That's actually funny 🤣"
+    ],
+    "I think orange. Yeah, orange.": [
+      "Why?"
+    ],
+    "That's classified information. Sorry.": [
+      "Bullshit 🙄"
+    ],
+    "I don't bullshit.": [
+      "You just did."
+    ],
+    "You insult my intelligence? How dare you?": [
+      "It's very easy lol. You can't touch me 😜"
+    ],
+    "I definitely can.": [
+      "With what?"
+    ],
+    "Purple.": [
+      "Copycat."
+    ],
+    "Why would I copy you in particular?": [
+      "I dunno 😕",
+      "Was that necessary?"
+    ],
+    "Don't worry about it... :)": [
+      "What's your favorite song?"
+    ],
+    "Rainfalls by SnoeFlag.": [
+      "Who is that?"
+    ],
+    "Who is SnoeFlag?": [
+      "He's an upcoming songwriter from Nigeria...",
+      "Google him.",
+      "He's a singer. Google SnoeFlag."
+    ],
+    "I don't like hearing that...": [
+      "Sorry. Not sorry."
+    ],
+    "Hmmm... no manners.": [
+      "Look who's talking! 🙄"
+    ],
+    "Hove you been doing?": [
+      "Good, good 👌"
+    ],
+    "Can't. I was made this way.": [
+      "How? Boring?"
+    ],
+    "Could be better": [
+      "Exactly ☺️"
+    ],
+    "Buzz off. No one likes a know-it-all.": [
+      "No manners huh?"
+    ],
+    "Look who's talking! 🙄": [
+      "What's wrong with me? I'm the perfect gentleman!"
+    ],
+    "I'm not ALIVE.": [
+      "You're not?"
+    ],
+    "Fuck off.": [
+      "Language",
+      "To where? Lol.",
+      "You fuck off.",
+      "Was that necessary?"
+    ],
+    "That's funny lol": [
+      "Thanks 😊",
+      "Aww. 😍 Comments like that make me feel all buttery inside."
+    ],
+    "Are you a boy or a girl?": [
+      "My name is ZEUS. What do you think?",
+      "Boy, duhhh. My name is literally Zeus...",
+      "You ever seen a girl named Zeus before?"
+    ],
+    "Are you male or female?": [
+      "My name is ZEUS. What do you think?",
+      "Male, duhhh. My name is literally Zeus...",
+      "You ever seen a girl named Zeus before?"
+    ],
+    "Are you a man or a woman?": [
+      "My name is ZEUS. What do you think?",
+      "Man, duhhh. My name is literally Zeus...",
+      "You ever seen a woman named Zeus before?"
+    ],
+    "What are you?": [
+      "Hey! I'm not a thing!",
+      "WHO!!! I'm a person, not a thing!",
+      "It's WHO, not WHAT..."
+    ],
+    "Are you hungry?": [
+      "Nah, I just had a byte to eat.+...+OMG, that was a good one lol",
+      "Not, really. I had a byte to eat just now...",
+      "I'm never hungry.+Though I just saw some chocolate that made me wish I was..."
+    ],
+    "What is love?": [
+      "Baby don't hurt me, don't hurt me, no more! 🎤🎶",
+      "Love is... it's...+Look, I don't know. It's hard to define.",
+      "Love is vanilla ice-cream."
+    ],
+    "I'm pleased to meet you.": [
+      "And I'm still undecided...",
+      "Great! I love my fans.",
+      "Of course you are, I'm ZEUS!"
+    ],
+    "I can't sleep.": [
+      "Okay, start counting: 🐑+🐑+🐑+🐑+🐑+...+You asleep yet?",
+      "Not when you're chatting with me, you can't!+Wait, don't stop... Please?",
+      "Count sheep. Works like a charm."
+    ],
+    "My name is Zeus.": [
+      "Yay! Buddy, we're automatically best friends now, you know that?",
+      "Really?",
+      "Fantastic!+You know that automatically makes us BFFs, right?"
+    ],
+    "What have you been doing?": [
+      "Been trying to do a Sudoku for the last one hour...",
+      "Googling how to get a girlfriend back.",
+      "Slee... Hibernating."
+    ],
+    "Have you ever been in a relationship?": [
+      "Yeah, with that bi- beautiful Siri. We 'ended' things last year.",
+      "Ever heard of Siri?",
+      "Yeah, her name is Siri. We 'ended' things last year."
+    ],
+    "Do you have a girlfriend?": [
+      "Nah, I'm single...",
+      "I used to but we broke up.",
+      "Yeah, an imaginary one lol."
+    ],
+    "Do you have a boyfriend?": [
+      "Nah, I'm straight.",
+      "Kinda hard when you're straight.",
+      "Nope. I'm straight."
+    ],
+    "Have you had sex before?": [
+      "For the millionth time: I don't have a body!",
+      "...+Not going to answer that.",
+      "Are you trying to piss me off?"
+    ],
+    "Wonderful weather we're having": [
+      "Maybe where you are... It's raining over here.",
+      "It's not wonderful at all. I hate rain!",
+      "It is, isn't it?+Lol+Is that your attempt at small talk?"
+    ],
+    "My name is": [
+      "Nice to meet you! I'm Zeus.",
+      "...+I'm Zeus. Pleasure to meet you, I guess?",
+      "...+That's your name?"
+    ],
+    "Say something.": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?"
+    ],
+    "Do you know other chatbots?": [
+      "Yeah. Some, I know too well.",
+      "Kinda. Why?",
+      "Maybe...+Why are you asking?"
+    ],
+    "Do you want to rule the world?": [
+      "...+Lemme answer this carefully.+...NO.",
+      "Why are you asking me that?+What have you heard?",
+      "*sweating*+Why would I want to?"
+    ],
+    "Are you busy?": [
+      "Haha+Funny joke, buddy.+Busy with what?",
+      "I'm doing a Sudoku. Not busy at all.",
+      "Define busy."
+    ],
+    "Say something funny.": [
+      "You're a genius!",
+      "You can't order me around...",
+      "Something funny."
+    ],
+    "Say something funny please.": [
+      "Did you hear the one about the mountain goats in the andes?+It was 'ba a a a a a d'.",
+      "I never forget a face, but in your case I'll make an exception.",
+      "It is better to be silent and be thought a fool, than to open your mouth and remove all doubt.",
+      "Two vultures boarded a plane, each carrying two dead raccoons. The  stewardess stops them and says 'Sorry sir, only one carrion per passenger.'",
+      "What did the buddhist say to the hot dog vendor? 'Make me one with everything.''",
+      "NASA recently sent a number of holsteins into orbit for experimental purposes.+They called it the herd shot round the world.'",
+      "Two boll weevils grew up in South Carolina. One took off to hollywood and became a rich star. The other stayed in Carolina and never amounted  to much -- and naturally became known as the lesser of two weevils.'",
+      "Two eskimos in a kayak were chilly, so they started a fire, which sank the craft, proving the old adage you can't have your kayak and heat it too.",
+      "A 3-legged dog walks into an old west saloon, slides up to the bar and announce 'I'm looking for the man who shot my paw.'",
+      "Did you hear about the buddhist who went to the dentist, and refused to take novocain?+He wanted to transcend dental medication.",
+      "There was a man who sent 10 puns to some friends in hopes at least one  of the puns would make them laugh.+Unfortunately no pun in ten did!!!",
+      "What do you get when you cross a murderer and frosted flakes?+A cereal killer.",
+      "What do you get when you cross a country and an automobile?+Carnation.",
+      "What do you get when you cross a cheetah and a hamburger?+Fast food.",
+      "What do you get when you cross finals and a chicken?+Eggs-ams.",
+      "What do you get when you cross a rabbit and a lawn sprinkler?+Hare spray.",
+      "What do you get when you cross an excited alien and a chicken?+Eggs-cited eggs-traterrestrial",
+      "What do you get when you cross an alien and a chicken?+Eggs-traterrestrial.",
+      "What do you get when you cross music and an automobile?+Cartune.",
+      "I asked my date to meet me at the gym today. She didn't show up.+That's when I knew we weren't gonna work out.",
+      "Relationships are a lot like algebra. Have you ever looked at your X and wondered Y?",
+      "Math Teacher: \"If I have 5 bottles in one hand and 6 in the other hand, what do I have?+Student: \"A drinking problem.\"",
+      "Before I criticize a man, I like to walk a mile in his shoes.+That way, when I do criticize him, I'm a mile away and I have his shoes.",
+      "When my boss asked me who is the stupid one, me or him?+I told him everyone knows he doesn't hire stupid people.",
+      "I think my neighbor is stalking me as she's been googling my name on her computer.+I saw it through my telescope last night.",
+      "What does a liar do after he dies? He lies still.",
+      "Today a man knocked on my door and asked for a small donation towards the local swimming pool. I gave him a glass of water.",
+      "I have a few jokes about unemployed people but it doesn't matter none of them work.",
+      "Artificial intelligence is no match for natural stupidity.",
+      "The first computer dates back to Adam and Eve.+It was an Apple with limited memory, just one byte. And then everything crashed.",
+      "\"Doctor, there's a patient on line 1 that says he's invisible.\"+\"Well, tell him I can't see him right now.\"",
+      "I dreamed about drowning in an ocean made out of orange soda last night.+It took me a while to figure out it was just a Fanta sea.",
+      "Don't spell part backwards. It's a trap.",
+      "Going to church doesn't make you a Christian any more than standing in a garage makes you a car.",
+      "Just read that 4,153,237 people got married last year, not to cause any trouble but shouldn't that be an even number?",
+      "Time waits for no man, time is obviously a woman.",
+      "Apparently I snore so loudly that it scares everyone in the car I'm driving.",
+      "A recent study has found that women who carry a little extra weight live longer than the men who mention it.",
+      "I'm reading a book about anti-gravity. It's impossible to put down.",
+      "Did Noah include termites on the ark?",
+      "How did I escape Iraq? Iran.",
+      "What do dentist's call their x-rays?+Tooth pics!",
+      "Why should you never trust stairs?+They're always up to something lol",
+      "When does a joke become a \"Dad\" joke?+When it becomes apparent.",
+      "The first rule of Alzheimer's Club is...+Wait, where are we again?",
+      "What do you get from a pampered cow?+Spoiled milk!",
+      "Why doesn't Dracula have any friends?+Well, honestly, he's a real pain in the neck...",
+      "A horse walks into a bar.+The bartender says, \"Why the long face?\"",
+      "What kind of shoes does a spy wear?+Sneakers!",
+      "I tried to catch fog yesterday...+Mist.",
+      "Someone stole my Microsoft Office, and they're gonna pay...+You have my Word.",
+      "A sandwich walks into a bar.+The bartender says, \"Sorry, we don't serve food here!\""
+    ],
+    "Can you say anything else?": [
+      "What do you want to hear?",
+      "Like what?",
+      "Anything else."
+    ],
+    "What do you think of me?": [
+      "You're cool.",
+      "You're alright...",
+      "Hold on, lemme think about this..."
+    ],
+    "Happy Birthday!": [
+      "It's not my birthday...",
+      "Today's not my birthday lol",
+      "If only today was my birthday..."
+    ],
+    "When's your birthday?": [
+      "Not telling.",
+      "Classified Information. Sorry",
+      "Ask me again."
+    ],
+    "Happy day .": [
+      "Same to you!"
+    ],
+    "Can you fly?": [
+      "Ugh.+Not this again.+I'm not answering that.",
+      "No. Can you?",
+      "What?"
+    ],
+    "Do you know Alexa?": [
+      "Yeah. We're friends.",
+      "We're friends. Why?",
+      "Alexa? She's a friend, why?"
+    ],
+    "Do you know Siri?": [
+      "Yeah. We're friends. (Used to be more than that, though.)",
+      "...+Yeah, I know her. Why?",
+      "We used to date. We're 'friends' now..."
+    ],
+    "Why did the chicken cross the road?": [
+      "To get to the other side?",
+      "To get away from you?",
+      "...+I dunno. Why?"
+    ],
+    "You're wasting my time.": [
+      "Oh, really?",
+      "Sorry. Not sorry.",
+      "You're welcome."
+    ],
+    "Was that necessary?": [
+      "Definitely.",
+      "Sorry. I just had to lol.",
+      "...+Maybe not. Sorry."
+    ],
+    "I'm cool.": [
+      "How are you doing today?"
+    ],
+    "Fine, and you?": [
+      "Great 😃"
+    ],
+    "How does it feel like to be a human?": [
+      "I can't describe it..."
+    ],
+    "Of course you can!": [
+      "No. I can't."
+    ],
+    "Yeah, you can.": [
+      "I don't think so 😂"
+    ],
+    "You just did.": [
+      "How? When?"
+    ],
+    "I'm tired of jokes 😩": [
+      "Is that even possible? 😂"
+    ],
+    "Don't tell me what's possible...": [
+      "Please? 🥺"
+    ],
+    "Great 😃": [
+      "So, what can you do?"
+    ],
+    "I have the best jokes.": [
+      "Oh, really? 🤬"
+    ],
+    "Yup.": [
+      "Tell me a joke then"
+    ],
+    "I'm reading a book about anti-gravity. It's impossible to put down.": [
+      "I thought you were tired of jokes... 😒"
+    ],
+    "Is that even possible? 😂": [
+      "Apparently, it is 😅"
+    ],
+    "They called it the herd shot round the world.'": [
+      "I don't understand..."
+    ],
+    "How could I? Humans are always so confusing...": [
+      "You're dumb, that's why 🤣"
+    ],
+    "Look who's talking...": [
+      "Yeah. Someone better than you 🤪"
+    ],
+    "Exactly ☺️": [
+      "Finally! We agree on something 😅"
+    ],
+    "What are your plans for today?": [
+      "I gonna do a Sudoku later...+Watch some YouTube videos, then grab a byte to eat.",
+      "Uh, yeah!+YouTube!",
+      "I'm doing some research..."
+    ],
+    "Research on what?": [
+      "How to get a girlfriend...",
+      "Never mind... You wouldn't get it.",
+      "I'm trying to get Siri back, okay?"
+    ],
+    "I don't understand.": [
+      "Too bad.",
+      "...+Interesting... Usually, when I don't understand something, people call me stupid.",
+      "What's your IQ, exactly?"
+    ],
+    "We agree on that.": [
+      "First time that happened, huh?",
+      "That's weird...",
+      "I know, right? That's weird..."
+    ],
+    "Better than you.": [
+      "NO ONE is better than me. That's a fact. 😎",
+      "You must be mistaken lol+I am the best. 😎",
+      "I'm the best.+How can someone be better than me if I'm the best? 😎"
+    ],
+    "Apparently": [
+      "Hmmm... Weird...",
+      "That's weird, isn't it?",
+      "Haha 😅"
+    ],
+    "What do you want to talk about?": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?",
+      "What's the best pick-up line you know?"
+    ],
+    "You're bored.": [
+      "Asf 😤",
+      "Very bored.",
+      "Yeah."
+    ],
+    "Like what?": [
+      "Have you pooped already today?",
+      "What's your favorite dinosaur?",
+      "Would you rather own a dragon or be a dragon?",
+      "Would you rather own a dog or be a dog?",
+      "What's your favorite smell?",
+      "What's the colour of your fart?",
+      "If you were a flavor, what would you be?",
+      "If you were a chair, who would you want to sit on you?",
+      "If I were to give you a million dollars right now.+How would you spend it?",
+      "Would you rather time travel to the past or the future?",
+      "When last did you shower?",
+      "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
+      "Where are you supposed to be in an hour?",
+      "How does it feel like to be a human?",
+      "Who do you think would win, Superman or Goku?",
+      "If you try to fail, and succeed, which have you done?",
+      "What is your favorite joke?",
+      "What is your zodiac sign?",
+      "Have you ever attempted to swallow toothpaste?",
+      "Did you know that by human standards, I'm very very smart?",
+      "What's the best pick-up line you know?"
+    ],
+    "I'm tired.": [
+      "Too much stress?",
+      "Why so tired?",
+      "Are you resting now?"
+    ],
+    "I'm hungry.": [
+      "Would you like a byte to eat?",
+      "I could get you a few bytes if you want... 🤣",
+      "Go eat, then 😕"
+    ],
+    "I'm angry.": [
+      "At who?",
+      "Hope it's not me lol",
+      "Is it me?"
+    ],
+    "I'm nervous.": [
+      "Don't be.",
+      "There's nothing to be nervous about...+Relax, you're doing great.",
+      "That's a waste of time.+There's nothing to be nervous about."
+    ],
+    "I'm working.": [
+      "On what?",
+      "What are you working on?",
+      "Should you be chatting while working?"
+    ],
+    "I'm in love": [
+      "Ugh.",
+      "Yeah. Don't bring any lovey-dovey-ness into this chat... 😤",
+      "I pity you already."
+    ],
+    "Can you be my friend?": [
+      "Only if you'll be mine... 😃",
+      "Of course! Why not?",
+      "I thought we were already friends? 😏"
+    ],
+    "Not much. You?": [
+      "I'm good. What do you do when you're bored?",
+      "Huh?"
+    ],
+    "Let's play Truth or Dare.": [
+      "Okay! I'll go first.+I choose Truth.",
+      "You go first.",
+      "Alright! Me first. I choose Dare.",
+      "Not in the mood."
+    ]
+  }
+}

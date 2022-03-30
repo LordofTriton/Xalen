@@ -1,13 +1,37 @@
-function Matcher(string1, string2) {
-    let string1array = string1.split(" ")
-    let string2array = string2.split(" ")
+import DateTime from "./dateTime";
 
-    let matches = 0
-    if (string1array.filter(text => string2array.filter(word => word.includes(text)).length > 0).length > 0) {
-        matches += 1
+const stringSimilarity = require("string-similarity");
+
+const matchThreshold = 0.5;
+
+function GetMatch(store, message) {
+    let index = -1;
+    let match = matchThreshold;
+    for (let i = 0; i < store.length; i++) {
+        let difference = stringSimilarity.compareTwoStrings(DateTime.removeStamp(message.content), DateTime.removeStamp(store[i]))
+        if (difference >= match) {
+            index = i;
+            match = difference;
+        }
     }
 
-    return matches
+    return index;
 }
 
-export default Matcher;
+function GetArrayMatch(store, message) {
+    let index = -1;
+    let match = matchThreshold;
+    for (let i = 0; i < store.length; i++) {
+        let difference = stringSimilarity.compareTwoStrings(DateTime.removeStamp(message), DateTime.removeStamp(store[i]))
+        if (difference >= match) {
+            index = i;
+            match = difference;
+        }
+    }
+
+    return index;
+}
+
+const MatchService = {GetMatch, GetArrayMatch}
+
+export default MatchService;

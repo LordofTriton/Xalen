@@ -2,7 +2,7 @@ import React from 'react'
 import './popMenu.css'
 
 //Images
-import logo from '../../images/logo1.png'
+import logo from '../../images/Bot/headphones.png'
 import switchIcon from '../../images/switch.png'
 
 const PopMenu = ({toggle, control, theme, toggleTheme}) => {

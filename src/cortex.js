@@ -5,10 +5,11 @@ import Title from './components/title/title';
 import SideNav from './components/sideNav/sideNav';
 import TopNav from './components/topNav/topNav';
 import ChatWindow from './components/chatWindow/chatWindow';
+// import Trainer from './components/trainer/trainer';
 
 //Images
-import lightBckg from './images/lightThemeBckg.jpeg'
-import darkBckg from './images/darkThemeBckg.png'
+import lightBckg from './images/lightThemeBckg.jpeg';
+import darkBckg from './images/darkThemeBckg.png';
 import PopMenu from './components/popMenu/popMenu';
 
 const Cortex = () => {
@@ -44,6 +45,7 @@ const Cortex = () => {
             <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} />
             <ChatWindow botState={botState} setBotState={setBotState} theme={theme} />
             <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} />
+            {/* <Trainer theme={theme} /> */}
         </div>
     )
 }

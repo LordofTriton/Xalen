@@ -6,6 +6,7 @@ import InfoBox from '../infoBox/infoBox'
 
 //Images
 import logo from '../../images/Bot/bot.png'
+import logoOffline from '../../images/Bot/404.png'
 import menuIcon from '../../images/menu1.png'
 
 const SideNav = ({botState, theme, togglePopMenu}) => {
@@ -13,7 +14,7 @@ const SideNav = ({botState, theme, togglePopMenu}) => {
 
     return(
         <div className="sideNav" style={{backgroundColor: theme === "Light" ? "white" : "#121212"}}>
-            <img className="sideNavLogo" src={logo} alt="logo" />
+            <img className="sideNavLogo" src={botState === "Online" ? logo : logoOffline} alt="logo" />
             <div className="sideNavButtonGallery">
                 <hr />
                 <img className="sideNavButton" src={menuIcon} alt="Menu" onClick={() => {togglePopMenu()}} />

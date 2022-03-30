@@ -9,8 +9,8 @@ import MatchService from '../../services/matcher';
 //Defaults
 let d = new Date()
 
-// const baseAPIURL = "https://zeuschat-server.herokuapp.com/";
-const baseAPIURL = "http://localhost:3001/";
+const baseAPIURL = "https://ekkochat-server.herokuapp.com/";
+// const baseAPIURL = "http://localhost:3001/";
 
 // const defaultMessage = [0, 8, 2, DateTime.dayPeriod() === "evening" ? 24 : DateTime.dayPeriod() === "morning" ? 16 : 20][Math.floor(Math.random() * 4)]
 
@@ -20,11 +20,6 @@ const baseAPIURL = "http://localhost:3001/";
 //     returnText = returnText.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, "")
 //     return returnText;
 // }
-
-function spreadResponse(array) {
-    if (array) return array;
-    else return []
-}
 
 const ChatWindow = ({botState, setBotState, theme}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -77,8 +72,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         matchIndex = MatchService.GetMatch(context, currentMessage)
         if (chatHistory.length > 0) {
             if (context.length > 0 && matchIndex >= 0) {
-                // if (botState === "Online") {
-                if (true) {
+                if (botState === "Online") {
                     let keys = Object.keys(yggdrasil)
                     setTyping(true)
                     setTimeout(() => replyMessage(keys.indexOf(context[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
@@ -86,8 +80,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             }
             else {
                 matchIndex = MatchService.GetMatch(Object.keys(atheneum), currentMessage)
-                // if (botState === "Online") {
-                if (true) {
+                if (botState === "Online") {
                     let keys = Object.keys(atheneum)
                     setTyping(true)
                     setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
@@ -129,7 +122,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 content: DateTime.addStamp(newMsg.trim()),
                 time: d
             }
-            learnStuff("zeus", chatHistory.concat(newMessage), newMessage.content)
+            learnStuff("ekko", chatHistory.concat(newMessage), newMessage.content)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()
@@ -156,12 +149,12 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         const ignoranceList = ignorance.split("+")
         let fallbackMessages = []
         for (let i = 0; i < ignoranceList.length; i++) {
-            const newZeusMessage = {
-                parent: "zeus",
+            const newEkkoMessage = {
+                parent: "ekko",
                 content: DateTime.addStamp(ignoranceList[i].trim()),
                 time: d
             }
-            fallbackMessages.push(newZeusMessage)
+            fallbackMessages.push(newEkkoMessage)
             scrollDown()
         }
 
@@ -185,12 +178,12 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                     let replyMessages = reply.split("+")
                     let replyList = []
                     for (let i = 0; i < replyMessages.length; i++) {
-                        const newZeusMessage = {
-                            parent: "zeus",
+                        const newEkkoMessage = {
+                            parent: "ekko",
                             content: DateTime.addStamp(replyMessages[i].trim()),
                             time: d
                         }
-                        replyList.push(newZeusMessage)
+                        replyList.push(newEkkoMessage)
                         scrollDown()
                     }
                     if (storeID === "Atheneum") {
@@ -212,13 +205,13 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             {
                 chatHistory.map((message) =>
                     <div className="chatMessage">
-                        <h3 className="chatContent" style={{float: message.parent === "zeus" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white" : "var(--medium)", color: message.parent === "user" ? "var(--medium)" : "var(--white)"}}>
+                        <h3 className="chatContent" style={{float: message.parent === "ekko" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white" : "var(--medium)", color: message.parent === "user" ? "var(--medium)" : "var(--white)"}}>
                             {DateTime.removeStamp(message.content)}
                         </h3>
                         <h4 className="chatMessageTime" style={{
-                            textAlign: message.parent === "zeus" ? "left" : "right",
-                            float: message.parent === "zeus" ? "left" : "right",
-                            transform: message.parent === "zeus" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
+                            textAlign: message.parent === "ekko" ? "left" : "right",
+                            float: message.parent === "ekko" ? "left" : "right",
+                            transform: message.parent === "ekko" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
                         >{DateTime.formatTime(message.time)}</h4>
                     </div>
                 )

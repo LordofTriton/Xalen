@@ -6,6 +6,7 @@ import InfoBox from '../infoBox/infoBox'
 
 //Images
 import logo from '../../images/Bot/bot.png'
+import logoOffline from '../../images/Bot/404.png'
 import menuIcon from '../../images/menu1.png'
 import cancelIcon from '../../images/close.png'
 
@@ -15,7 +16,7 @@ const TopNav = ({botState, theme, togglePopMenu, popMenuState}) => {
     return(
         <>
             <div className="topNav" style={{backgroundColor: theme === "Light" ? "white" : "#121212"}}>
-                    <img className="topNavLogo" src={logo} alt="logo" />
+                    <img className="topNavLogo" src={botState === "Online" ? logo : logoOffline} alt="logo" />
                     <h3 className="topNavTitle">Ekko</h3>
                     <h4 className="topNavStatus" style={{color: botState === "Online" ? "#7FACFA" : "dimgray"}}>
                         {botState}

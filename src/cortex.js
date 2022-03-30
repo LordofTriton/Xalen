@@ -8,24 +8,24 @@ import ChatWindow from './components/chatWindow/chatWindow';
 // import Trainer from './components/trainer/trainer';
 
 //Images
-import lightBckg from './images/lightThemeBckg.jpeg';
+import lightBckg from './images/lightThemeBckg.png';
 import darkBckg from './images/darkThemeBckg.png';
 import PopMenu from './components/popMenu/popMenu';
 
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)
     const [botState, setBotState] = useState("Online");
-    const [theme, setTheme] = useState(localStorage.getItem("ZEUSTheme") ? localStorage.getItem("ZEUSTheme") : "Dark")
+    const [theme, setTheme] = useState(localStorage.getItem("EkkoTheme") ? localStorage.getItem("EkkoTheme") : "Dark")
     const [popMenuState, setPopMenuState] = useState(false)
 
     function toggleTheme() {
         if (theme === "Light") {
             setTheme("Dark")
-            localStorage.setItem("ZEUSTheme", "Dark")
+            localStorage.setItem("EkkoTheme", "Dark")
         }
         else {
             setTheme("Light")
-            localStorage.setItem("ZEUSTheme", "Light")
+            localStorage.setItem("EkkoTheme", "Light")
         }
     }
 
@@ -34,7 +34,7 @@ const Cortex = () => {
     }
 
     useEffect(() => {
-        document.title = "Zeus";
+        document.title = "Ekko";
     })
 
     return(

@@ -49,11 +49,24 @@ function removeStamp(text) {
     else return text;
 }
 
+function removeArrayStamp(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].includes("_")) {
+            let newText = array[i].split("_");
+            newArray.push(newText[1])
+        }
+        else newArray.push(array[i]);
+    }
+    
+    return newArray;
+}
+
 function addStamp(text) {
     if (text.includes("_")) return text;
     else return `${Date.now()}_${text}`
 }
 
-const DateTime = {getDateFormatOne, dayPeriod, formatTime, removeStamp, addStamp}
+const DateTime = {getDateFormatOne, dayPeriod, formatTime, removeStamp, removeArrayStamp, addStamp}
 
 export default DateTime

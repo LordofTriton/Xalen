@@ -12,8 +12,6 @@ const premierSpeaker = Math.random() * 10 > 5;
 const baseAPIURL = "https://ekkochat-server.herokuapp.com/";
 // const baseAPIURL = "http://localhost:3001/";
 
-// const defaultMessage = [0, 8, 2, DateTime.dayPeriod() === "evening" ? 24 : DateTime.dayPeriod() === "morning" ? 16 : 20][Math.floor(Math.random() * 4)]
-
 // const stripMessage = ({text}) => {
 //     let returnText = text;
 //     returnText = returnText.replace(/[^\p{L}\s]/gu, "")
@@ -39,7 +37,6 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         "1648443203671_Konnichiwa!",
         "1648443214329_Howdy! How do you do?"
     ])
-    const [learning, setLearning] = useState(true)
 
     useEffect(() => {
         axios.get(`${baseAPIURL}Atheneum`).then(re => {
@@ -50,13 +47,6 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             if (!premierSpeaker) setContext(Object.keys(re.data))
         })
     }, [])
-
-    // if (Object.keys(atheneum).length < 1) {
-    //     setAtheneum(APIService.getAtheneum())
-    // }
-    // if (Object.keys(yggdrasil).length < 1) {
-    //     setYggdrasil(APIService.getYggdrasil())
-    // }
 
     const scrollDown = () => {
         let chatWindowEl = document.getElementById("chatWindow")
@@ -92,35 +82,52 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
     }, [currentMessage])
 
-    async function learnStuff(subject, learningMaterial, newMessage) {
-        if (learning) {
-            let parentMessage = learningMaterial.filter(msg => msg.parent === subject)
-            parentMessage = parentMessage[parentMessage.length - 1]
+    function learnStuff(subject, learningMaterial, newMessage) {
+        let parentMessage = learningMaterial.filter(msg => msg.parent === subject)
+        parentMessage = parentMessage[parentMessage.length - 1]
 
-            if (parentMessage) {
-                parentMessage = parentMessage.fullContent;
+        if (parentMessage) {
+            parentMessage = parentMessage.fullContent;
 
-                if (MatchService.GetArrayMatch(context, newMessage) < 0) {
-                    await axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
-                        // let store = {}
-                        // if (re.data[parentMessage]) store = {...re.data, [parentMessage]: [...re.data[parentMessage], newMessage]}
-                        // else store = {...re.data, [parentMessage]: [newMessage]}
-                        if (re.data[parentMessage]) {
-                            let store = {...re.data, [parentMessage]: [...re.data[parentMessage], newMessage]}
-                            store = {...store, [newMessage]: []}
-                            axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
-                                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
-                                    setYggdrasil(re.data);
-                                })
+            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+
+                if (context.length > 0) {
+                    if (!DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
+                        let store = {...re.data, [parentMessage]: [...context, newMessage]}
+                        store = {...store, [newMessage]: []}
+                        axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
+                            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                                setYggdrasil(re.data);
+                                setContext([])
                             })
-                        }
-                        else {
-                            setLearning(false);
-                            setBotState("Offline");
-                        }
+                        })
+                    }
+                }
+                else {
+                    let store = {...re.data, [parentMessage]: [...context, newMessage]}
+                    store = {...store, [newMessage]: []}
+                    axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
+                        axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                            setYggdrasil(re.data);
+                            setContext([])
+                        })
                     })
                 }
-            }
+            })
+        }
+        else {
+            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                if (!DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
+                    let store = {...re.data, "": [...re.data[""], newMessage]}
+                    store = {...store, [newMessage]: []}
+                    axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
+                        axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                            setYggdrasil(re.data);
+                            setContext(re.data[newMessage])
+                        })
+                    })
+                }
+            })
         }
     }
 
@@ -134,6 +141,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 fullContent: DateTime.addStamp(newMsg.trim()),
                 time: d
             }
+
             learnStuff("ekko", chatHistory.concat(newMessage), newMessage.fullContent)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
@@ -175,6 +183,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
 
         let lastMessage = chatHistory[chatHistory.length - 1]
         setContext(yggdrasil[keys[keys.indexOf(lastMessage.content)]])
+        setContext(yggdrasil[fallbackMessages[fallbackMessages.length - 1].fullContent])
         learnStuff("user", chatHistory.concat(fallbackMessages), fallbackMessages[fallbackMessages.length - 1].fullContent)
 
         setChatHistory(chatHistory.concat(fallbackMessages))
@@ -186,7 +195,6 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             let keys = Object.keys(responseStore)
             if (keys.length > 0) {
                 let d = new Date()
-                setContext(responseStore[keys[index]])
                 let reply = responseStore[keys[index]]
                 if (reply.length > 0) {
                     reply = reply[Math.floor(Math.random() * reply.length)]
@@ -202,6 +210,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                         replyList.push(newEkkoMessage)
                         scrollDown()
                     }
+                    setContext(responseStore[replyList[replyList.length - 1].fullContent])
                     if (storeID === "Atheneum") {
                         learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1].fullContent)
                     }

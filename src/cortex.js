@@ -40,7 +40,7 @@ const Cortex = () => {
     return(
         <div className="displayContent" 
             style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
-            {/* <Title toggle={titleDisplay} control={setTitleDisplay} theme={theme} /> */}
+            <Title toggle={titleDisplay} control={setTitleDisplay} theme={theme} />
             <TopNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} popMenuState={popMenuState} />
             <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} />
             <ChatWindow botState={botState} setBotState={setBotState} theme={theme} />

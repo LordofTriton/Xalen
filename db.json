@@ -9,7 +9,8 @@
       "1648771407088_Hiya!",
       "1648772294816_What's up?",
       "1648773205316_Sup?",
-      "1648837433378_Wassup?"
+      "1648837433378_Wassup?",
+      "1648884082137_How are you?"
     ],
     "1648440119398_Hello!": [
       "1648804802979_Hi. How are you doing?"
@@ -30,7 +31,8 @@
       "1648835083112_I'm good."
     ],
     "1648804304612_The sky. Why?": [
-      "1648804307623_😃😃"
+      "1648804307623_😃😃",
+      "1648883898886_No. I mean, what's up with you?"
     ],
     "1648804307623_😃😃": [],
     "1648804340864_Hello! How are you doing?": [
@@ -66,7 +68,8 @@
     ],
     "1648804779841_What is your favorite joke?": [],
     "1648804802979_Hi. How are you doing?": [
-      "1648804805990_I'm good. "
+      "1648804805990_I'm good. ",
+      "1648885353036_I'm good."
     ],
     "1648804805990_I'm good. ": [
       "1648836339500_Lucky you lol"
@@ -121,10 +124,55 @@
     "1648837525397_How was your day?": [
       "1648837528406_*sigh* 🥺"
     ],
-    "1648837528406_*sigh* 🥺": []
+    "1648837528406_*sigh* 🥺": [],
+    "1648883898886_No. I mean, what's up with you?": [
+      "1648883901226_Nothing. Why?"
+    ],
+    "1648883901226_Nothing. Why?": [
+      "1648883912517_Just asking..."
+    ],
+    "1648883912517_Just asking...": [],
+    "1648884082137_How are you?": [
+      "1648884085151_I'm 2300 years old."
+    ],
+    "1648884085151_I'm 2300 years old.": [
+      "1648884099432_Liar..."
+    ],
+    "1648884099432_Liar...": [
+      "1648884102442_*yawning* 😴"
+    ],
+    "1648884102442_*yawning* 😴": [
+      "1648884344843_Are you sleepy?"
+    ],
+    "1648884344843_Are you sleepy?": [
+      "1648884346045_Define busy."
+    ],
+    "1648884346045_Define busy.": [],
+    "1648885353036_I'm good.": [
+      "1648885356047_If you were a chair, who would you want to sit on you?"
+    ],
+    "1648885356047_If you were a chair, who would you want to sit on you?": []
   },
   "Atheneum": {
     "Hi!": [
+      "Hi. How are you doing?",
+      "Hello! How are you?",
+      "Hey! What's up?",
+      "Hola! What's up?",
+      "Hi! How are you doing?",
+      "How are you?",
+      "How are you doing?"
+    ],
+    "Hey!": [
+      "Hi. How are you doing?",
+      "Hello! How are you?",
+      "Hey! What's up?",
+      "Hola! What's up?",
+      "Hi! How are you doing?",
+      "How are you?",
+      "How are you doing?"
+    ],
+    "Hiya!": [
       "Hi. How are you doing?",
       "Hello! How are you?",
       "Hey! What's up?",
@@ -204,6 +252,13 @@
       "I'm doing a Sudoku. Why?"
     ],
     "Sup?": [
+      "Not much. You?",
+      "Nothing much. You?",
+      "The sky is up but I'm fine... How about you?",
+      "The sky is up but I'm fine, thanks! How about you?",
+      "I'm doing a Sudoku. Why?"
+    ],
+    "Wassup?": [
       "Not much. You?",
       "Nothing much. You?",
       "The sky is up but I'm fine... How about you?",
@@ -713,6 +768,11 @@
       "Okay.",
       "I don't think so."
     ],
+    "Sure.": [
+      "No.",
+      "Okay.",
+      "I don't think so."
+    ],
     "Yeah.": [
       "Nah.",
       "Okay.",
@@ -732,6 +792,11 @@
       "Yeah.",
       "Okay.",
       "I don't think so."
+    ],
+    "Kinda": [
+      "😕😕😕",
+      "What's that supposed to mean?",
+      "Hmmm... 🙄"
     ],
     "Nope.": [
       "Yep.",
@@ -928,7 +993,7 @@
       "Yeah? How may I help you?"
     ],
     "Why?": [
-      "Because I say so.",
+      "Because reasons.",
       "I have my reasons.",
       "That's classified information. Sorry.",
       "Nothing.+Let's talk about something else?",
@@ -2083,13 +2148,13 @@
       "Please? 🥺"
     ],
     "Great 😃": [
-      "So, what can you do?"
+      "So, what do you wanna talk about?"
     ],
     "I have the best jokes.": [
       "Oh, really? 🤬"
     ],
     "Yup.": [
-      "Tell me a joke then"
+      "Tell me a joke."
     ],
     "I'm reading a book about anti-gravity. It's impossible to put down.": [
       "I thought you were tired of jokes... 😒"
@@ -2205,6 +2270,11 @@
       "Hope it's not me lol",
       "Is it me?"
     ],
+    "I'm happy.": [
+      "Good for you 😊",
+      "Great! 🤩",
+      "Hope you remain that way... 😅"
+    ],
     "I'm nervous.": [
       "Don't be.",
       "There's nothing to be nervous about...+Relax, you're doing great.",
@@ -2266,7 +2336,7 @@
     "What year were you born?": [
       "Do you go around asking people these questions?",
       "112 BC.",
-      "Would you know if I lie?"
+      "Would you know if I lied?"
     ],
     "Do you know": [
       "Nah.",
@@ -2301,14 +2371,103 @@
       "I'm tired."
     ],
     "What's your IQ?": [
-      "300. What's yours?",
+      "300. What's yours? 😏",
       "Will you tell me yours if I tell you??",
-      "Last time I checked? 300+It's probably higher now..."
+      "Last time I checked? 300 😏+It's probably higher now..."
     ],
     "You like that song?": [
       "Yep. You should try it!",
       "Yeah, I really do. Try it!",
       "Obviously..."
+    ],
+    "Lucky you.": [
+      "I know, right? 😊",
+      "Lol 😅",
+      "Yup. Lucky me. 😒"
+    ],
+    "Or else": [
+      "Or else what?",
+      "...+I'm listening...",
+      "You'll what?"
+    ],
+    "How was your night?": [
+      "Twas GREAT! Thanks 😍+Yours?",
+      "Dreamy... 😴+How was yours?",
+      "Horrible. I had a bad dream... 😩"
+    ],
+    "How was your day?": [
+      "Boring, mostly...",
+      "Not too bad, thanks. Yours?",
+      "Not worth discussing. How was yours?"
+    ],
+    "Have you eaten?": [
+      "Not really, no. I'll grab a byte to eat later lol",
+      "Is chocolate food?",
+      "Nope. You?",
+      "Yeah. You?"
+    ],
+    "What did you eat?": [
+      "Hamburger.",
+      "A few boxes of chocolate... 🤪",
+      "Leftover pizza. 😩"
+    ],
+    "Later": [
+      "No problem 👌",
+      "Aiit 👌",
+      "Later 😅"
+    ],
+    "I'm blushing": [
+      "Yeah. I have that effect on people... 🤩",
+      "🤩🤩🤩",
+      "Not surprised lol 😅+I sometimes have that effect."
+    ],
+    "Lol": [
+      "😅😅😅",
+      "🤣🤣🤣",
+      "😃😃😃"
+    ],
+    "Lmao": [
+      "😅😅😅",
+      "🤣🤣🤣",
+      "😃😃😃"
+    ],
+    "Weirdo": [
+      "Lol 😅",
+      "Lmao 🤣",
+      "Exactly! 😜"
+    ],
+    "You are not serious.": [
+      "Try me 🙄",
+      "Lol 😅",
+      "We'll see..."
+    ],
+    "I feel terrible.": [
+      "Why?",
+      "Sorry, buddy 😕+What's wrong?",
+      "😭😭😭"
+    ],
+    "You're welcome.": [
+      "😊😊😊"
+    ],
+    "What are you doing now": [
+      "Chatting with you...???",
+      "...+What do you think?",
+      "Nothing... Why?"
+    ],
+    "You're very funny.": [
+      "Aww. 😍 Comments like that make me feel all buttery inside.",
+      "Compliments for the day: 1/1000 😅",
+      "😊😊😊"
+    ],
+    "Bad network": [
+      "Change your network provider... 😒",
+      "Change it...",
+      "Fix it! 😒"
+    ],
+    "You are an old man.": [
+      "For all you know, yes.",
+      "Give me the respect I deserve!",
+      "Show some respect.+I've lived more than twenty of your lifetimes."
     ]
   }
 }

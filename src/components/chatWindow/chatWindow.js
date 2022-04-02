@@ -9,8 +9,8 @@ import MatchService from '../../services/matcher';
 //Defaults
 let d = new Date()
 const premierSpeaker = Math.random() * 10 > 5;
-const baseAPIURL = "https://ekkochat-server.herokuapp.com/";
-// const baseAPIURL = "http://localhost:3001/";
+// const baseAPIURL = "https://ekkochat-server.herokuapp.com/";
+const baseAPIURL = "http://localhost:3001/";
 
 // const stripMessage = ({text}) => {
 //     let returnText = text;

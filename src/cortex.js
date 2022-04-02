@@ -5,7 +5,7 @@ import Title from './components/title/title';
 import SideNav from './components/sideNav/sideNav';
 import TopNav from './components/topNav/topNav';
 import ChatWindow from './components/chatWindow/chatWindow';
-// import Trainer from './components/trainer/trainer';
+import Hook from './components/Hook/hook';
 
 //Images
 import lightBckg from './images/lightThemeBckg.png';
@@ -17,6 +17,8 @@ const Cortex = () => {
     const [botState, setBotState] = useState("Online");
     const [theme, setTheme] = useState(localStorage.getItem("EkkoTheme") ? localStorage.getItem("EkkoTheme") : "Dark")
     const [popMenuState, setPopMenuState] = useState(false)
+    const [throwHook, setThrowHook] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(false)
 
     function toggleTheme() {
         if (theme === "Light") {
@@ -37,6 +39,8 @@ const Cortex = () => {
         document.title = "Ekko";
     })
 
+    if (!loggedIn) setTimeout(() => {setThrowHook(true); setLoggedIn(true)}, 60000)
+
     return(
         <div className="displayContent" 
             style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
@@ -45,7 +49,7 @@ const Cortex = () => {
             <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} />
             <ChatWindow botState={botState} setBotState={setBotState} theme={theme} />
             <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} />
-            {/* <Trainer theme={theme} /> */}
+            <Hook toggle={throwHook} control={setThrowHook} />
         </div>
     )
 }

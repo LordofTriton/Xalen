@@ -17,6 +17,7 @@
     top: 0px;
     left: 0px;
     background-color: var(--white);
+    background-image: url(../../images/lightThemeBckg.png);
     width: 100vw;
     height: 100vh;
     z-index: 30;
@@ -39,7 +40,7 @@
 }
 
 .titleTitle p {
-    font-family: Lightning;
+    font-family: Title;
     color: var(--orange-peel);
     font-size: 100px;
     padding: 0px;
@@ -49,7 +50,7 @@
 }
 
 .titleMark {
-    font-family: Lightning;
+    font-family: Title;
     color: var(--orange-peel);
     display: inline-block;
     transform: translate(10px, -70px);
@@ -62,7 +63,7 @@
     position: fixed;
     bottom: 30px;
     left: 25vw;
-    background-color: var(--medium);
+    background-color: var(--dark-orange);
 }
 
 @media screen and (min-width: 1125px) {

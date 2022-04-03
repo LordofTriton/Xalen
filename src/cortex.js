@@ -15,7 +15,7 @@ import PopMenu from './components/popMenu/popMenu';
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)
     const [botState, setBotState] = useState("Online");
-    const [theme, setTheme] = useState(localStorage.getItem("EkkoTheme") ? localStorage.getItem("EkkoTheme") : "Dark")
+    const [theme, setTheme] = useState(localStorage.getItem("TritonTheme") ? localStorage.getItem("TritonTheme") : "Dark")
     const [popMenuState, setPopMenuState] = useState(false)
     const [throwHook, setThrowHook] = useState(false)
     const [loggedIn, setLoggedIn] = useState(false)
@@ -23,11 +23,11 @@ const Cortex = () => {
     function toggleTheme() {
         if (theme === "Light") {
             setTheme("Dark")
-            localStorage.setItem("EkkoTheme", "Dark")
+            localStorage.setItem("TritonTheme", "Dark")
         }
         else {
             setTheme("Light")
-            localStorage.setItem("EkkoTheme", "Light")
+            localStorage.setItem("TritonTheme", "Light")
         }
     }
 
@@ -36,7 +36,7 @@ const Cortex = () => {
     }
 
     useEffect(() => {
-        document.title = "Ekko";
+        document.title = "Triton";
     })
 
     if (!loggedIn) setTimeout(() => {setThrowHook(true); setLoggedIn(true)}, 60000)

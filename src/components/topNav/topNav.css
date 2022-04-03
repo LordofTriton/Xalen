@@ -15,34 +15,36 @@
 .topNavLogo {
     height: 70%;
     aspect-ratio: 1;
-    margin: 2% 0px 0px 15px;
+    margin: 1.5% 0px 0px 15px;
     padding: 0px;
-    animation: wiggle 5s infinite;
+    animation: strobe 5s infinite;
     pointer-events: none;
     float: left;
 }
 
 .topNavTitle {
-    font-family: Lightning;
-    color: var(--dark);
-    font-size: 30px;
+    font-family: Title;
+    color: var(--blue);
+    font-size: 40px;
     padding: 0px;
     float: left;
-    margin: 8px 0px 0px 20px;
+    margin: 13px 0px 0px 20px;
 }
 
 .topNavStatus {
     color: var(--orange-peel);
     font-weight: 400;
-    transform: translate(-80px, 20px);
+    transform: translate(0px, 20px);
     padding: 0px;
     float: left;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .topNavMenuButton {
     height: 50%;
     aspect-ratio: 1;
-    margin: 4% 20px 0px 0px;
+    margin: 3.5% 20px 0px 0px;
     cursor: pointer;
     transition: all 0.5s;
     float: right;

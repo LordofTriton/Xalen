@@ -23,8 +23,8 @@
 }
 
 .hookFrontTitle {
-    color: var(--dark);
-    font-family: Lightning;
+    color: var(--blue);
+    font-family: Title;
     font-size: 50px;
     padding: 0px;
     margin: 0px 0px 0px 0px;

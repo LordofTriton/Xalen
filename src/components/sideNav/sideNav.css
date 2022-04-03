@@ -43,26 +43,28 @@
     aspect-ratio: 1;
     margin: 30px 25% 20px 25%;
     padding: 0px;
-    animation: wiggle 5s infinite;
+    animation: strobe 5s infinite;
     pointer-events: none;
 }
 
 .sideNavTitle {
-    color: var(--dark);
-    font-family: Lightning;
-    font-size: 50px;
+    color: var(--blue);
+    font-family: Title;
+    font-size: 35px;
     padding: 0px;
     text-align: center;
     /* animation: title_anim 5s infinite; */
-    margin: 70px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
 }
 
 .sideNavStatus {
-    color: var(--medium);
+    color: var(--dark-orange);
     font-weight: 400;
     padding: 0px;
     text-align: center;
-    margin: 10px 0px 0px 0px;
+    margin: 3px 0px 0px 0px;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .sideNavButtonGallery {
@@ -78,21 +80,30 @@
 }
 
 .sideNavButtonGallery hr {
-    /* border-bottom: 2px solid var(--orange-peel); */
+    border-bottom: 2px solid var(--blue);
     margin: 0px 25% 0px 25%;
     background-color: var(--orange-peel);
 }
 
 .sideNavButton {
-    width: 20%;
+    width: 30%;
     aspect-ratio: 1;
-    margin: 50px 40% 40px 40%;
+    margin: 50px 35% 0px 35%;
     cursor: pointer;
     transition: all 0.5s;
 }
 
 .sideNavButton:hover {
     transform: scale(1.2,1.2);
+}
+
+.sideNavButtonText {
+    text-align: center;
+    color: var(--dark-orange);
+    font-size: 13px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
 .sideNavMenuOption {

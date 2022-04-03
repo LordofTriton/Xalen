@@ -3,15 +3,15 @@
 }
 
 @font-face {
-  font-family: Lightning;
-  src: url(misc/motivota-font/Motivota-BVLd.ttf);
+  font-family: Title;
+  src: url(misc/LostFish-5DOz.ttf);
 }
 
 :root {
   --white: #FFFFFF;
-  --light: #CAD9FC;
-  --medium: #7FACFA;
-  --dark: #428DFF;
+  --light-orange: #FFCB37;
+  --dark-orange: #FCAC1F;
+  --blue: #5E73DD;
   
   --black: #000000;
   --platinum: #E5E5E5;
@@ -37,12 +37,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--dark);
+  background: var(--blue);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: var(--medium);
+  background: var(--dark-orange);
 }
 
 .body {

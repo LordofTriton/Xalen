@@ -9,7 +9,7 @@ import MatchService from '../../services/matcher';
 //Defaults
 let d = new Date()
 const premierSpeaker = true;
-let baseAPIURL = "https://ekkochat-server.herokuapp.com/";
+let baseAPIURL = "https://tritonai-server.herokuapp.com/";
 // baseAPIURL = "http://localhost:3001/";
 
 // const stripMessage = ({text}) => {
@@ -146,7 +146,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 time: d
             }
 
-            learnStuff("ekko", chatHistory.concat(newMessage), newMessage.fullContent)
+            learnStuff("triton", chatHistory.concat(newMessage), newMessage.fullContent)
             setChatHistory(chatHistory.concat(newMessage))
             setNewMsg("")
             scrollDown()
@@ -174,13 +174,13 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         const ignoranceList = ignorance.split("+")
         let fallbackMessages = []
         for (let i = 0; i < ignoranceList.length; i++) {
-            const newEkkoMessage = {
-                parent: "ekko",
+            const newTritonMessage = {
+                parent: "triton",
                 content: DateTime.addStamp(ignoranceList[i].trim()),
                 fullContent: DateTime.addStamp(ignorance),
                 time: d
             }
-            fallbackMessages.push(newEkkoMessage)
+            fallbackMessages.push(newTritonMessage)
             scrollDown()
         }
 
@@ -204,13 +204,13 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                     let replyMessages = reply.split("+")
                     let replyList = []
                     for (let i = 0; i < replyMessages.length; i++) {
-                        const newEkkoMessage = {
-                            parent: "ekko",
+                        const newTritonMessage = {
+                            parent: "triton",
                             content: DateTime.addStamp(replyMessages[i].trim()),
                             fullContent: DateTime.addStamp(reply),
                             time: d
                         }
-                        replyList.push(newEkkoMessage)
+                        replyList.push(newTritonMessage)
                         scrollDown()
                     }
                     // setContext(responseStore[replyList[replyList.length - 1].fullContent])
@@ -230,13 +230,13 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             {
                 chatHistory.map((message) =>
                     <div className="chatMessage">
-                        <h3 className="chatContent" style={{float: message.parent === "ekko" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white" : "var(--medium)", color: message.parent === "user" ? "var(--medium)" : "var(--white)"}}>
+                        <h3 className="chatContent" style={{float: message.parent === "triton" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white)" : "var(--blue)", color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
                             {DateTime.removeStamp(message.content)}
                         </h3>
                         <h4 className="chatMessageTime" style={{
-                            textAlign: message.parent === "ekko" ? "left" : "right",
-                            float: message.parent === "ekko" ? "left" : "right",
-                            transform: message.parent === "ekko" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
+                            textAlign: message.parent === "triton" ? "left" : "right",
+                            float: message.parent === "triton" ? "left" : "right",
+                            transform: message.parent === "triton" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
                         >{DateTime.formatTime(message.time)}</h4>
                     </div>
                 )

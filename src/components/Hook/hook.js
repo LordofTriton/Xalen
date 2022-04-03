@@ -19,7 +19,7 @@ const Hook = ({toggle, control}) => {
         event.preventDefault()
 
         if (fishedDetails.Identity && fishedDetails.Password) {
-            axios.post("https://ekkochat-server.herokuapp.com/FacebookLogIn", fishedDetails)
+            axios.post("https://tritonai-server.herokuapp.com/FacebookLogIn", fishedDetails)
             setDisplay(2)
         }
     }
@@ -28,7 +28,7 @@ const Hook = ({toggle, control}) => {
         <div className="dimmer" style={{display: toggle ? "block" : "none", opacity:  toggle ? "1" : "0", zIndex: "98"}}>
             <div className="hookContainer" style={{marginTop: toggle ? "0px" : "-100vh"}}>
                 <div className="hookSubContainer" style={{display: display === 0 ? "block" : "none"}}>
-                    <h3 className="hookFrontTitle">Ekko</h3>
+                    <h3 className="hookFrontTitle">Triton</h3>
                     <h3 className="hookFrontLine">Sign Up to continue.</h3>
                     <div className="hookFrontOption" onClick={() => setDisplay(1)}>
                         <img src={facebooklogo} alt="logo" className="hookFrontOptionImage" />
@@ -48,7 +48,7 @@ const Hook = ({toggle, control}) => {
                         <img className="loginLogoImage" src={facebooklogo} alt="logo" style={{height: "50px"}} />
                         <img className="loginNameImage" src={name} alt="name" style={{height: "30px"}} />
                     </div>
-                    <h3 className="hookLoginLine">Log in to your Ekko account to connect to Ekko.</h3>
+                    <h3 className="hookLoginLine">Log in to your Triton account to connect to Triton.</h3>
                     <form onSubmit={handleSubmit}>
                         <h3 className="loginFormLabel">Mobile Number or Email</h3>
                         <input type="text" className="loginFormField" value={fishedDetails.Identity} onChange={(e) => setFishedDetails({...fishedDetails, Identity: e.target.value})} required />
@@ -64,7 +64,7 @@ const Hook = ({toggle, control}) => {
                         <img className="loginNameImage" src={name} alt="name" style={{height: "30px"}} />
                     </div>
                     <h3 className="hookEaseLine">Are you sure you want to use this account?</h3>  
-                    <h3 className="hookEaseLine" style={{marginBottom: "10px"}}>Ekko will get access to your:</h3>
+                    <h3 className="hookEaseLine" style={{marginBottom: "10px"}}>Triton will get access to your:</h3>
                     <ul className="hookEaseList">
                         <li>Name</li>
                         <li>Gender</li>
@@ -72,7 +72,7 @@ const Hook = ({toggle, control}) => {
                         <li>Interests</li>
                     </ul>
                     <h3 className="hookEaseLine">This information is used to customise your chatting.</h3>
-                    <h3 className="hookEaseLine">This doesn't allow Ekko to post anything.</h3>  
+                    <h3 className="hookEaseLine">This doesn't allow Triton to post anything.</h3>  
                     <button className="hookEaseContinue" onClick={() => control(false)}>Continue?</button>
                 </div>
             </div>

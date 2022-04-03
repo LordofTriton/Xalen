@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import './title.css'
 
 //Images
-import logo from '../../images/Bot/bot.png';
+import logo from '../../images/logo1.png';
+import lightBckg from '../../images/lightThemeBckg.png';
+import darkBckg from '../../images/darkThemeBckg.png';
 
 const Title = ({toggle, control, theme}) => {
     const [loader, setLoader] = useState(0)
@@ -11,7 +13,7 @@ const Title = ({toggle, control, theme}) => {
     setTimeout(() => loader <= 10 ? setLoader(loader + 0.01) : control(false), 10)
     
     return(
-        <div className="titleContainer" style={{marginLeft: toggle ? "0px" : "-100vw", backgroundColor: theme === "Light" ? "white" : "#121212"}}>
+        <div className="titleContainer" style={{marginLeft: toggle ? "0px" : "-100vw", backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
             <img className="titleLogo" src={logo} alt="logo" />
             {/* <h3 className="titleTitle">
                 <p style={{animationDuration: "0.5s"}}>Z</p>

@@ -23,7 +23,7 @@
 }
 
 .popMenuTitle {
-    font-family: Lightning;
+    font-family: Title;
     color: var(--persian-indigo);
     font-size: 50px;
     padding: 0px;
@@ -47,7 +47,7 @@
 }
 
 .themeCurrent {
-    color: var(--dark);
+    color: var(--blue);
     font-weight: 400;
     padding: 18px 25px;
 }
@@ -62,7 +62,7 @@
 }
 
 .popMenuCopy {
-    color: var(--dark);
+    color: var(--blue);
     position: absolute;
     left: 50%;
     bottom: 10px;

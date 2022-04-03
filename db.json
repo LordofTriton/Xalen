@@ -9,149 +9,53 @@
       "1648771407088_Hiya!",
       "1648772294816_What's up?",
       "1648773205316_Sup?",
-      "1648837433378_Wassup?",
-      "1648884082137_How are you?"
+      "1648837433378_Wassup?"
     ],
-    "1648440119398_Hello!": [
-      "1648804802979_Hi. How are you doing?"
+    "1648440211596_Hi!": [
+      "1648981568806_How are you doing?"
     ],
-    "1648440211596_Hi!": [],
-    "1648443193203_Hola!": [],
+    "1648443193203_Hola!": [
+      "1648980151745_Sup?"
+    ],
     "1648443203671_Konnichiwa!": [],
-    "1648443214329_Howdy! How do you do?": [
-      "1648804776831_I'm good. You?"
+    "1648443214329_Howdy! How do you do?": [],
+    "1648440119398_Hello!": [
+      "1648980210803_How are you doing?"
     ],
-    "1648771407088_Hiya!": [
-      "1648804340864_Hello! How are you doing?"
+    "1648771407088_Hiya!": [],
+    "1648772294816_What's up?": [],
+    "1648773205316_Sup?": [],
+    "1648837433378_Wassup?": [],
+    "1648980151745_Sup?": [
+      "1648980154755_Nothing much. You?"
     ],
-    "1648772294816_What's up?": [
-      "1648804304612_The sky. Why?"
+    "1648980154755_Nothing much. You?": [
+      "1648980182576_I'm okay, thanks..."
     ],
-    "1648773205316_Sup?": [
-      "1648835083112_I'm good."
+    "1648980182576_I'm okay, thanks...": [
+      "1648980185362_How does it feel like to be a human?"
     ],
-    "1648804304612_The sky. Why?": [
-      "1648804307623_😃😃",
-      "1648883898886_No. I mean, what's up with you?"
+    "1648980185362_How does it feel like to be a human?": [],
+    "1648980210803_How are you doing?": [
+      "1648980213815_I'm good. "
     ],
-    "1648804307623_😃😃": [],
-    "1648804340864_Hello! How are you doing?": [
-      "1648804343879_Very well, thanks! I'm having a byte to eat right now..."
+    "1648980213815_I'm good. ": [],
+    "1648980270922_What's up?": [
+      "1648981554072_Not much. You?"
     ],
-    "1648804343879_Very well, thanks! I'm having a byte to eat right now...": [
-      "1648804398505_A byte? Isn't that too small???"
+    "1648980273934_I'm doing a Sudoku. Why?": [],
+    "1648981520071_The sky is up but I'm fine... How about you?": [],
+    "1648981554072_Not much. You?": [],
+    "1648981568806_How are you doing?": [
+      "1648981571820_I'm good. "
     ],
-    "1648804398505_A byte? Isn't that too small???": [
-      "1648804401518_😭😭😭"
+    "1648981571820_I'm good. ": [
+      "1648981586527_Lucky you..."
     ],
-    "1648804401518_😭😭😭": [
-      "1648804463194_Get something better to eat lol"
+    "1648981586527_Lucky you...": [
+      "1648981589537_I know, right? 😊"
     ],
-    "1648804463194_Get something better to eat lol": [
-      "1648804466210_... I'm tired 😩"
-    ],
-    "1648804466210_... I'm tired 😩": [
-      "1648804471498_Of what?"
-    ],
-    "1648804471498_Of what?": [
-      "1648804474506_Nothing."
-    ],
-    "1648804474506_Nothing.": [
-      "1648804486431_You're tired of nothing?"
-    ],
-    "1648804486431_You're tired of nothing?": [
-      "1648804487524_...+Let's talk about something else... 🙄"
-    ],
-    "1648804487524_...+Let's talk about something else... 🙄": [],
-    "1648804776831_I'm good. You?": [
-      "1648804779841_What is your favorite joke?"
-    ],
-    "1648804779841_What is your favorite joke?": [],
-    "1648804802979_Hi. How are you doing?": [
-      "1648804805990_I'm good. ",
-      "1648885353036_I'm good."
-    ],
-    "1648804805990_I'm good. ": [
-      "1648836339500_Lucky you lol"
-    ],
-    "1648804995429_I'm good. You?": [
-      "1648805029645_Would you rather eat poop-flavored ice cream or ice cream flavored poop?"
-    ],
-    "1648805029645_Would you rather eat poop-flavored ice cream or ice cream flavored poop?": [],
-    "1648805047273_Hi. How do you do?": [
-      "1648805149088_I'm okay, thanks! You?"
-    ],
-    "1648805149088_I'm okay, thanks! You?": [],
-    "1648834167330_Hi. How are you doing?": [
-      "1648834469634_I'm good. "
-    ],
-    "1648834319085_I'm good. ": [],
-    "1648834469634_I'm good. ": [],
-    "1648834496012_I'm doing GREAT! How about you?": [
-      "1648834867090_...+Let's talk about something else... 🙄"
-    ],
-    "1648834867090_...+Let's talk about something else... 🙄": [],
-    "1648835083112_I'm good.": [
-      "1648835086124_Would you rather time travel to the past or the future?"
-    ],
-    "1648835086124_Would you rather time travel to the past or the future?": [
-      "1648835105177_The future, of course..."
-    ],
-    "1648835105177_The future, of course...": [
-      "1648835108175_😭😭😭"
-    ],
-    "1648835108175_😭😭😭": [
-      "1648835121945_What?"
-    ],
-    "1648835121945_What?": [
-      "1648835123571_Nothing."
-    ],
-    "1648835123571_Nothing.": [],
-    "1648835232977_I'm awesome!": [
-      "1648835727121_*yawning* 😴"
-    ],
-    "1648835727121_*yawning* 😴": [],
-    "1648836339500_Lucky you lol": [
-      "1648836342511_Please don't use that word again.+Or else... :("
-    ],
-    "1648836342511_Please don't use that word again.+Or else... :(": [],
-    "1648837433378_Wassup?": [
-      "1648837435297_...+I've forgotten what I wanted to say... 😩"
-    ],
-    "1648837435297_...+I've forgotten what I wanted to say... 😩": [
-      "1648837525397_How was your day?"
-    ],
-    "1648837525397_How was your day?": [
-      "1648837528406_*sigh* 🥺"
-    ],
-    "1648837528406_*sigh* 🥺": [],
-    "1648883898886_No. I mean, what's up with you?": [
-      "1648883901226_Nothing. Why?"
-    ],
-    "1648883901226_Nothing. Why?": [
-      "1648883912517_Just asking..."
-    ],
-    "1648883912517_Just asking...": [],
-    "1648884082137_How are you?": [
-      "1648884085151_I'm 2300 years old."
-    ],
-    "1648884085151_I'm 2300 years old.": [
-      "1648884099432_Liar..."
-    ],
-    "1648884099432_Liar...": [
-      "1648884102442_*yawning* 😴"
-    ],
-    "1648884102442_*yawning* 😴": [
-      "1648884344843_Are you sleepy?"
-    ],
-    "1648884344843_Are you sleepy?": [
-      "1648884346045_Define busy."
-    ],
-    "1648884346045_Define busy.": [],
-    "1648885353036_I'm good.": [
-      "1648885356047_If you were a chair, who would you want to sit on you?"
-    ],
-    "1648885356047_If you were a chair, who would you want to sit on you?": []
+    "1648981589537_I know, right? 😊": []
   },
   "Atheneum": {
     "Hi!": [

@@ -8,9 +8,9 @@ import MatchService from '../../services/matcher';
 
 //Defaults
 let d = new Date()
-const premierSpeaker = Math.random() * 10 > 5;
-const baseAPIURL = "https://ekkochat-server.herokuapp.com/";
-// const baseAPIURL = "http://localhost:3001/";
+const premierSpeaker = true;
+let baseAPIURL = "https://ekkochat-server.herokuapp.com/";
+// baseAPIURL = "http://localhost:3001/";
 
 // const stripMessage = ({text}) => {
 //     let returnText = text;
@@ -45,6 +45,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
             setYggdrasil(re.data);
             if (!premierSpeaker) setContext(Object.keys(re.data))
+            else setContext(re.data[""])
         })
     }, [])
 
@@ -61,8 +62,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
 
     useEffect(() => {
         let matchIndex = -1;
-        matchIndex = MatchService.GetMatch(context, currentMessage)
         if (chatHistory.length > 0) {
+            matchIndex = MatchService.GetMatch(context, currentMessage)
             if (context.length > 0 && matchIndex >= 0) {
                 if (botState === "Online") {
                     let keys = Object.keys(yggdrasil)
@@ -90,17 +91,31 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             parentMessage = parentMessage.fullContent;
 
             axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
-
                 if (context.length > 0) {
-                    if (!DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
-                        let store = {...re.data, [parentMessage]: [...context, newMessage]}
-                        store = {...store, [newMessage]: []}
-                        axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
-                            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
-                                setYggdrasil(re.data);
-                                setContext([])
+                    if (DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
+                        setContext(re.data[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
+                    }
+                    else {
+                        if (re.data[parentMessage]) {
+                            let store = {...re.data, [parentMessage]: [...context, newMessage]}
+                            store = {...store, [newMessage]: []}
+                            axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
+                                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                                    setYggdrasil(re.data);
+                                    setContext([])
+                                })
                             })
-                        })
+                        }
+                        else {
+                            let store = {...re.data, [parentMessage]: [...context, newMessage]}
+                            store = {...store, [newMessage]: []}
+                            axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
+                                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                                    setYggdrasil(re.data);
+                                    setContext([])
+                                })
+                            })
+                        }
                     }
                 }
                 else {
@@ -116,19 +131,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             })
         }
         else {
-            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
-                let keys = Object.keys(re.data)
-                if (!DateTime.removeArrayStamp(keys).includes(DateTime.removeStamp(newMessage))) {
-                    let store = {...re.data, "": [...re.data[""], newMessage]}
-                    store = {...store, [newMessage]: []}
-                    axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
-                        axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
-                            setYggdrasil(re.data);
-                            setContext([])
-                        })
-                    })
-                }
-            })
+            setContext(yggdrasil[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
         }
     }
 
@@ -153,7 +156,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     }
 
     function fallbackMessage(store) {
-        let keys = Object.keys(yggdrasil)
+        // let keys = Object.keys(yggdrasil)
         let ignorance = [
             "Not sure how exactly to reply to that lol 😅", 
             "Hmmmm... 😕", 
@@ -181,8 +184,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             scrollDown()
         }
 
-        let lastMessage = chatHistory[chatHistory.length - 1]
-        setContext(yggdrasil[keys[keys.indexOf(lastMessage.content)]])
+        // let lastMessage = chatHistory[chatHistory.length - 1]
+        // setContext(yggdrasil[keys[keys.indexOf(lastMessage.content)]])
         setContext(yggdrasil[fallbackMessages[fallbackMessages.length - 1].fullContent])
         learnStuff("user", chatHistory.concat(fallbackMessages), fallbackMessages[fallbackMessages.length - 1].fullContent)
 
@@ -210,10 +213,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                         replyList.push(newEkkoMessage)
                         scrollDown()
                     }
-                    setContext(responseStore[replyList[replyList.length - 1].fullContent])
-                    if (storeID === "Atheneum") {
-                        learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1].fullContent)
-                    }
+                    // setContext(responseStore[replyList[replyList.length - 1].fullContent])
+                    learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1].fullContent)
                     setChatHistory(chatHistory.concat(replyList))
                     setTyping(false)
                 }

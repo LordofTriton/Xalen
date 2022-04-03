@@ -114,11 +114,17 @@
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.5s;
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 .chatInputDockSubmit:hover {
     background-color: var(--dark-orange);
     transform: scale(1.1,1.1);
+}
+
+.chatInputDockSubmit img {
+    height: 80%;
 }
 
 

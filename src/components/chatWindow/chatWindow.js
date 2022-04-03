@@ -6,11 +6,14 @@ import axios from 'axios';
 import DateTime from '../../services/dateTime';
 import MatchService from '../../services/matcher';
 
+//Images
+import sendIcon from '../../images/send1.png'
+
 //Defaults
-let d = new Date()
-const premierSpeaker = true;
+let d = new Date();
+const premierSpeaker = Math.random() * 10 > 5;
 let baseAPIURL = "https://tritonai-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:3001/";
+baseAPIURL = "http://localhost:3001/";
 
 // const stripMessage = ({text}) => {
 //     let returnText = text;
@@ -37,6 +40,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         "1648443203671_Konnichiwa!",
         "1648443214329_Howdy! How do you do?"
     ])
+    const [ancestor, setAncestor] = useState("")
 
     useEffect(() => {
         axios.get(`${baseAPIURL}Atheneum`).then(re => {
@@ -63,12 +67,22 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     useEffect(() => {
         let matchIndex = -1;
         if (chatHistory.length > 0) {
-            matchIndex = MatchService.GetMatch(context, currentMessage)
+            let parentContext = []
+            if (ancestor) parentContext = Object.keys(yggdrasil);
+            else {
+                let parentMessage = chatHistory.filter(msg => msg.parent === "triton")
+                parentMessage = parentMessage[parentMessage.length - 1]
+                parentContext = yggdrasil[parentMessage.fullContent];
+            }
+            console.log(parentContext)
+            console.log(currentMessage)
+            matchIndex = MatchService.GetMatch(parentContext, currentMessage)
             if (context.length > 0 && matchIndex >= 0) {
+                alert("I know this!")
                 if (botState === "Online") {
                     let keys = Object.keys(yggdrasil)
                     setTyping(true)
-                    setTimeout(() => replyMessage(keys.indexOf(context[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                    setTimeout(() => replyMessage(keys.indexOf(parentContext[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
                 }
             }
             else {
@@ -89,11 +103,13 @@ const ChatWindow = ({botState, setBotState, theme}) => {
 
         if (parentMessage) {
             parentMessage = parentMessage.fullContent;
+            if (ancestor) parentMessage = ancestor;
 
             axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
                 if (context.length > 0) {
                     if (DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
                         setContext(re.data[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
+                        setAncestor("")
                     }
                     else {
                         if (re.data[parentMessage]) {
@@ -103,6 +119,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                                 axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
                                     setYggdrasil(re.data);
                                     setContext([])
+                                    setAncestor("")
                                 })
                             })
                         }
@@ -113,6 +130,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                                 axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
                                     setYggdrasil(re.data);
                                     setContext([])
+                                    setAncestor("")
                                 })
                             })
                         }
@@ -125,13 +143,37 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                         axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
                             setYggdrasil(re.data);
                             setContext([])
+                            setAncestor("")
                         })
                     })
                 }
             })
         }
         else {
-            setContext(yggdrasil[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
+            if (subject === "triton") {
+                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                    let keys = Object.keys(re.data)
+                    if (DateTime.removeArrayStamp(keys).includes(DateTime.removeStamp(newMessage))) {
+                        setContext(re.data[keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
+                        setAncestor(keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0])
+                    }
+                    else {
+                        let store = {...re.data, "": [...re.data[""], newMessage]}
+                        store = {...store, [newMessage]: []}
+                        axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
+                            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                                setYggdrasil(re.data);
+                                setContext([])
+                                setAncestor(newMessage)
+                            })
+                        })
+                    }
+                })
+            }
+            else {
+                setContext(yggdrasil[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
+                setAncestor(context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0])
+            }
         }
     }
 
@@ -251,7 +293,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 <form onSubmit={handleSubmit}>
                     <input type="text" className="chatInputDockField" value={newMsg} onChange={(el) => setNewMsg(el.target.value)} 
                         style={{backgroundColor: theme === "Light" ? "white" : "#121212", color: theme === "Light" ? "#121212" : "white"}} />
-                    <input type="submit" className="chatInputDockSubmit" value="Send" />
+                    {/* <input type="image" src={sendIcon} alt="Submit" className="chatInputDockSubmit" value="Send" /> */}
+                    <button className="chatInputDockSubmit"><img src={sendIcon} alt="Send" /></button>
                 </form>
             </div>
         </div>

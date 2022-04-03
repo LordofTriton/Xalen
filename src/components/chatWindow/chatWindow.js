@@ -13,7 +13,7 @@ import sendIcon from '../../images/send1.png'
 let d = new Date();
 const premierSpeaker = Math.random() * 10 > 5;
 let baseAPIURL = "https://tritonai-server.herokuapp.com/";
-baseAPIURL = "http://localhost:3001/";
+// baseAPIURL = "http://localhost:3001/";
 
 // const stripMessage = ({text}) => {
 //     let returnText = text;
@@ -74,11 +74,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 parentMessage = parentMessage[parentMessage.length - 1]
                 parentContext = yggdrasil[parentMessage.fullContent];
             }
-            console.log(parentContext)
-            console.log(currentMessage)
             matchIndex = MatchService.GetMatch(parentContext, currentMessage)
             if (context.length > 0 && matchIndex >= 0) {
-                alert("I know this!")
                 if (botState === "Online") {
                     let keys = Object.keys(yggdrasil)
                     setTyping(true)

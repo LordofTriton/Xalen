@@ -1,0 +1,46 @@
+.offlineContainer {
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    transform: translate(0px, -50%);
+    z-index: 19;
+    transition: all 0.5s;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.offlineTitle {
+    text-align: center;
+}
+
+.retryButton {
+    width: 30%;
+    height: 50px;
+    background-color: var(--blue);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0px;
+    outline: 0px;
+    transition: all 0.5s;
+    margin: 0px 35%;
+    color: white;
+}
+
+.retryButton:hover {
+    background-color: var(--dark-orange);
+    width: 20%;
+    margin: 0px 40%;
+}
+
+@media screen and (min-width: 1125px) {
+    .retryButton {
+        width: 10%;
+        margin: 0px 45%;
+    }
+    .retryButton:hover {
+        width: 20%;
+        margin: 0px 40%;
+    }
+}

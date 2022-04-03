@@ -6,6 +6,7 @@ import SideNav from './components/sideNav/sideNav';
 import TopNav from './components/topNav/topNav';
 import ChatWindow from './components/chatWindow/chatWindow';
 import Hook from './components/Hook/hook';
+import Offline from './components/offline/offline';
 
 //Images
 import lightBckg from './images/lightThemeBckg.png';
@@ -50,6 +51,7 @@ const Cortex = () => {
             <ChatWindow botState={botState} setBotState={setBotState} theme={theme} />
             <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} />
             <Hook toggle={throwHook} control={setThrowHook} />
+            <Offline theme={theme} botState={botState} setBotState={setBotState} />
         </div>
     )
 }

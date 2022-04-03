@@ -9,8 +9,8 @@ import MatchService from '../../services/matcher';
 //Defaults
 let d = new Date()
 const premierSpeaker = Math.random() * 10 > 5;
-// const baseAPIURL = "https://ekkochat-server.herokuapp.com/";
-const baseAPIURL = "http://localhost:3001/";
+const baseAPIURL = "https://ekkochat-server.herokuapp.com/";
+// const baseAPIURL = "http://localhost:3001/";
 
 // const stripMessage = ({text}) => {
 //     let returnText = text;
@@ -117,13 +117,14 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         }
         else {
             axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
-                if (!DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
+                let keys = Object.keys(re.data)
+                if (!DateTime.removeArrayStamp(keys).includes(DateTime.removeStamp(newMessage))) {
                     let store = {...re.data, "": [...re.data[""], newMessage]}
                     store = {...store, [newMessage]: []}
                     axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
                         axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
                             setYggdrasil(re.data);
-                            setContext(re.data[newMessage])
+                            setContext([])
                         })
                     })
                 }
@@ -154,7 +155,6 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     function fallbackMessage(store) {
         let keys = Object.keys(yggdrasil)
         let ignorance = [
-            "...+I've forgotten what I wanted to say... 😩", 
             "Not sure how exactly to reply to that lol 😅", 
             "Hmmmm... 😕", 
             "...+Let's talk about something else... 🙄",
@@ -167,7 +167,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             "Lmao 🤣🤣",
             "😭😭😭",
             "*yawning* 😴"
-        ][Math.floor(Math.random() * 13)]
+        ][Math.floor(Math.random() * 12)]
         const ignoranceList = ignorance.split("+")
         let fallbackMessages = []
         for (let i = 0; i < ignoranceList.length; i++) {

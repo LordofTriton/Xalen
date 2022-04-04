@@ -16,7 +16,7 @@ import PopMenu from './components/popMenu/popMenu';
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)
     const [botState, setBotState] = useState("Online");
-    const [theme, setTheme] = useState(localStorage.getItem("TritonTheme") ? localStorage.getItem("TritonTheme") : "Dark")
+    const [theme, setTheme] = useState(localStorage.getItem("TritonTheme") ? localStorage.getItem("TritonTheme") : "Light")
     const [popMenuState, setPopMenuState] = useState(false)
     const [throwHook, setThrowHook] = useState(false)
     const [loggedIn, setLoggedIn] = useState(false)

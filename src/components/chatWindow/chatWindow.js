@@ -12,7 +12,6 @@ import sendIcon from '../../images/send1.png'
 //Defaults
 let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
-premierSpeaker = true
 let baseAPIURL = "https://tritonai-server.herokuapp.com/";
 // baseAPIURL = "http://localhost:3001/";
 
@@ -36,7 +35,7 @@ const fallback = [
     "Lmao 🤣🤣",
     "😭😭😭",
     "*yawning* 😴",
-    ""
+    "Really? 😒"
 ]
 
 const ChatWindow = ({botState, setBotState, theme}) => {
@@ -81,6 +80,12 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         }
     }, [yggdrasil])
 
+    async function AddHomeWork(message) {
+        await axios.get(`${baseAPIURL}Research`).then(async re => {
+            await axios.post(`${baseAPIURL}Research`, {...re.data, HomeWork: [...re.data.HomeWork, message]})
+        })
+    }
+
     useEffect(() => {
         let matchIndex = -1;
         if (chatHistory.length > 0) {
@@ -109,13 +114,14 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                     let keys = Object.keys(atheneum)
                     setTyping(true)
                     setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                    if (matchIndex < 0) AddHomeWork(currentMessage.fullContent)
                 }
             }
         }
         window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
     }, [currentMessage])
 
-    function learnStuff(subject, learningMaterial, newMessage) {
+    async function learnStuff(subject, learningMaterial, newMessage) {
         let parentMessage = learningMaterial.filter(msg => msg.parent === subject)
         parentMessage = parentMessage[parentMessage.length - 1]
 
@@ -123,7 +129,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             parentMessage = parentMessage.fullContent;
             if (ancestor) parentMessage = ancestor;
 
-            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+            await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
                 if (context.length > 0) {
                     if (DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
                         setContext(re.data[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
@@ -133,8 +139,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                         if (re.data[parentMessage]) {
                             let store = {...re.data, [parentMessage]: [...context, newMessage]}
                             store = {...store, [newMessage]: []}
-                            axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
-                                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                            await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
+                                await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
                                     setYggdrasil(re.data);
                                 })
                             })
@@ -144,8 +150,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                         else {
                             let store = {...re.data, [parentMessage]: [...context, newMessage]}
                             store = {...store, [newMessage]: []}
-                            axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
-                                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                            await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
+                                await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
                                     setYggdrasil(re.data);
                                 })
                             })
@@ -157,8 +163,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 else {
                     let store = {...re.data, [parentMessage]: [...context, newMessage]}
                     store = {...store, [newMessage]: []}
-                    axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
-                        axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                    await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
+                        await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
                             setYggdrasil(re.data);
                         })
                     })
@@ -169,7 +175,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         }
         else {
             if (subject === "triton") {
-                axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
                     let keys = Object.keys(re.data)
                     if (DateTime.removeArrayStamp(keys).includes(DateTime.removeStamp(newMessage))) {
                         setContext(re.data[keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
@@ -178,8 +184,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                     else {
                         let store = {...re.data, "": [...re.data[""], newMessage]}
                         store = {...store, [newMessage]: []}
-                        axios.post(`${baseAPIURL}Yggdrasil`, store).then(re => {
-                            axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+                        await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
+                            await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
                                 setYggdrasil(re.data);
                                 setContext([])
                                 setAncestor(newMessage)
@@ -212,7 +218,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             setNewMsg("")
             scrollDown()
 
-            setTimeout(() => setCurrentMessage(newMessage), Math.min(2000, Math.floor(Math.random() * 5000)))
+            setTimeout(() => setCurrentMessage(newMessage), 1000)
         }
     }
 

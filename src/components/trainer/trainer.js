@@ -15,8 +15,6 @@ const Trainer = ({theme}) => {
     const learnStuff = () => {
         if (learningProgress <= TrainingData.length) {
             const currentMessage = TrainingData[learningProgress]
-            console.log("Current:", currentMessage)
-            console.log("Context:", context)
             if (learningProgress === 0) {
                 axios.get(baseAPIURL).then(re => {
                     setContext(re.data[Object.keys(Object.keys(re.data).indexOf(currentMessage))])

@@ -12,8 +12,9 @@ import sendIcon from '../../images/send1.png'
 //Defaults
 let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
+// premierSpeaker = true;
 let baseAPIURL = "https://tritonai-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:3001/";
+// baseAPIURL = "http://localhost:5000/";
 
 // const stripMessage = ({text}) => {
 //     let returnText = text;
@@ -59,10 +60,10 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     const [ancestor, setAncestor] = useState("")
 
     useEffect(() => {
-        axios.get(`${baseAPIURL}Atheneum`).then(re => {
+        axios.get(`${baseAPIURL}atheneum/getAll`).then(re => {
             setAtheneum(re.data);
         })
-        axios.get(`${baseAPIURL}Yggdrasil`).then(re => {
+        axios.get(`${baseAPIURL}yggdrasil/getAll`).then(re => {
             setYggdrasil(re.data);
             if (!premierSpeaker) setContext(Object.keys(re.data))
             else setContext(re.data[""])
@@ -81,9 +82,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     }, [yggdrasil])
 
     async function AddHomeWork(message) {
-        await axios.get(`${baseAPIURL}Research`).then(async re => {
-            await axios.post(`${baseAPIURL}Research`, {...re.data, HomeWork: [...re.data.HomeWork, message]})
-        })
+        await axios.post(`${baseAPIURL}research/addOne`, {researchTopic: message})
     }
 
     useEffect(() => {
@@ -121,74 +120,82 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
     }, [currentMessage])
 
-    async function learnStuff(subject, learningMaterial, newMessage) {
+    async function learnStuff(subject, learningMaterial, childMessage) {
         let parentMessage = learningMaterial.filter(msg => msg.parent === subject)
         parentMessage = parentMessage[parentMessage.length - 1]
+        let newMessage = childMessage.fullContent
 
         if (parentMessage) {
             parentMessage = parentMessage.fullContent;
             if (ancestor) parentMessage = ancestor;
 
-            await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
+            await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
                 if (context.length > 0) {
                     if (DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
                         setContext(re.data[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
                         setAncestor("")
+                        if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
                     }
                     else {
                         if (re.data[parentMessage]) {
-                            let store = {...re.data, [parentMessage]: [...context, newMessage]}
-                            store = {...store, [newMessage]: []}
-                            await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
-                                await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
-                                    setYggdrasil(re.data);
+                            await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: parentMessage, records: [...context, newMessage]}).then(async re => {
+                                await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
+                                    await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
+                                        setYggdrasil(re.data);
+                                        setContext([])
+                                        setAncestor("")
+                                        if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
+                                    })
                                 })
                             })
-                            setContext([])
-                            setAncestor("")
                         }
                         else {
-                            let store = {...re.data, [parentMessage]: [...context, newMessage]}
-                            store = {...store, [newMessage]: []}
-                            await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
-                                await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
-                                    setYggdrasil(re.data);
+                            await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: parentMessage, records: [...context, newMessage]}).then(async re => {
+                                await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
+                                    await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
+                                        setYggdrasil(re.data);
+                                        setContext([])
+                                        setAncestor("")
+                                        if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
+                                    })
                                 })
                             })
-                            setContext([])
-                            setAncestor("")
                         }
                     }
                 }
                 else {
-                    let store = {...re.data, [parentMessage]: [...context, newMessage]}
-                    store = {...store, [newMessage]: []}
-                    await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
-                        await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
-                            setYggdrasil(re.data);
+                    await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: parentMessage, records: [...context, newMessage]}).then(async re => {
+                        await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
+                            await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
+                                setYggdrasil(re.data);
+                                setContext([])
+                                setAncestor("")
+                                if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
+                            })
                         })
                     })
-                    setContext([])
-                    setAncestor("")
+
                 }
             })
         }
         else {
             if (subject === "triton") {
-                await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
+                await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
                     let keys = Object.keys(re.data)
                     if (DateTime.removeArrayStamp(keys).includes(DateTime.removeStamp(newMessage))) {
                         setContext(re.data[keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
                         setAncestor(keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0])
+                        setTimeout(() => setCurrentMessage(childMessage), 1000)
                     }
                     else {
-                        let store = {...re.data, "": [...re.data[""], newMessage]}
-                        store = {...store, [newMessage]: []}
-                        await axios.post(`${baseAPIURL}Yggdrasil`, store).then(async re => {
-                            await axios.get(`${baseAPIURL}Yggdrasil`).then(async re => {
-                                setYggdrasil(re.data);
-                                setContext([])
-                                setAncestor(newMessage)
+                        await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: "", records: [...re.data[""], newMessage]}).then(async re => {
+                            await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
+                                await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
+                                    setYggdrasil(re.data);
+                                    setContext([])
+                                    setAncestor(newMessage)
+                                    setTimeout(() => setCurrentMessage(childMessage), 1000)
+                                })
                             })
                         })
                     }
@@ -196,7 +203,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             }
             else {
                 let keys = Object.keys(yggdrasil)
-                setContext(yggdrasil[keys.filter((message) => message === newMessage)[0]])
+                setContext(yggdrasil[keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
                 setAncestor(keys.filter((message) => message === newMessage)[0])
             }
         }
@@ -213,17 +220,14 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 time: d
             }
 
-            learnStuff("triton", chatHistory.concat(newMessage), newMessage.fullContent)
             setChatHistory(chatHistory.concat(newMessage))
+            learnStuff("triton", chatHistory.concat(newMessage), newMessage)
             setNewMsg("")
             scrollDown()
-
-            setTimeout(() => setCurrentMessage(newMessage), 1000)
         }
     }
 
     function fallbackMessage(store) {
-        // let keys = Object.keys(yggdrasil)
         let ignorance = fallback[Math.floor(Math.random() * fallback.length)]
         const ignoranceList = ignorance.split("+")
         let fallbackMessages = []
@@ -238,12 +242,10 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             scrollDown()
         }
 
-        // let lastMessage = chatHistory[chatHistory.length - 1]
-        // setContext(yggdrasil[keys[keys.indexOf(lastMessage.content)]])
         setContext(yggdrasil[fallbackMessages[fallbackMessages.length - 1].fullContent])
-        learnStuff("user", chatHistory.concat(fallbackMessages), fallbackMessages[fallbackMessages.length - 1].fullContent)
-
         setChatHistory(chatHistory.concat(fallbackMessages))
+        learnStuff("user", chatHistory.concat(fallbackMessages), fallbackMessages[fallbackMessages.length - 1])
+
         setTyping(false)
     }
 
@@ -268,9 +270,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                         replyList.push(newTritonMessage)
                         scrollDown()
                     }
-                    // setContext(responseStore[replyList[replyList.length - 1].fullContent])
-                    learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1].fullContent)
                     setChatHistory(chatHistory.concat(replyList))
+                    learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1])
                     setTyping(false)
                 }
                 else fallbackMessage(storeID)
@@ -306,7 +307,6 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 <form onSubmit={handleSubmit}>
                     <input type="text" className="chatInputDockField" value={newMsg} onChange={(el) => setNewMsg(el.target.value)} 
                         style={{backgroundColor: theme === "Light" ? "white" : "#121212", color: theme === "Light" ? "#121212" : "white"}} />
-                    {/* <input type="image" src={sendIcon} alt="Submit" className="chatInputDockSubmit" value="Send" /> */}
                     <button className="chatInputDockSubmit"><img src={sendIcon} alt="Send" /></button>
                 </form>
             </div>

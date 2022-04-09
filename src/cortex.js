@@ -15,17 +15,17 @@ import PopMenu from './components/popMenu/popMenu';
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)
     const [botState, setBotState] = useState("Online");
-    const [theme, setTheme] = useState(localStorage.getItem("TritonTheme") ? localStorage.getItem("TritonTheme") : "Light")
+    const [theme, setTheme] = useState(localStorage.getItem("XalenTheme") ? localStorage.getItem("XalenTheme") : "Light")
     const [popMenuState, setPopMenuState] = useState(false)
 
     function toggleTheme() {
         if (theme === "Light") {
             setTheme("Dark")
-            localStorage.setItem("TritonTheme", "Dark")
+            localStorage.setItem("XalenTheme", "Dark")
         }
         else {
             setTheme("Light")
-            localStorage.setItem("TritonTheme", "Light")
+            localStorage.setItem("XalenTheme", "Light")
         }
     }
 
@@ -34,7 +34,7 @@ const Cortex = () => {
     }
 
     useEffect(() => {
-        document.title = "Triton";
+        document.title = "Xalen";
     })
 
     return(

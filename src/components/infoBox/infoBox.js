@@ -14,8 +14,8 @@ const InfoBox = ({toggle, control, theme}) => {
                     </h3>
                 </div>
                 <div className="infoBoxBottom"></div>
-                <h3 className="infoBoxCredit">Built by <span style={{fontWeight: "500"}}>LordOfTriton</span></h3>
-                <h3 className="infoBoxURL"><a href="https://github.com/LordofTriton">https://github.com/LordofTriton</a></h3>
+                <h3 className="infoBoxCredit">Built by <span style={{fontWeight: "500"}}>LordOfXalen</span></h3>
+                <h3 className="infoBoxURL"><a href="https://github.com/LordofXalen">https://github.com/LordofXalen</a></h3>
             </div>
         </>
     )

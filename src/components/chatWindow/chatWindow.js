@@ -67,6 +67,15 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             setYggdrasil(re.data);
             if (!premierSpeaker) setContext(Object.keys(re.data))
             else setContext(re.data[""])
+
+            // let keys = Object.keys(re.data)
+
+            // for (let i = 0; i < keys.length; i++) {
+            //     async function addOne() {
+            //         await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: keys[i], records: re.data[keys[i]]})
+            //     }
+            //     addOne()
+            // }
         })
     }, [])
 
@@ -232,13 +241,13 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         const ignoranceList = ignorance.split("+")
         let fallbackMessages = []
         for (let i = 0; i < ignoranceList.length; i++) {
-            const newTritonMessage = {
+            const newXalenMessage = {
                 parent: "triton",
                 content: DateTime.addStamp(ignoranceList[i].trim()),
                 fullContent: DateTime.addStamp(ignorance),
                 time: d
             }
-            fallbackMessages.push(newTritonMessage)
+            fallbackMessages.push(newXalenMessage)
             scrollDown()
         }
 
@@ -261,13 +270,13 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                     let replyMessages = reply.split("+")
                     let replyList = []
                     for (let i = 0; i < replyMessages.length; i++) {
-                        const newTritonMessage = {
+                        const newXalenMessage = {
                             parent: "triton",
                             content: DateTime.addStamp(replyMessages[i].trim()),
                             fullContent: DateTime.addStamp(reply),
                             time: d
                         }
-                        replyList.push(newTritonMessage)
+                        replyList.push(newXalenMessage)
                         scrollDown()
                     }
                     setChatHistory(chatHistory.concat(replyList))

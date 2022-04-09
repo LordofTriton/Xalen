@@ -16,7 +16,7 @@ const TopNav = ({theme, togglePopMenu, popMenuState}) => {
         <>
             <div className="topNav" style={{backgroundColor: theme === "Light" ? "white" : "#121212"}}>
                     <img className="topNavLogo" src={logo} alt="logo" />
-                    <h3 className="topNavTitle">Triton</h3>
+                    <h3 className="topNavTitle">Xalen</h3>
                 <img className="topNavMenuButton" src={popMenuState ? cancelIcon : menuIcon} alt="pic" onClick={() => {togglePopMenu()}} />
             </div>
 

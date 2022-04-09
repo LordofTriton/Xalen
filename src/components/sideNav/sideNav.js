@@ -18,7 +18,7 @@ const SideNav = ({theme, togglePopMenu}) => {
                 <img className="sideNavButton" src={menuIcon} alt="Menu" onClick={() => {togglePopMenu()}} />
                 <h3 className="sideNavButtonText">MENU</h3>
                 <hr />
-                <h3 className="sideNavTitle">Triton</h3>
+                <h3 className="sideNavTitle">Xalen</h3>
             </div>
 
             <InfoBox toggle={infoBoxOpen} control={setInfoBoxOpen} theme={theme} />

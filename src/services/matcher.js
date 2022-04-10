@@ -9,7 +9,8 @@ function GetMatch(store, message) {
     let match = matchThreshold;
     for (let i = 0; i < store.length; i++) {
         let difference = stringSimilarity.compareTwoStrings(DateTime.removeStamp(message.content), DateTime.removeStamp(store[i]))
-        if (difference >= match) {
+        if (DateTime.removeStamp(message.content).includes(DateTime.removeStamp(store[i]))) difference = 1;
+        if (difference >= match || ) {
             index = i;
             match = difference;
         }

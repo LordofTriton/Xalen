@@ -315,7 +315,8 @@ const ChatWindow = ({botState, setBotState, theme}) => {
             <div className="chatInputDock">
                 <form onSubmit={handleSubmit}>
                     <input type="text" className="chatInputDockField" value={newMsg} onChange={(el) => setNewMsg(el.target.value)} 
-                        style={{backgroundColor: theme === "Light" ? "white" : "#121212", color: theme === "Light" ? "#121212" : "white"}} />
+                        style={{backgroundColor: theme === "Light" ? "white" : "#121212", color: theme === "Light" ? "#121212" : "white"}}
+                        placeholder="Type your message here..." />
                     <button className="chatInputDockSubmit"><img src={sendIcon} alt="Send" /></button>
                 </form>
             </div>

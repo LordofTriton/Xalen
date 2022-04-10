@@ -4,13 +4,24 @@ const stringSimilarity = require("string-similarity");
 
 const matchThreshold = 0.5;
 
+function stripMessage(text) {
+    let returnText = text;
+    returnText = returnText.replace(/[^\p{L}\s]/gu, "")
+    returnText = returnText.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, "")
+    return returnText;
+}
+
 function GetMatch(store, message) {
     let index = -1;
     let match = matchThreshold;
     for (let i = 0; i < store.length; i++) {
         let difference = stringSimilarity.compareTwoStrings(DateTime.removeStamp(message.content), DateTime.removeStamp(store[i]))
-        if (DateTime.removeStamp(message.content).includes(DateTime.removeStamp(store[i]))) difference = 1;
-        if (difference >= match || ) {
+
+        if (stripMessage(DateTime.removeStamp(message.content)).includes(stripMessage(DateTime.removeStamp(store[i])))) {
+            difference = 1;
+        }
+        
+        if (difference >= match) {
             index = i;
             match = difference;
         }

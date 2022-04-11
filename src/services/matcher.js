@@ -17,8 +17,8 @@ function GetMatch(store, message) {
     for (let i = 0; i < store.length; i++) {
         let difference = stringSimilarity.compareTwoStrings(DateTime.removeStamp(message.content), DateTime.removeStamp(store[i]))
 
-        if ((stripMessage(DateTime.removeStamp(message.content)).includes(stripMessage(DateTime.removeStamp(store[i]))))
-            || (stripMessage(DateTime.removeStamp(store[i])).includes(stripMessage(DateTime.removeStamp(message.content))))) difference = 1;
+        if ((stripMessage(DateTime.removeStamp(message.content)).toLowerCase().includes(stripMessage(DateTime.removeStamp(store[i])).toLowerCase()))
+            || (stripMessage(DateTime.removeStamp(store[i])).toLowerCase().includes(stripMessage(DateTime.removeStamp(message.content)).toLowerCase()))) difference = 1;
 
         if (difference >= match) {
             index = i;

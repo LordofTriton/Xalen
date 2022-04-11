@@ -5,6 +5,7 @@ import axios from 'axios';
 //Services
 import DateTime from '../../services/dateTime';
 import MatchService from '../../services/matcher';
+import Override from '../../services/defaults';
 
 //Images
 import sendIcon from '../../images/send1.png'
@@ -22,22 +23,6 @@ let baseAPIURL = "https://xalen-server.herokuapp.com/";
 //     returnText = returnText.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, "")
 //     return returnText;
 // }
-
-const fallback = [
-    "Not sure how exactly to reply to that lol 😅", 
-    "Hmmmm... 😕", 
-    "...+Let's talk about something else... 🙄",
-    "Yeah. Okay, time to change topic.+You're boring me. 🙄",
-    "😃😃😃",
-    "Lmao 🤣🤣+Let's change topic. I'm bored. 🙄",
-    "*sigh* 🥺",
-    "... I'm tired 😩",
-    "😕😕😕",
-    "Lmao 🤣🤣",
-    "😭😭😭",
-    "*yawning* 😴",
-    "Really? 😒"
-]
 
 const ChatWindow = ({botState, setBotState, theme}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -97,32 +82,39 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     useEffect(() => {
         let matchIndex = -1;
         if (chatHistory.length > 0) {
-            let parentContext = []
-            if (ancestor) {
-                parentContext = Object.keys(yggdrasil);
-                matchIndex = DateTime.removeArrayStamp(parentContext).indexOf(DateTime.removeStamp(currentMessage.content))
+            let userMsg = chatHistory.filter(msg => msg.parent === "user")
+            if ((chatHistory.filter(msg => msg.parent === "user").length >= 3) && (DateTime.removeStamp(userMsg[userMsg.length - 1].fullContent) === DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent) && DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent) === DateTime.removeStamp(userMsg[userMsg.length - 3].fullContent))) {
+                setTyping(true)
+                setTimeout(() => replyMessage(0, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
             }
             else {
-                let parentMessage = chatHistory.filter(msg => msg.parent === "triton")
-                parentMessage = parentMessage[parentMessage.length - 1]
-                parentContext = yggdrasil[parentMessage.fullContent];
-                matchIndex = MatchService.GetMatch(parentContext, currentMessage)
-            }
-            
-            if (context.length > 0 && parentContext.length > 0 && matchIndex >= 0) {
-                if (botState === "Online") {
-                    let keys = Object.keys(yggdrasil)
-                    setTyping(true)
-                    setTimeout(() => replyMessage(keys.indexOf(parentContext[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                let parentContext = []
+                if (ancestor) {
+                    parentContext = Object.keys(yggdrasil);
+                    matchIndex = DateTime.removeArrayStamp(parentContext).indexOf(DateTime.removeStamp(currentMessage.content))
                 }
-            }
-            else {
-                matchIndex = MatchService.GetMatch(Object.keys(atheneum), currentMessage)
-                if (botState === "Online") {
-                    let keys = Object.keys(atheneum)
-                    setTyping(true)
-                    setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                    if (matchIndex < 0) AddHomeWork(currentMessage.fullContent)
+                else {
+                    let parentMessage = chatHistory.filter(msg => msg.parent === "triton")
+                    parentMessage = parentMessage[parentMessage.length - 1]
+                    parentContext = yggdrasil[parentMessage.fullContent];
+                    matchIndex = MatchService.GetMatch(parentContext, currentMessage)
+                }
+                
+                if (context.length > 0 && parentContext.length > 0 && matchIndex >= 0) {
+                    if (botState === "Online") {
+                        let keys = Object.keys(yggdrasil)
+                        setTyping(true)
+                        setTimeout(() => replyMessage(keys.indexOf(parentContext[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                    }
+                }
+                else {
+                    matchIndex = MatchService.GetMatch(Object.keys(atheneum), currentMessage)
+                    if (botState === "Online") {
+                        let keys = Object.keys(atheneum)
+                        setTyping(true)
+                        setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                        if (matchIndex < 0) AddHomeWork(currentMessage.fullContent)
+                    }
                 }
             }
         }
@@ -222,10 +214,11 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         event.preventDefault()
         if (/^[a-zA-Z]/.test(newMsg) && !typing) {
             let d = new Date()
+            let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
             const newMessage = {
                 parent: "user",
-                content: DateTime.addStamp(newMsg.trim()),
-                fullContent: DateTime.addStamp(newMsg.trim()),
+                content: DateTime.addStamp(msg.trim()),
+                fullContent: DateTime.addStamp(msg.trim()),
                 time: d
             }
 
@@ -237,7 +230,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     }
 
     function fallbackMessage(store) {
-        let ignorance = fallback[Math.floor(Math.random() * fallback.length)]
+        let ignorance = Override.fallback[Math.floor(Math.random() * Override.fallback.length)]
         const ignoranceList = ignorance.split("+")
         let fallbackMessages = []
         for (let i = 0; i < ignoranceList.length; i++) {
@@ -265,7 +258,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 let d = new Date()
                 let reply = responseStore[keys[index]]
                 if (reply.length > 0) {
-                    if (reply.length > 1) reply = reply.filter((message) => !fallback.includes(message))
+                    if (reply.length > 1) reply = reply.filter((message) => !Override.fallback.includes(message))
                     reply = reply[Math.floor(Math.random() * reply.length)]
                     let replyMessages = reply.split("+")
                     let replyList = []

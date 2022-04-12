@@ -4,7 +4,7 @@ const stringSimilarity = require("string-similarity");
 
 const matchThreshold = 0.5;
 
-function stripMessage(text) {
+function StripMessage(text) {
     let returnText = text;
     returnText = returnText.replace(/[^\p{L}\s]/gu, "")
     returnText = returnText.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, "")
@@ -17,12 +17,27 @@ function GetMatch(store, message) {
     for (let i = 0; i < store.length; i++) {
         let difference = stringSimilarity.compareTwoStrings(DateTime.removeStamp(message.content), DateTime.removeStamp(store[i]))
 
-        if ((stripMessage(DateTime.removeStamp(message.content)).toLowerCase().includes(stripMessage(DateTime.removeStamp(store[i])).toLowerCase()))
-            || (stripMessage(DateTime.removeStamp(store[i])).toLowerCase().includes(stripMessage(DateTime.removeStamp(message.content)).toLowerCase()))) difference = 1;
-
         if (difference >= match) {
             index = i;
             match = difference;
+        }
+    }
+
+    if (index < 0) {
+        let phraseIndex = 0;
+        for (let i = 0; i < store.length; i++) {
+            let difference = 0;
+            let processedStore = ` ${StripMessage(DateTime.removeStamp(store[i])).toLowerCase()}`
+            let processedMessage = ` ${StripMessage(DateTime.removeStamp(message.content)).toLowerCase()}`
+
+            if (processedMessage.includes(processedStore)) {
+                if (processedMessage.indexOf(processedStore) > phraseIndex) {
+                    phraseIndex = processedMessage.indexOf(processedStore);
+                    difference = 1;
+                }
+            }
+
+            if (difference > 0) index = i;
         }
     }
 
@@ -50,6 +65,6 @@ function GetParentIndex(store, parent) {
     return parentIndex;
 }
 
-const MatchService = {GetMatch, GetArrayMatch, GetParentIndex}
+const MatchService = {GetMatch, GetArrayMatch, GetParentIndex, StripMessage}
 
 export default MatchService;

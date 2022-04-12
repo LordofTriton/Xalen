@@ -17,13 +17,6 @@ let premierSpeaker = Math.random() * 10 > 5;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
 // baseAPIURL = "http://localhost:5000/";
 
-// const stripMessage = ({text}) => {
-//     let returnText = text;
-//     returnText = returnText.replace(/[^\p{L}\s]/gu, "")
-//     returnText = returnText.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, "")
-//     return returnText;
-// }
-
 const ChatWindow = ({botState, setBotState, theme}) => {
     const [chatHistory, setChatHistory] = useState([])
     const [typing, setTyping] = useState(false)
@@ -83,7 +76,9 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         let matchIndex = -1;
         if (chatHistory.length > 0) {
             let userMsg = chatHistory.filter(msg => msg.parent === "user")
-            if ((chatHistory.filter(msg => msg.parent === "user").length >= 3) && (DateTime.removeStamp(userMsg[userMsg.length - 1].fullContent) === DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent) && DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent) === DateTime.removeStamp(userMsg[userMsg.length - 3].fullContent))) {
+            if ((chatHistory.filter(msg => msg.parent === "user").length >= 3) 
+                && (MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 1].fullContent)).trim() === MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent)).trim()
+                && MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent)).trim() === MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 3].fullContent)).trim())) {
                 setTyping(true)
                 setTimeout(() => replyMessage(0, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
             }

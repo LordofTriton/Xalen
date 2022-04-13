@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './chatWindow.css'
 import axios from 'axios';
+import asdfjkl from 'asdfjkl';
 
 //Services
 import DateTime from '../../services/dateTime';
@@ -73,47 +74,62 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     }
 
     useEffect(() => {
+        window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
+
         let matchIndex = -1;
         if (chatHistory.length > 0) {
+
             let userMsg = chatHistory.filter(msg => msg.parent === "user")
             if ((chatHistory.filter(msg => msg.parent === "user").length >= 3) 
                 && (MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 1].fullContent)).trim() === MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent)).trim()
                 && MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent)).trim() === MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 3].fullContent)).trim())) {
                 setTyping(true)
                 setTimeout(() => replyMessage(0, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                return;
+            }
+            
+            let parentContext = []
+            if (ancestor) {
+                parentContext = Object.keys(yggdrasil);
+                matchIndex = DateTime.removeArrayStamp(parentContext).indexOf(DateTime.removeStamp(currentMessage.fullContent))
             }
             else {
-                let parentContext = []
-                if (ancestor) {
-                    parentContext = Object.keys(yggdrasil);
-                    matchIndex = DateTime.removeArrayStamp(parentContext).indexOf(DateTime.removeStamp(currentMessage.content))
+                let parentMessage = chatHistory.filter(msg => msg.parent === "triton")
+                parentMessage = parentMessage[parentMessage.length - 1]
+                parentContext = yggdrasil[parentMessage.fullContent];
+                matchIndex = MatchService.GetMatch(parentContext, currentMessage)
+            }
+            
+            if (context.length > 0 && parentContext.length > 0 && matchIndex >= 0) {
+                if (botState === "Online") {
+                    let keys = Object.keys(yggdrasil)
+                    setTyping(true)
+                    setTimeout(() => replyMessage(keys.indexOf(parentContext[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
                 }
-                else {
-                    let parentMessage = chatHistory.filter(msg => msg.parent === "triton")
-                    parentMessage = parentMessage[parentMessage.length - 1]
-                    parentContext = yggdrasil[parentMessage.fullContent];
-                    matchIndex = MatchService.GetMatch(parentContext, currentMessage)
-                }
-                
-                if (context.length > 0 && parentContext.length > 0 && matchIndex >= 0) {
-                    if (botState === "Online") {
-                        let keys = Object.keys(yggdrasil)
-                        setTyping(true)
-                        setTimeout(() => replyMessage(keys.indexOf(parentContext[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                    }
-                }
-                else {
-                    matchIndex = MatchService.GetMatch(Object.keys(atheneum), currentMessage)
-                    if (botState === "Online") {
-                        let keys = Object.keys(atheneum)
-                        setTyping(true)
-                        setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                        if (matchIndex < 0) AddHomeWork(currentMessage.fullContent)
-                    }
-                }
+                return;
+            }
+
+            matchIndex = MatchService.GetMatch(Object.keys(Override.convoTrigger), currentMessage)
+            if (matchIndex >= 0) {
+                setTyping(true)
+                setTimeout(() => replyMessage(4, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                return;
+            }
+
+            if (asdfjkl(currentMessage.fullContent) > 10) {
+                setTyping(true)
+                setTimeout(() => replyMessage(2, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                return;
+            }
+            
+            matchIndex = MatchService.GetMatch(Object.keys(atheneum), currentMessage)
+            if (botState === "Online") {
+                let keys = Object.keys(atheneum)
+                setTyping(true)
+                setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
+                if (matchIndex < 0) AddHomeWork(currentMessage.fullContent)
             }
         }
-        window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
     }, [currentMessage])
 
     async function learnStuff(subject, learningMaterial, childMessage) {

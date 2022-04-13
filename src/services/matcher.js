@@ -27,13 +27,16 @@ function GetMatch(store, message) {
         let phraseIndex = 0;
         for (let i = 0; i < store.length; i++) {
             let difference = 0;
-            let processedStore = ` ${StripMessage(DateTime.removeStamp(store[i])).toLowerCase()}`
-            let processedMessage = ` ${StripMessage(DateTime.removeStamp(message.content)).toLowerCase()}`
 
-            if (processedMessage.includes(processedStore)) {
-                if (processedMessage.indexOf(processedStore) > phraseIndex) {
-                    phraseIndex = processedMessage.indexOf(processedStore);
-                    difference = 1;
+            if (store[i].length > 1) {
+                let processedStore = ` ${StripMessage(DateTime.removeStamp(store[i])).toLowerCase()}`
+                let processedMessage = ` ${StripMessage(DateTime.removeStamp(message.content)).toLowerCase()}`
+
+                if (processedMessage.includes(processedStore)) {
+                    if (processedMessage.indexOf(processedStore) > phraseIndex) {
+                        phraseIndex = processedMessage.indexOf(processedStore);
+                        difference = 1;
+                    }
                 }
             }
 

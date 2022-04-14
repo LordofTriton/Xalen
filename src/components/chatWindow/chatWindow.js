@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './chatWindow.css'
 import axios from 'axios';
-import asdfjkl from 'asdfjkl';
 
 //Services
 import DateTime from '../../services/dateTime';
-import MatchService from '../../services/matcher';
-import Override from '../../services/defaults';
+import Fallbacks from '../../services/defaults';
 
 //Images
 import sendIcon from '../../images/send1.png'
@@ -16,7 +14,7 @@ let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({botState, setBotState, theme}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -25,9 +23,9 @@ const ChatWindow = ({botState, setBotState, theme}) => {
     const [currentMessage, setCurrentMessage] = useState({
         parent: "",
         content: "",
+        fullContent: "",
         time: d
     })
-    const [atheneum, setAtheneum] = useState({})
     const [yggdrasil, setYggdrasil] = useState({})
     const [context, setContext] = useState([
         "1648440119398_Hello!",
@@ -37,11 +35,9 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         "1648443214329_Howdy! How do you do?"
     ])
     const [ancestor, setAncestor] = useState("")
+    const [learning, setLearning] = useState("")
 
     useEffect(() => {
-        axios.get(`${baseAPIURL}atheneum/getAll`).then(re => {
-            setAtheneum(re.data);
-        })
         axios.get(`${baseAPIURL}yggdrasil/getAll`).then(re => {
             setYggdrasil(re.data);
             if (!premierSpeaker) setContext(Object.keys(re.data))
@@ -65,165 +61,54 @@ const ChatWindow = ({botState, setBotState, theme}) => {
 
     useEffect(() => {
         if (chatHistory.length < 1 && Object.keys(yggdrasil).length > 0 && premierSpeaker) {
-            replyMessage(0, yggdrasil, "Yggdrasil")
+            replyMessage(yggdrasil[""])
         }
     }, [yggdrasil])
-
-    async function AddHomeWork(message) {
-        await axios.post(`${baseAPIURL}research/addOne`, {researchTopic: message})
-    }
 
     useEffect(() => {
         window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
 
-        let matchIndex = -1;
-        if (chatHistory.length > 0) {
-
-            let userMsg = chatHistory.filter(msg => msg.parent === "user")
-            if ((chatHistory.filter(msg => msg.parent === "user").length >= 3) 
-                && (MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 1].fullContent)).trim() === MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent)).trim()
-                && MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 2].fullContent)).trim() === MatchService.StripMessage(DateTime.removeStamp(userMsg[userMsg.length - 3].fullContent)).trim())) {
-                setTyping(true)
-                setTimeout(() => replyMessage(0, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                return;
-            }
-            
-            let parentContext = []
-            if (ancestor) {
-                parentContext = Object.keys(yggdrasil);
-                matchIndex = DateTime.removeArrayStamp(parentContext).indexOf(DateTime.removeStamp(currentMessage.fullContent))
-            }
-            else {
-                let parentMessage = chatHistory.filter(msg => msg.parent === "triton")
-                parentMessage = parentMessage[parentMessage.length - 1]
-                parentContext = yggdrasil[parentMessage.fullContent];
-                matchIndex = MatchService.GetMatch(parentContext, currentMessage)
-            }
-            
-            if (context.length > 0 && parentContext.length > 0 && matchIndex >= 0) {
-                if (botState === "Online") {
-                    let keys = Object.keys(yggdrasil)
-                    setTyping(true)
-                    setTimeout(() => replyMessage(keys.indexOf(parentContext[matchIndex]), yggdrasil, "Yggdrasil"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                }
-                return;
-            }
-
-            matchIndex = MatchService.GetMatch(Object.keys(Override.convoTrigger), currentMessage)
-            if (matchIndex >= 0) {
-                setTyping(true)
-                setTimeout(() => replyMessage(4, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                return;
-            }
-
-            if (asdfjkl(currentMessage.fullContent) > 10) {
-                setTyping(true)
-                setTimeout(() => replyMessage(2, Override, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                return;
-            }
-            
-            matchIndex = MatchService.GetMatch(Object.keys(atheneum), currentMessage)
-            if (botState === "Online") {
-                let keys = Object.keys(atheneum)
-                setTyping(true)
-                setTimeout(() => replyMessage(keys.indexOf(keys[matchIndex]), atheneum, "Atheneum"), Math.min(2000, Math.floor(Math.random() * 5000)))
-                if (matchIndex < 0) AddHomeWork(currentMessage.fullContent)
-            }
+        let messageData = {
+            chatHistory: chatHistory,
+            ancestor: ancestor,
+            currentMessage: currentMessage,
+            context: context,
+            botState: botState
         }
+
+        axios.post(`${baseAPIURL}getReply/`, messageData).then(re => {
+            setTyping(true)
+            setTimeout(() => replyMessage(re.data.replies), Math.min(2000, Math.floor(Math.random() * 5000)))
+        })
+
     }, [currentMessage])
 
     async function learnStuff(subject, learningMaterial, childMessage) {
+        setLearning(true)
+        
         let parentMessage = learningMaterial.filter(msg => msg.parent === subject)
         parentMessage = parentMessage[parentMessage.length - 1]
         let newMessage = childMessage.fullContent
 
-        if (parentMessage) {
-            parentMessage = parentMessage.fullContent;
-            if (ancestor) parentMessage = ancestor;
-
-            await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
-                if (context.length > 0) {
-                    if (DateTime.removeArrayStamp(context).includes(DateTime.removeStamp(newMessage))) {
-                        setContext(re.data[context.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
-                        setAncestor("")
-                        if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
-                    }
-                    else {
-                        if (re.data[parentMessage]) {
-                            await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: parentMessage, records: [...context, newMessage]}).then(async re => {
-                                await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
-                                    await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
-                                        setYggdrasil(re.data);
-                                        setContext([])
-                                        setAncestor("")
-                                        if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
-                                    })
-                                })
-                            })
-                        }
-                        else {
-                            await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: parentMessage, records: [...context, newMessage]}).then(async re => {
-                                await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
-                                    await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
-                                        setYggdrasil(re.data);
-                                        setContext([])
-                                        setAncestor("")
-                                        if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
-                                    })
-                                })
-                            })
-                        }
-                    }
-                }
-                else {
-                    await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: parentMessage, records: [...context, newMessage]}).then(async re => {
-                        await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
-                            await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
-                                setYggdrasil(re.data);
-                                setContext([])
-                                setAncestor("")
-                                if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
-                            })
-                        })
-                    })
-
-                }
-            })
+        let learnData = {
+            parentMessage: parentMessage,
+            ancestor: ancestor,
+            newMessage: newMessage,
+            context: context,
+            subject: subject
         }
-        else {
-            if (subject === "triton") {
-                await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
-                    let keys = Object.keys(re.data)
-                    if (DateTime.removeArrayStamp(keys).includes(DateTime.removeStamp(newMessage))) {
-                        setContext(re.data[keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
-                        setAncestor(keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0])
-                        setTimeout(() => setCurrentMessage(childMessage), 1000)
-                    }
-                    else {
-                        await axios.post(`${baseAPIURL}yggdrasil/updateOne`, {label: "", records: [...re.data[""], newMessage]}).then(async re => {
-                            await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: newMessage, records: []}).then(async re => {
-                                await axios.get(`${baseAPIURL}yggdrasil/getAll`).then(async re => {
-                                    setYggdrasil(re.data);
-                                    setContext([])
-                                    setAncestor(newMessage)
-                                    setTimeout(() => setCurrentMessage(childMessage), 1000)
-                                })
-                            })
-                        })
-                    }
-                })
-            }
-            else {
-                let keys = Object.keys(yggdrasil)
-                setContext(yggdrasil[keys.filter((message) => DateTime.removeStamp(message) === DateTime.removeStamp(newMessage))[0]])
-                setAncestor(keys.filter((message) => message === newMessage)[0])
-            }
-        }
+
+        await axios.post(`${baseAPIURL}learn/`, learnData).then(re => {
+            setContext(re.data.newContext);
+            setAncestor(re.data.newAncestor);
+            if (subject === "triton") setCurrentMessage(childMessage)
+            setLearning(false)
+        })
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (/^[a-zA-Z]/.test(newMsg) && !typing) {
+        if (/^[a-zA-Z]/.test(newMsg) && !typing && !learning) {
             let d = new Date()
             let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
             const newMessage = {
@@ -240,8 +125,10 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         }
     }
 
-    function fallbackMessage(store) {
-        let ignorance = Override.fallback[Math.floor(Math.random() * Override.fallback.length)]
+    function fallbackMessage() {
+        axios.post(`${baseAPIURL}research/addOne`, {researchTopic: currentMessage.fullContent})
+
+        let ignorance = Fallbacks[Math.floor(Math.random() * Fallbacks.length)]
         const ignoranceList = ignorance.split("+")
         let fallbackMessages = []
         for (let i = 0; i < ignoranceList.length; i++) {
@@ -262,35 +149,27 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         setTyping(false)
     }
 
-    function replyMessage(index, responseStore, storeID) {
-        if (index >= 0) {
-            let keys = Object.keys(responseStore)
-            if (keys.length > 0) {
-                let d = new Date()
-                let reply = responseStore[keys[index]]
-                if (reply.length > 0) {
-                    if (reply.length > 1) reply = reply.filter((message) => !Override.fallback.includes(message))
-                    reply = reply[Math.floor(Math.random() * reply.length)]
-                    let replyMessages = reply.split("+")
-                    let replyList = []
-                    for (let i = 0; i < replyMessages.length; i++) {
-                        const newXalenMessage = {
-                            parent: "triton",
-                            content: DateTime.addStamp(replyMessages[i].trim()),
-                            fullContent: DateTime.addStamp(reply),
-                            time: d
-                        }
-                        replyList.push(newXalenMessage)
-                        scrollDown()
-                    }
-                    setChatHistory(chatHistory.concat(replyList))
-                    learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1])
-                    setTyping(false)
+    function replyMessage(reply) {
+        if (reply.length > 0) {
+            if (reply.length > 1) reply = reply.filter((message) => !Fallbacks.includes(message))
+            reply = reply[Math.floor(Math.random() * reply.length)]
+            let replyMessages = reply.split("+")
+            let replyList = []
+            for (let i = 0; i < replyMessages.length; i++) {
+                const newXalenMessage = {
+                    parent: "triton",
+                    content: DateTime.addStamp(replyMessages[i].trim()),
+                    fullContent: DateTime.addStamp(reply),
+                    time: d
                 }
-                else fallbackMessage(storeID)
+                replyList.push(newXalenMessage)
+                scrollDown()
             }
+            setChatHistory(chatHistory.concat(replyList))
+            learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1])
+            setTyping(false)
         }
-        else fallbackMessage(storeID)
+        else fallbackMessage()
     }
 
     return(

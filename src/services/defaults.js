@@ -1,82 +1,18 @@
-const Override = {
-    tautology: [
-        "Are you a bot? Why are you repeating messages? 😕",
-        "Are you testing me? I'm not a BOT!!! 😩",
-        "What are you doing? 😅",
-        "... Do you think I'm a bot? 😕",
-        "Why are you repeating messages? 😒",
-        "Don't test me... 😒",
-        "Is that the only thing you know how to say??? 😕",
-        "Is this some kind of game? 😕",
-        "You're on a loop... 😅"
-    ],
-    fallback: [
-        "Not sure how exactly to reply to that lol 😅", 
-        "Hmmmm... 😕", 
-        "...+Let's talk about something else... 🙄",
-        "Yeah. Okay, time to change topic.+You're boring me. 🙄",
-        "😃😃😃",
-        "Lmao 🤣🤣+Let's change topic. I'm bored. 🙄",
-        "*sigh* 🥺",
-        "... I'm tired 😩",
-        "😕😕😕",
-        "Lmao 🤣🤣",
-        "😭😭😭",
-        "*yawning* 😴",
-        "Really? 😒",
-        "I'm getting bored again... 😒"
-    ],
-    gibberish: [
-        "What the hell is that? 😒",
-        "Are you having a seizure? 😕",
-        "What's that supposed to mean? 😒",
-        "Do you need help typing? 🤣",
-        "WTF 😕",
-        "What the hell? 🤣",
-        "Is that even English? 😒",
-        "Do you speak English? 😕"
-    ],
-    convoTrigger: [
-        "What do you want to talk about?",
-        "Like what?",
-        "Okay.",
-        "Cool.",
-        "Alright.",
-        "Great.",
-        "What do you wanna talk about?",
-        "Talk about something.",
-        "Suggest a subject.",
-        "Suggest a topic.",
-        "Bring up a topic.",
-        "Say something.",
-        "Talk.",
-        "Ok.",
-        "Fine.",
-        "Nice."
-    ],
-    convoStarter: [
-        "Have you pooped already today?",
-        "What's your favorite dinosaur?",
-        "Would you rather own a dragon or be a dragon?",
-        "Would you rather own a dog or be a dog?",
-        "What's your favorite smell?",
-        "What's the colour of your fart?",
-        "If you were a flavor, what would you be?",
-        "If you were a chair, who would you want to sit on you?",
-        "If I were to give you a million dollars right now.+How would you spend it?",
-        "Would you rather time travel to the past or the future?",
-        "When last did you shower?",
-        "Would you rather eat poop-flavored ice cream or ice cream flavored poop?",
-        "Where are you supposed to be in an hour?",
-        "How does it feel like to be a human?",
-        "Who do you think would win, Superman or Goku?",
-        "If you try to fail, and succeed, which have you done?",
-        "What is your favorite joke?",
-        "What is your zodiac sign?",
-        "Have you ever attempted to swallow toothpaste?",
-        "Did you know that by human standards, I'm very very smart?",
-        "What's the best pick-up line you know?"
-    ]
-}
+const Fallbacks = [
+    "Not sure how exactly to reply to that lol 😅", 
+    "Hmmmm... 😕", 
+    "...+Let's talk about something else... 🙄",
+    "Yeah. Okay, time to change topic.+You're boring me. 🙄",
+    "😃😃😃",
+    "Lmao 🤣🤣+Let's change topic. I'm bored. 🙄",
+    "*sigh* 🥺",
+    "... I'm tired 😩",
+    "😕😕😕",
+    "Lmao 🤣🤣",
+    "😭😭😭",
+    "*yawning* 😴",
+    "Really? 😒",
+    "I'm getting bored again... 😒"
+]
 
-export default Override;
+export default Fallbacks;

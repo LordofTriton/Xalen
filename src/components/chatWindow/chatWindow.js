@@ -14,7 +14,7 @@ let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-baseAPIURL = "http://localhost:5000/";
+// baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({botState, setBotState, theme}) => {
     const [chatHistory, setChatHistory] = useState([])

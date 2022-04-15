@@ -111,6 +111,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
         if (/^[a-zA-Z]/.test(newMsg) && !typing && !learning) {
             let d = new Date()
             let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
+            msg = msg.replaceAll("_", " ")
             const newMessage = {
                 parent: "user",
                 content: DateTime.addStamp(msg.trim()),

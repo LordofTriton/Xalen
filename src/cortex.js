@@ -17,6 +17,7 @@ const Cortex = () => {
     const [botState, setBotState] = useState("Online");
     const [theme, setTheme] = useState(localStorage.getItem("XalenTheme") ? localStorage.getItem("XalenTheme") : "Light")
     const [popMenuState, setPopMenuState] = useState(false)
+    const [censor, setCensor] = useState(localStorage.getItem("XalenCensor") ? localStorage.getItem("XalenCensor") : false)
 
     function toggleTheme() {
         if (theme === "Light") {
@@ -27,6 +28,11 @@ const Cortex = () => {
             setTheme("Light")
             localStorage.setItem("XalenTheme", "Light")
         }
+    }
+
+    function toggleCensor() {
+        localStorage.setItem("XalenCensor", !censor)
+        setCensor(!censor)
     }
 
     function togglePopMenu() {
@@ -43,8 +49,8 @@ const Cortex = () => {
             <Title toggle={titleDisplay} control={setTitleDisplay} theme={theme} />
             <TopNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} popMenuState={popMenuState} />
             <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} />
-            <ChatWindow botState={botState} setBotState={setBotState} theme={theme} />
-            <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} />
+            <ChatWindow botState={botState} setBotState={setBotState} theme={theme} censor={censor} />
+            <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} censor={censor} toggleCensor={toggleCensor} />
             <Offline theme={theme} botState={botState} setBotState={setBotState} />
         </div>
     )

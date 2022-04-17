@@ -8,15 +8,16 @@ import Fallbacks from '../../services/defaults';
 
 //Images
 import sendIcon from '../../images/send1.png'
+import Censor from '../../services/censor';
 
 //Defaults
 let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
-const ChatWindow = ({botState, setBotState, theme}) => {
+const ChatWindow = ({botState, setBotState, theme, censor}) => {
     const [chatHistory, setChatHistory] = useState([])
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
@@ -180,7 +181,7 @@ const ChatWindow = ({botState, setBotState, theme}) => {
                 chatHistory.map((message) =>
                     <div className="chatMessage">
                         <h3 className="chatContent" style={{float: message.parent === "triton" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white)" : "var(--blue)", color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
-                            {DateTime.removeStamp(message.content)}
+                            {Censor.CensorText(DateTime.removeStamp(message.content), censor)}
                         </h3>
                         <h4 className="chatMessageTime" style={{
                             textAlign: message.parent === "triton" ? "left" : "right",

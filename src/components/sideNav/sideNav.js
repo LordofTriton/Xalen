@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './sideNav.css'
-
-//Components
-import InfoBox from '../infoBox/infoBox'
 
 //Images
 import logo from '../../images/logo1.png'
 import menuIcon from '../../images/menu.png'
 
 const SideNav = ({theme, togglePopMenu}) => {
-    const [infoBoxOpen, setInfoBoxOpen] = useState(false)
-
     return(
         <div className="sideNav" style={{backgroundColor: theme === "Light" ? "white" : "#121212"}}>
             <img className="sideNavLogo" src={logo} alt="logo" />
@@ -20,8 +15,6 @@ const SideNav = ({theme, togglePopMenu}) => {
                 <hr />
                 <h3 className="sideNavTitle">Xalen</h3>
             </div>
-
-            <InfoBox toggle={infoBoxOpen} control={setInfoBoxOpen} theme={theme} />
         </div>
     )
 }

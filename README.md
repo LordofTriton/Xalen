@@ -1,4 +1,4 @@
-Visit the deployed project at [https://zeus-chat.herokuapp.com](https://zeus-chat.herokuapp.com).
+Visit the deployed project at [https://xalen.netlify.app](https://xalen.netlify.app).
 
 # Getting Started with Create React App
 

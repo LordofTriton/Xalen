@@ -12,7 +12,9 @@ const Fallbacks = [
     "😭😭😭",
     "*yawning* 😴",
     "Really? 😒",
-    "I'm getting bored again... 😒"
+    "I'm getting bored again... 😒",
+    "Do you think I'm stupid? 🥺",
+    "... What? 😕"
 ]
 
 export default Fallbacks;

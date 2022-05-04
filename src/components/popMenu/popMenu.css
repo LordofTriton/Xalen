@@ -3,7 +3,7 @@
     height: calc(100vh - 70px);
     position: fixed;
     top: 70px;
-    left: 0px;
+    right: 0px;
     z-index: 19;
     transition: all 0.5s;
     padding: 30px;
@@ -105,9 +105,7 @@
 @media screen and (min-width: 1125px) {
     .popMenuContainer {
         width: 600px;
-        height: 100vh;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 70px;
+        right: 0px;
     }
 }

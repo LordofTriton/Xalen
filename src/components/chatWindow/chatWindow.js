@@ -5,17 +5,19 @@ import axios from 'axios';
 //Services
 import DateTime from '../../services/dateTime';
 import Fallbacks from '../../services/defaults';
+import Censor from '../../services/censor';
+import Emoji from '../../services/emoji'
 
 //Images
-import sendIcon from '../../images/send1.png'
-import Censor from '../../services/censor';
+import sendIcon from '../../images/send1.png';
+import emojiIcon from '../../images/emoji.png'
 
 //Defaults
 let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({botState, setBotState, theme, censor}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -37,6 +39,7 @@ const ChatWindow = ({botState, setBotState, theme, censor}) => {
     ])
     const [ancestor, setAncestor] = useState("")
     const [learning, setLearning] = useState("")
+    const [emojiBox, setEmojiBox] = useState(false)
 
     useEffect(() => {
         axios.get(`${baseAPIURL}yggdrasil/getAll`).then(re => {
@@ -109,7 +112,8 @@ const ChatWindow = ({botState, setBotState, theme, censor}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (/^[a-zA-Z]/.test(newMsg) && !typing && !learning) {
+        setEmojiBox(false)
+        if (/[a-zA-Z]/.test(newMsg) && !typing && !learning) {
             let d = new Date()
             let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
             msg = msg.replaceAll("_", " ")
@@ -175,37 +179,49 @@ const ChatWindow = ({botState, setBotState, theme, censor}) => {
     }
 
     return(
-        <div className="chatWindow" id="chatWindow">
-            <h3 className="dateTimeDisplay" style={{color: theme === "Light" ? "#121212" : "white"}}>{DateTime.getDateFormatOne()}</h3>
-            {
-                chatHistory.map((message) =>
+        <>
+            <div className="chatWindow" id="chatWindow">
+                <h3 className="dateTimeDisplay" style={{color: theme === "Light" ? "#121212" : "white"}}>{DateTime.getDateFormatOne()}</h3>
+                {
+                    chatHistory.map((message) =>
+                        <div className="chatMessage">
+                            <h3 className="chatContent" style={{float: message.parent === "triton" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white)" : "var(--blue)", color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
+                                {Censor.CensorText(DateTime.removeStamp(message.content), censor)}
+                            </h3>
+                            <h4 className="chatMessageTime" style={{
+                                textAlign: message.parent === "triton" ? "left" : "right",
+                                float: message.parent === "triton" ? "left" : "right",
+                                transform: message.parent === "triton" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
+                            >{DateTime.formatTime(message.time)}</h4>
+                        </div>
+                    )
+                }
+                {
+                    typing ?
                     <div className="chatMessage">
-                        <h3 className="chatContent" style={{float: message.parent === "triton" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white)" : "var(--blue)", color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
-                            {Censor.CensorText(DateTime.removeStamp(message.content), censor)}
-                        </h3>
-                        <h4 className="chatMessageTime" style={{
-                            textAlign: message.parent === "triton" ? "left" : "right",
-                            float: message.parent === "triton" ? "left" : "right",
-                            transform: message.parent === "triton" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
-                        >{DateTime.formatTime(message.time)}</h4>
-                    </div>
-                )
-            }
-            {
-                typing ?
-                <div className="chatMessage">
-                    <h3 className="chatContentTyping" style={{float: "left"}}>...</h3>
-                </div> : null
-            }
-            <div className="chatInputDock">
-                <form onSubmit={handleSubmit}>
-                    <input type="text" className="chatInputDockField" value={newMsg} onChange={(el) => setNewMsg(el.target.value)} 
-                        style={{backgroundColor: theme === "Light" ? "white" : "#121212", color: theme === "Light" ? "#121212" : "white"}}
-                        placeholder="Type your message here..." />
-                    <button className="chatInputDockSubmit"><img src={sendIcon} alt="Send" /></button>
-                </form>
+                        <h3 className="chatContentTyping" style={{float: "left"}}>...</h3>
+                    </div> : null
+                }
+                <div className="chatInputDock">
+                    <form onSubmit={handleSubmit}>
+                        <img className="emojiButton" src={emojiIcon} onClick={() => setEmojiBox(true)} alt="emoji" />
+                        <input type="text" className="chatInputDockField" value={newMsg} onChange={(el) => setNewMsg(el.target.value)} 
+                            style={{backgroundColor: theme === "Light" ? "white" : "#121212", color: theme === "Light" ? "#121212" : "white"}}
+                            placeholder="Type your message here..." onClick={() => setEmojiBox(false)} />
+                        <button className="chatInputDockSubmit"><img src={sendIcon} alt="Send" /></button>
+                    </form>
+                </div>
             </div>
-        </div>
+            <div className="chatEmojiBox" style={{bottom: emojiBox ? "90px" : "-100vh"}}>
+                <div className="chatEmojiTray">
+                {
+                    Emoji.map((emoji) =>
+                        <h3 className="chatEmoji" onClick={() => setNewMsg(newMsg.concat(emoji))}>{emoji}</h3>
+                    )
+                }
+                </div>
+            </div>
+        </>
     )
 }
 

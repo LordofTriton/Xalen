@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 //Components
 import Title from './components/title/title';
-import SideNav from './components/sideNav/sideNav';
 import TopNav from './components/topNav/topNav';
 import ChatWindow from './components/chatWindow/chatWindow';
 import Offline from './components/offline/offline';
@@ -50,14 +49,16 @@ const Cortex = () => {
     })
 
     return(
-        <div className="displayContent" 
-            style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
+        <div className="backDrop">
             <Title toggle={titleDisplay} control={setTitleDisplay} theme={theme} />
-            <TopNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} popMenuState={popMenuState} />
-            <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} />
-            <ChatWindow botState={botState} setBotState={setBotState} theme={theme} censor={censor} />
-            <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} censor={censor} toggleCensor={toggleCensor} />
-            <Offline theme={theme} botState={botState} setBotState={setBotState} />
+            <div className="displayContent" 
+                style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
+                <TopNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} popMenuState={popMenuState} />
+                {/* <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} /> */}
+                <ChatWindow botState={botState} setBotState={setBotState} theme={theme} censor={censor} />
+                <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} censor={censor} toggleCensor={toggleCensor} />
+                <Offline theme={theme} botState={botState} setBotState={setBotState} />
+            </div>
         </div>
     )
 }

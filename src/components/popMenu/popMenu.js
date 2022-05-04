@@ -20,7 +20,7 @@ const PopMenu = ({toggle, control, theme, toggleTheme, censor, toggleCensor}) =>
             <div className="dimmer" onClick={() => control(false)} 
                 style={{display: toggle ? "block" : "none", opacity:  toggle ? "1" : "0"}}>
             </div>
-            <div className="popMenuContainer" style={{left: toggle ? null : "150vw", backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
+            <div className="popMenuContainer" style={{right: toggle ? null : "-100vw", backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
                 <img className="popMenuLogo" src={logo} alt="logo" />
                 {
                     menuPage === "Buttons" ?

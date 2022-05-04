@@ -4,7 +4,7 @@
 }
 
 .chatWindow {
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 160px);
     float: right;
     background-size: contain;
@@ -78,7 +78,7 @@
     position: fixed;
     bottom: 0px;
     right: 0px;
-    width: 100vw;
+    width: 100%;
     height: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -86,8 +86,19 @@
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.emojiButton {
+    height: 50px;
+    float: left;
+    margin: 10px 0px 10px 2%;
+    cursor: pointer;
+}
+
+.emojiButton:hover {
+    transform: scale(1.1, 1.1);
+}
+
 .chatInputDockField {
-    width: 78%;
+    width: calc(76% - 50px);
     height: 50px;
     margin: 10px 0px 10px 2%;
     border: 0px;
@@ -127,19 +138,46 @@
     height: 80%;
 }
 
+.chatEmojiBox {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    bottom: -100vh;
+    left: 0px;
+    z-index: 19;
+    transition: all 0.5s;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.chatEmojiTray {
+    width: fit-content;
+    height: fit-content;
+}
+
+.chatEmoji {
+    padding: 5px 10px 7px 10px;
+    margin: 5px 5px 5px 5px;
+    float: left;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.chatEmoji:hover {
+    transform: scale(1.2, 1.2);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
 
 @media screen and (min-width: 1125px) {
-    .chatWindow {
-        width: 85vw !important;
-        height: calc(100vh - 90px);
-        left: 15vw;
-        top: 0px;
-    }
-    .chatInputDock {
-        width: 85vw;
-    }
     .chatInputDockField {
-        width: 88%;
+        width: calc(86% - 50px);
     }
     .chatInputDockSubmit {
         width: 6%;

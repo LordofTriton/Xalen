@@ -16,7 +16,7 @@ const badWordsRegex = new RegExp(badWordsRegexString, 'ig');
 
 function CensorText(text, toggle) {
     let newText = text.replace(badWordsRegex, badWord => "*".repeat(badWord.length));
-    return toggle == "On" ? newText : text
+    return toggle === "On" ? newText : text
 }
 
 const Censor = {CensorText}

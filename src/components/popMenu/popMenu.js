@@ -29,7 +29,7 @@ const PopMenu = ({toggle, control, theme, toggleTheme, censor, toggleCensor}) =>
                             <h3 className="themeCurrent">Dark Theme <span><img className="switch" src={switchIcon} alt="switch" style={{transform: theme === "Light" ? "rotate(180deg) translate(0px, 23px)" : null}} /></span></h3>
                         </div>
                         <div className="themeButton" onClick={() => toggleCensor()} style={{backgroundColor: theme === "Light" ? "whitesmoke" : "white"}}>
-                            <h3 className="themeCurrent">Censor <span><img className="switch" src={switchIcon} alt="switch" style={{transform: !censor ? "rotate(180deg) translate(0px, 23px)" : null}} /></span></h3>
+                            <h3 className="themeCurrent">Censor <span><img className="switch" src={switchIcon} alt="switch" style={{transform: censor === "Off" ? "rotate(180deg) translate(0px, 23px)" : null}} /></span></h3>
                         </div>
                         <div className="themeButton" onClick={() => setMenuPage("Info")} style={{backgroundColor: theme === "Light" ? "whitesmoke" : "white"}}>
                             <h3 className="themeCurrent">About/Info <span><img className="info" src={infoIcon} alt="info" /></span></h3>

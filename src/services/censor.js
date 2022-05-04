@@ -10,13 +10,13 @@ function convertWordToRegexString(word) {
     return word.replace(/[aeio]/g, c => `[${c}${l33t[c]}]+`);
 }
 
-const badWords = ["fuck", "cunt", "pussy", "vagina", "bitch", "shit", "sex", "shag", "fetish", "porn", "blowjob", "doggystyle", "cowgirl", "cock", "dick", "penis", "boobs", "tits", "bastard", "wanker", "bullshit", "motherfucker", "sisterfucker", "fatherfucker", "asshole", "ass", "clit", "nigga", "nigger", "crap", "prick", "goddamn", "effing", "bollocks", "arse", "arsehole", "slut", "twat", "milf", "whore", "gigolo", "stripper", "damn", "fanny", "piss", "dork", "nerd", "tities", "balls", "sod", "fool", "dumbass", "idiot", "moron", "dumb", "stupid", "pornstar", "slave", "horseshit"];
+const badWords = ["fuck", "cunt", "pussy", "vagina", "bitch", "shit", "sex", "shag", "fetish", "porn", "blowjob", "doggystyle", "cowgirl", "cock", "dick", "penis", "boobs", "tits", "bastard", "wanker", "bullshit", "motherfucker", "sisterfucker", "fatherfucker", "asshole", "ass", "clit", "nigga", "nigger", "crap", "prick", "goddamn", "effing", "bollocks", "arse", "arsehole", "slut", "twat", "milf", "whore", "gigolo", "stripper", "damn", "fanny", "piss", "dork", "nerd", "tities", "balls", "sod", "dumbass", "moron", "pornstar", "slave", "horseshit", "ass"];
 const badWordsRegexString = "\\b(" + badWords.map(convertWordToRegexString).join("|") + ")\\b";
 const badWordsRegex = new RegExp(badWordsRegexString, 'ig');
 
-function CensorText(text) {
+function CensorText(text, toggle) {
     let newText = text.replace(badWordsRegex, badWord => "*".repeat(badWord.length));
-    return newText
+    return toggle == "On" ? newText : text
 }
 
 const Censor = {CensorText}

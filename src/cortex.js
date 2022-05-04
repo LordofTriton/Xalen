@@ -17,7 +17,7 @@ const Cortex = () => {
     const [botState, setBotState] = useState("Online");
     const [theme, setTheme] = useState(localStorage.getItem("XalenTheme") ? localStorage.getItem("XalenTheme") : "Light")
     const [popMenuState, setPopMenuState] = useState(false)
-    const [censor, setCensor] = useState(localStorage.getItem("XalenCensor") ? localStorage.getItem("XalenCensor") : false)
+    const [censor, setCensor] = useState(localStorage.getItem("XalenCensor") ? localStorage.getItem("XalenCensor") : "Off")
 
     function toggleTheme() {
         if (theme === "Light") {
@@ -31,8 +31,14 @@ const Cortex = () => {
     }
 
     function toggleCensor() {
-        localStorage.setItem("XalenCensor", !censor)
-        setCensor(!censor)
+        if (censor === "On") {
+            setCensor("Off")
+            localStorage.setItem("XalenCensor", "Off")
+        }
+        else {
+            setCensor("On")
+            localStorage.setItem("XalenCensor", "On")
+        }
     }
 
     function togglePopMenu() {

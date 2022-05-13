@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './infoPage.css'
 
 const InfoPage = ({CortexControl}) => {
-    const [infoDisplay, setInfoDisplay] = useState("Overview")
+    const [infoDisplay, setInfoDisplay] = useState("Introduction")
 
     let toggle = CortexControl.infoPage;
     let theme = CortexControl.theme;
@@ -11,15 +11,15 @@ const InfoPage = ({CortexControl}) => {
         <div className="infoPageContainer" style={{top: toggle ? "70px" : "-100vh", backgroundColor: theme === "Light" ? "whitesmoke" : "#121212"}}>
             <h3 className="comic">You know you could just ask me this stuff, right?</h3>
             <div className="infoSideBar">
-                <h3 className="infoSideBarLink" style={{color: infoDisplay === "Overview" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Overview" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Overview")}>Overview</h3>
-                <h3 className="infoSideBarLink" style={{color: infoDisplay === "Developer" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Developer" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Developer")}>Developer</h3>
-                <h3 className="infoSideBarLink" style={{color: infoDisplay === "Pricing" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Pricing" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Pricing")}>Pricing</h3>
-                <h3 className="infoSideBarLink" style={{color: infoDisplay === "Platforms" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Platforms" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Platforms")}>Platforms</h3>
-                <h3 className="infoSideBarLink" style={{color: infoDisplay === "Language" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Language" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Language")}>Language</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Introduction" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Introduction" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Introduction")}>Introduction</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Developer" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Developer" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Developer")}>Developer</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Pricing" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Pricing" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Pricing")}>Pricing</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Platforms" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Platforms" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Platforms")}>Platforms</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Language" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Language" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Language")}>Language</h3>
             </div>
             <div className="infoDisplayBox">
                 {
-                    infoDisplay === "Overview" ?
+                    infoDisplay === "Introduction" ?
                         <>
                         <h3 className="infoTitle">Who is Xalen?<span>Who, not what.</span></h3>
                         <h3 className="infoText">Xalen is your friend.</h3>
@@ -63,7 +63,7 @@ const InfoPage = ({CortexControl}) => {
                     infoDisplay === "Platforms" ?
                         <>
                         <h3 className="infoTitle">What platforms are supported?</h3>
-                        <h3 className="infoText">At the moment, Xalen can only be accessed from your browser at <a href="https://xalen.netlify.app">xalen.netlify.app</a>. But applications for PC and mobile are in the works and will be available soon!</h3>
+                        <h3 className="infoText">At the moment, Xalen can only be accessed from your browser at <a href="https://xalen.netlify.app">xalen.netlify.app</a>. But applications for desktop and mobile are in the works and will be available soon!</h3>
                         </>
                     : null
                 }

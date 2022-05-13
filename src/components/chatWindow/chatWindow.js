@@ -119,7 +119,7 @@ const ChatWindow = ({CortexControl}) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         setEmojiBox(false)
-        if (/[a-zA-Z]/.test(newMsg) && !typing && !learning) {
+        if (newMsg.trim().length > 0 && !typing && !learning) {
             let d = new Date()
             let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
             msg = msg.replaceAll("_", " ")

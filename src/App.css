@@ -68,6 +68,7 @@
   height: 100vh;
   overflow: hidden;
   background-color: var(--blue);
+  background-size: cover;
 }
 
 .displayContent {

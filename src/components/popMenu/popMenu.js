@@ -15,8 +15,8 @@ const PopMenu = ({CortexControl}) => {
     let control = CortexControl.setPopMenuState;
     let theme = CortexControl.theme;
     let toggleTheme = CortexControl.toggleTheme;
-    let censor = CortexControl.popMenuState;
-    let toggleCensor = CortexControl.popMenuState;
+    let censor = CortexControl.censor;
+    let toggleCensor = CortexControl.toggleCensor;
     let setInfoPage = CortexControl.setInfoPage;
 
     useEffect(() => {

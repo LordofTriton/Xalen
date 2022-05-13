@@ -8,8 +8,9 @@ import Offline from './components/offline/offline';
 
 //Images
 import lightBckg from './images/lightThemeBckg.png';
-import darkBckg from './images/darkThemeBckg.png';
+import darkBckg from './images/dark1.jpg';
 import PopMenu from './components/popMenu/popMenu';
+import InfoPage from './components/infoPage/infoPage';
 
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)
@@ -17,6 +18,7 @@ const Cortex = () => {
     const [theme, setTheme] = useState(localStorage.getItem("XalenTheme") ? localStorage.getItem("XalenTheme") : "Light")
     const [popMenuState, setPopMenuState] = useState(false)
     const [censor, setCensor] = useState(localStorage.getItem("XalenCensor") ? localStorage.getItem("XalenCensor") : "Off")
+    const [infoPage, setInfoPage] = useState(false)
 
     function toggleTheme() {
         if (theme === "Light") {
@@ -42,22 +44,41 @@ const Cortex = () => {
 
     function togglePopMenu() {
         setPopMenuState(!popMenuState)
+        setInfoPage(false)
     }
 
     useEffect(() => {
         document.title = "Xalen";
     })
 
+    const CortexControl = {
+        titleDisplay,
+        setTitleDisplay,
+        botState,
+        setBotState,
+        theme,
+        setTheme,
+        popMenuState,
+        setPopMenuState,
+        censor,
+        setCensor,
+        togglePopMenu,
+        toggleTheme,
+        toggleCensor,
+        infoPage,
+        setInfoPage
+    }
+
     return(
         <div className="backDrop">
-            <Title toggle={titleDisplay} control={setTitleDisplay} theme={theme} />
-            <div className="displayContent" 
-                style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
-                <TopNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} popMenuState={popMenuState} />
+            <Title CortexControl={CortexControl} />
+            <div className="displayContent" style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
+                <TopNav CortexControl={CortexControl} />
                 {/* <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} /> */}
-                <ChatWindow botState={botState} setBotState={setBotState} theme={theme} censor={censor} />
-                <PopMenu toggle={popMenuState} control={setPopMenuState} theme={theme} toggleTheme={toggleTheme} censor={censor} toggleCensor={toggleCensor} />
-                <Offline theme={theme} botState={botState} setBotState={setBotState} />
+                <ChatWindow CortexControl={CortexControl} />
+                <PopMenu CortexControl={CortexControl} />
+                <Offline CortexControl={CortexControl} />
+                <InfoPage CortexControl={CortexControl} />
             </div>
         </div>
     )

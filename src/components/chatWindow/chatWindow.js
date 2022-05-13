@@ -6,11 +6,12 @@ import axios from 'axios';
 import DateTime from '../../services/dateTime';
 import Fallbacks from '../../services/defaults';
 import Censor from '../../services/censor';
-import Emoji from '../../services/emoji'
+import Emoji from '../../services/emoji';
+import Identity from '../../services/identity';
 
 //Images
 import sendIcon from '../../images/send1.png';
-import emojiIcon from '../../images/emoji.png'
+import emojiIcon from '../../images/emoji.png';
 
 //Defaults
 let d = new Date();
@@ -19,7 +20,7 @@ let premierSpeaker = Math.random() * 10 > 5;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
 // baseAPIURL = "http://localhost:5000/";
 
-const ChatWindow = ({botState, setBotState, theme, censor}) => {
+const ChatWindow = ({CortexControl}) => {
     const [chatHistory, setChatHistory] = useState([])
     const [typing, setTyping] = useState(false)
     const [newMsg, setNewMsg] = useState("")
@@ -40,6 +41,11 @@ const ChatWindow = ({botState, setBotState, theme, censor}) => {
     const [ancestor, setAncestor] = useState("")
     const [learning, setLearning] = useState("")
     const [emojiBox, setEmojiBox] = useState(false)
+
+    let botState = CortexControl.botState;
+    let setBotState = CortexControl.setBotState;
+    let theme = CortexControl.theme;
+    let censor = CortexControl.censor;
 
     useEffect(() => {
         axios.get(`${baseAPIURL}yggdrasil/getAll`).then(re => {
@@ -164,7 +170,7 @@ const ChatWindow = ({botState, setBotState, theme, censor}) => {
             for (let i = 0; i < replyMessages.length; i++) {
                 const newXalenMessage = {
                     parent: "triton",
-                    content: DateTime.addStamp(replyMessages[i].trim()),
+                    content: DateTime.addStamp(Identity(replyMessages[i].trim())),
                     fullContent: DateTime.addStamp(reply),
                     time: d
                 }

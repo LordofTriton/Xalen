@@ -3,9 +3,12 @@ import './offline.css'
 
 //Images
 import lightBckg from '../../images/lightThemeBckg.png';
-import darkBckg from '../../images/darkThemeBckg.png';
+import darkBckg from '../../images/dark1.jpg';
 
-const Offline = ({theme, botState, setBotState}) => {
+const Offline = ({CortexControl}) => {
+    let theme = CortexControl.theme;
+    let botState = CortexControl.botState;
+    let setBotState = CortexControl.setBotState;
 
     const retryConnection = () => {
         window.navigator.onLine ? setBotState("Online") : setBotState("Offline");

@@ -1,0 +1,77 @@
+.infoPageContainer {
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: fixed;
+    top: 70px;
+    right: 0px;
+    z-index: 19;
+    transition: all 0.5s;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.comic {
+    color: var(--blue);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.infoSideBar {
+    width: 100%;
+    height: fit-content;
+    float: left;
+    box-sizing: border-box;
+}
+
+.infoSideBarLink {
+    color: white;
+    background-color: var(--blue);
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.infoDisplayBox {
+    width: 100%;
+    height: fit-content;
+    float: left;
+    padding: 30px 0px 30px 0px;
+    box-sizing: border-box;
+}
+
+.infoTitle {
+    color: var(--blue);
+    font-weight: 300;
+    font-size: 50px;
+    margin: 0px;
+}
+
+.infoTitle span {
+    font-size: 10px;
+    float: right;
+    transform: translate(0px, 30px);
+}
+
+.infoText {
+    color: var(--blue);
+    font-weight: 300;
+    margin: 20px 5px;
+}
+
+.infoText a {
+    color: var(--dark-orange);
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1125px) {
+    .infoSideBar {
+        width: 20%;
+    }
+    .infoDisplayBox {
+        width: 80%;
+        padding: 5px 30px 30px 50px;
+    }
+}

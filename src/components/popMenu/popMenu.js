@@ -6,10 +6,18 @@ import logo from '../../images/logo1.png'
 import switchIcon from '../../images/switch.png'
 import infoIcon from '../../images/info.png'
 import lightBckg from '../../images/lightThemeBckg.png';
-import darkBckg from '../../images/darkThemeBckg.png';
+import darkBckg from '../../images/dark1.jpg';
 
-const PopMenu = ({toggle, control, theme, toggleTheme, censor, toggleCensor}) => {
+const PopMenu = ({CortexControl}) => {
     const [menuPage, setMenuPage] = useState("Buttons");
+
+    let toggle = CortexControl.popMenuState;
+    let control = CortexControl.setPopMenuState;
+    let theme = CortexControl.theme;
+    let toggleTheme = CortexControl.toggleTheme;
+    let censor = CortexControl.popMenuState;
+    let toggleCensor = CortexControl.popMenuState;
+    let setInfoPage = CortexControl.setInfoPage;
 
     useEffect(() => {
         if (!toggle) setMenuPage("Buttons")
@@ -31,7 +39,7 @@ const PopMenu = ({toggle, control, theme, toggleTheme, censor, toggleCensor}) =>
                         <div className="themeButton" onClick={() => toggleCensor()} style={{backgroundColor: theme === "Light" ? "whitesmoke" : "white"}}>
                             <h3 className="themeCurrent">Censor <span><img className="switch" src={switchIcon} alt="switch" style={{transform: censor === "Off" ? "rotate(180deg) translate(0px, 23px)" : null}} /></span></h3>
                         </div>
-                        <div className="themeButton" onClick={() => setMenuPage("Info")} style={{backgroundColor: theme === "Light" ? "whitesmoke" : "white"}}>
+                        <div className="themeButton" onClick={() => setInfoPage(true)} style={{backgroundColor: theme === "Light" ? "whitesmoke" : "white"}}>
                             <h3 className="themeCurrent">About/Info <span><img className="info" src={infoIcon} alt="info" /></span></h3>
                         </div>
                     </>

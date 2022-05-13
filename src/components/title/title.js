@@ -4,11 +4,13 @@ import './title.css'
 //Images
 import logo from '../../images/logo1.png';
 import lightBckg from '../../images/lightThemeBckg.png';
-import darkBckg from '../../images/darkThemeBckg.png';
+import darkBckg from '../../images/dark1.jpg';
 
-const Title = ({toggle, control, theme}) => {
+const Title = ({CortexControl}) => {
     const [loader, setLoader] = useState(0)
-
+    let toggle = CortexControl.titleDisplay;
+    let control = CortexControl.setTitleDisplay;
+    let theme = CortexControl.theme;
 
     setTimeout(() => loader <= 10 ? setLoader(loader + 0.01) : control(false), 10)
     

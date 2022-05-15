@@ -18,6 +18,7 @@
     left: 0px;
     background-color: var(--white);
     background-image: url(../../images/lightThemeBckg.png);
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     z-index: 30;
@@ -67,6 +68,9 @@
 }
 
 @media screen and (min-width: 1125px) {
+    .titleContainer {
+        background-size: contain;
+    }
     .titleLogo {
         width: 20%;
         margin: 0px 40% 0px 40%;

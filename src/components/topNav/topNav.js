@@ -11,12 +11,18 @@ const TopNav = ({CortexControl}) => {
     let togglePopMenu = CortexControl.togglePopMenu;
     let popMenuState = CortexControl.popMenuState;
     let infoPage = CortexControl.infoPage;
+    let botState = CortexControl.botState;
+    let profilePicture = CortexControl.profilePicture;
 
     return(
         <>
             <div className="topNav" style={{backgroundColor: theme === "Light" ? "white" : "#121212"}}>
-                    <img className="topNavLogo" src={logo} alt="logo" />
-                    <h3 className="topNavTitle">Xalen</h3>
+                    {/* <img className="topNavLogo" src={logo} alt="logo" /> */}
+                    <div className="topNavProfile" style={{backgroundImage: "url("+profilePicture+")"}}></div>
+                    <div style={{width: "fit-content", height: "fit-content", float: "left"}}>
+                        <h3 className="topNavTitle">Xalen</h3>
+                        <div className="botStateIndicator"></div>
+                    </div>
                 <img className="topNavMenuButton" src={popMenuState || infoPage ? cancelIcon : menuIcon} alt="pic" onClick={() => {togglePopMenu()}} />
             </div>
         </>

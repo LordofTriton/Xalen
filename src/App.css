@@ -80,10 +80,6 @@
   overflow: hidden;
   background-size: cover;
   box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   box-shadow: 0px 0px 8px 0 rgba(0,0,0,0.4);
 }
 
@@ -91,5 +87,9 @@
 @media screen and (min-width: 1125px) {
   .displayContent {
     background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -12,6 +12,8 @@ import darkBckg from './images/dark1.jpg';
 import PopMenu from './components/popMenu/popMenu';
 import InfoPage from './components/infoPage/infoPage';
 
+import profilePicture from './images/123-1237918_small.jpg'
+
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)
     const [botState, setBotState] = useState("Online");
@@ -52,6 +54,7 @@ const Cortex = () => {
     })
 
     const CortexControl = {
+        profilePicture,
         titleDisplay,
         setTitleDisplay,
         botState,

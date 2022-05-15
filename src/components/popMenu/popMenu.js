@@ -18,6 +18,7 @@ const PopMenu = ({CortexControl}) => {
     let censor = CortexControl.censor;
     let toggleCensor = CortexControl.toggleCensor;
     let setInfoPage = CortexControl.setInfoPage;
+    let profilePicture = CortexControl.profilePicture;
 
     useEffect(() => {
         if (!toggle) setMenuPage("Buttons")
@@ -29,7 +30,8 @@ const PopMenu = ({CortexControl}) => {
                 style={{display: toggle ? "block" : "none", opacity:  toggle ? "1" : "0"}}>
             </div>
             <div className="popMenuContainer" style={{right: toggle ? null : "-100vw", backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
-                <img className="popMenuLogo" src={logo} alt="logo" />
+                {/* <img className="popMenuLogo" src={logo} alt="logo" /> */}
+                <div className="popMenuProfile" style={{backgroundImage: "url("+profilePicture+")"}}></div>
                 {
                     menuPage === "Buttons" ?
                     <>

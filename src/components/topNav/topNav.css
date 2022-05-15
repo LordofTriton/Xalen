@@ -12,14 +12,20 @@
     padding-top: 3px;
 }
 
-.topNavLogo {
+.topNavProfile {
     height: 70%;
     aspect-ratio: 1;
-    margin: 8px 0px 0px 15px;
+    margin: 9px 0px 0px 20px;
     padding: 0px;
     animation: strobe 5s infinite;
     pointer-events: none;
     float: left;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    outline: 3px solid var(--dark-orange);
+    outline-offset: 5px;
 }
 
 .topNavTitle {
@@ -31,6 +37,15 @@
     margin: 13px 0px 0px 20px;
     /* text-shadow: 2px 2px 0px var(--dark-orange); */
     text-transform: uppercase;
+}
+
+.botStateIndicator {
+    width: 7px;
+    height: 7px;
+    background-color: lime;
+    border-radius: 20px;
+    float: left;
+    transform: translate(5px, 18px);
 }
 
 .topNavStatus {

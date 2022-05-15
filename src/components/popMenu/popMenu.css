@@ -13,13 +13,19 @@
     background-size: cover;
 }
 
-.popMenuLogo {
+.popMenuProfile {
     width: 20%;
     aspect-ratio: 1;
-    margin: 25px 40% 20px 40%;
+    margin: 25px 40% 100px 40%;
     padding: 0px;
     animation: strobe 5s infinite;
     pointer-events: none;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    outline: 3px solid var(--dark-orange);
+    outline-offset: 5px;
 }
 
 .popMenuTitle {

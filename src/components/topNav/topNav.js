@@ -2,7 +2,6 @@ import React from 'react'
 import './topNav.css'
 
 //Images
-import logo from '../../images/logo1.png'
 import menuIcon from '../../images/menu.png'
 import cancelIcon from '../../images/close.png'
 
@@ -21,7 +20,7 @@ const TopNav = ({CortexControl}) => {
                     <div className="topNavProfile" style={{backgroundImage: "url("+profilePicture+")"}}></div>
                     <div style={{width: "fit-content", height: "fit-content", float: "left"}}>
                         <h3 className="topNavTitle">Xalen</h3>
-                        <div className="botStateIndicator"></div>
+                        {botState === "Online" ? <div className="botStateIndicator"></div> : null}
                     </div>
                 <img className="topNavMenuButton" src={popMenuState || infoPage ? cancelIcon : menuIcon} alt="pic" onClick={() => {togglePopMenu()}} />
             </div>

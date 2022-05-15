@@ -52,15 +52,6 @@ const ChatWindow = ({CortexControl}) => {
             setYggdrasil(re.data);
             if (!premierSpeaker) setContext(Object.keys(re.data))
             else setContext(re.data[""])
-
-            // let keys = Object.keys(re.data)
-
-            // for (let i = 0; i < keys.length; i++) {
-            //     async function addOne() {
-            //         await axios.post(`${baseAPIURL}yggdrasil/addOne`, {label: keys[i], records: re.data[keys[i]]})
-            //     }
-            //     addOne()
-            // }
         })
     }, [])
 

@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './title.css'
 import './loader.css'
 
 //Images
-import logo from '../../images/logo1.png';
 import lightBckg from '../../images/lightThemeBckg.png';
 import darkBckg from '../../images/dark1.jpg';
 

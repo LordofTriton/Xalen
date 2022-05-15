@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import './popMenu.css'
 
 //Images
-import logo from '../../images/logo1.png'
 import switchIcon from '../../images/switch.png'
 import infoIcon from '../../images/info.png'
 import lightBckg from '../../images/lightThemeBckg.png';

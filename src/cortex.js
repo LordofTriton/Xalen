@@ -45,8 +45,10 @@ const Cortex = () => {
     }
 
     function togglePopMenu() {
-        setPopMenuState(!popMenuState)
-        setInfoPage(false)
+        if (botState === "Online") {
+            setPopMenuState(!popMenuState)
+            setInfoPage(false)
+        }
     }
 
     useEffect(() => {
@@ -77,7 +79,6 @@ const Cortex = () => {
             <Title CortexControl={CortexControl} />
             <div className="displayContent" style={{backgroundImage: theme === "Light" ? "url("+lightBckg+")" : "url("+darkBckg+")"}}>
                 <TopNav CortexControl={CortexControl} />
-                {/* <SideNav botState={botState} theme={theme} togglePopMenu={togglePopMenu} /> */}
                 <ChatWindow CortexControl={CortexControl} />
                 <PopMenu CortexControl={CortexControl} />
                 <Offline CortexControl={CortexControl} />

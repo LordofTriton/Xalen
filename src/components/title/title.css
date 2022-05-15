@@ -25,15 +25,21 @@
     transition: all 0.5s;
 }
 
-.titleLogo {
+.titleProfile {
     width: 50%;
+    max-width: 500px;
     aspect-ratio: 1;
     margin: 0px 25% 0px 25%;
     position: absolute;
     top: 50%;
-    animation: logoAnim 1s ease-in-out;
     pointer-events: none;
-    transform: translate(0px, -50%) scale(1,1);
+    transform: translate(0px, -50%);
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    outline: 3px solid var(--dark-orange);
+    outline-offset: 5px;
 }
 
 .titleTitle {

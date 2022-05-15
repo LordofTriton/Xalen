@@ -42,7 +42,7 @@
 .botStateIndicator {
     width: 7px;
     height: 7px;
-    background-color: lime;
+    background-color: var(--dark-orange);
     border-radius: 20px;
     float: left;
     transform: translate(5px, 18px);

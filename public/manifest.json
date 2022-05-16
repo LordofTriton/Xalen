@@ -3,23 +3,28 @@
   "name": "Xalen",
   "icons": [
     {
-      "src": "icon.ico",
+      "src": "titleLogo.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
       "src": "logo1.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "300x300"
     },
     {
       "src": "logo2.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "300x300"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#000000"
+  "background_color": "#000000",
+  "orientation": "any",
+  "dir": "ltr",
+  "description": "A self learning conversational chatbot.",
+  "prefer_related_applications": "true"
 }

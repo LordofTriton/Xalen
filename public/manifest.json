@@ -23,7 +23,6 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#000000",
-  "orientation": "any",
   "dir": "ltr",
   "description": "A self learning conversational chatbot.",
   "prefer_related_applications": "true"

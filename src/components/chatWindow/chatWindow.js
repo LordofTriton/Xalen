@@ -18,7 +18,7 @@ let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({CortexControl}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -30,14 +30,7 @@ const ChatWindow = ({CortexControl}) => {
         fullContent: "",
         time: d
     })
-    const [yggdrasil, setYggdrasil] = useState({})
-    const [context, setContext] = useState([
-        "1648440119398_Hello!",
-        "1648440211596_Hi!",
-        "1648443193203_Hola!",
-        "1648443203671_Konnichiwa!",
-        "1648443214329_Howdy! How do you do?"
-    ])
+    const [context, setContext] = useState([])
     const [ancestor, setAncestor] = useState("")
     const [learning, setLearning] = useState("")
     const [emojiBox, setEmojiBox] = useState(false)
@@ -47,24 +40,20 @@ const ChatWindow = ({CortexControl}) => {
     let theme = CortexControl.theme;
     let censor = CortexControl.censor;
 
-    useEffect(() => {
-        axios.get(`${baseAPIURL}yggdrasil/getAll`).then(re => {
-            setYggdrasil(re.data);
-            if (!premierSpeaker) setContext(Object.keys(re.data))
-            else setContext(re.data[""])
-        })
-    }, [])
-
     const scrollDown = () => {
         let chatWindowEl = document.getElementById("chatWindow")
         if (chatWindowEl) chatWindowEl.scrollTo({top: chatWindowEl.scrollHeight, left: 0, behavior: 'smooth'})
     }
 
     useEffect(() => {
-        if (chatHistory.length < 1 && Object.keys(yggdrasil).length > 0 && premierSpeaker) {
-            replyMessage(yggdrasil[""])
-        }
-    }, [yggdrasil])
+        axios.get(`${baseAPIURL}yggdrasil/start`).then(re => {
+            if (chatHistory.length < 1 && premierSpeaker) {
+                console.log(re.data)
+                replyMessage(re.data)
+            }
+            setContext(re.data)
+        })
+    }, [])
 
     useEffect(() => {
         window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
@@ -144,8 +133,7 @@ const ChatWindow = ({CortexControl}) => {
             fallbackMessages.push(newXalenMessage)
             scrollDown()
         }
-
-        setContext(yggdrasil[fallbackMessages[fallbackMessages.length - 1].fullContent])
+        
         setChatHistory(chatHistory.concat(fallbackMessages))
         learnStuff("user", chatHistory.concat(fallbackMessages), fallbackMessages[fallbackMessages.length - 1])
 
@@ -154,7 +142,7 @@ const ChatWindow = ({CortexControl}) => {
 
     function replyMessage(reply) {
         if (reply.length > 0) {
-            if (reply.length > 1) reply = reply.filter((message) => !Fallbacks.includes(message))
+            if (reply.filter((message) => !Fallbacks.includes(message)).length > 0) reply = reply.filter((message) => !Fallbacks.includes(message))
             reply = reply[Math.floor(Math.random() * reply.length)]
             let replyMessages = reply.split("+")
             let replyList = []

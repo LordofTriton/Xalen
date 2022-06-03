@@ -12,7 +12,7 @@ import darkBckg from './images/dark1.jpg';
 import PopMenu from './components/popMenu/popMenu';
 import InfoPage from './components/infoPage/infoPage';
 
-import profilePicture from './images/123-1237918_small.jpg'
+import profilePicture from './images/2686216261.jpg'
 
 const Cortex = () => {
     const [titleDisplay, setTitleDisplay] = useState(true)

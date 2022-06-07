@@ -39,7 +39,7 @@ const InfoPage = ({CortexControl}) => {
                         <h3 className="infoTitle">Who created Xalen?</h3>
                         <h3 className="infoText">Hi. My name is Joshua Agboola. 😎</h3>
                         <h3 className="infoText">I'm a Computer Science student based in Lagos, Nigeria.</h3>
-                        <h3 className="infoText">I built this bot cause I always wanted my own J.A.R.V.I.S, like literally anyone who watched knows IronMan. 😏</h3>
+                        <h3 className="infoText">I built this bot cause I always wanted my own J.A.R.V.I.S, like literally anyone who watched or knows IronMan. 😏</h3>
                         <h3 className="infoText">It's built with MongoDB, Express, ReactJS, and Node.js (MERN Stack).</h3>
                         <h3 className="infoText">Hope you like it!</h3>
                         <br/>

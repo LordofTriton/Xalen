@@ -32,6 +32,7 @@ const ChatWindow = ({CortexControl}) => {
     })
     const [context, setContext] = useState([])
     const [ancestor, setAncestor] = useState("")
+    const [parent, setParent] = useState("")
     const [learning, setLearning] = useState("")
     const [emojiBox, setEmojiBox] = useState(false)
 
@@ -61,9 +62,9 @@ const ChatWindow = ({CortexControl}) => {
         let messageData = {
             chatHistory: chatHistory,
             ancestor: ancestor,
-            currentMessage: currentMessage,
             context: context,
-            botState: botState
+            botState: botState,
+            parent: parent
         }
 
         axios.post(`${baseAPIURL}getReply/`, messageData).then(re => {
@@ -91,6 +92,7 @@ const ChatWindow = ({CortexControl}) => {
         await axios.post(`${baseAPIURL}learn/`, learnData).then(re => {
             setContext(re.data.newContext);
             setAncestor(re.data.newAncestor);
+            setParent(re.data.newParent);
             if (subject === "triton") setCurrentMessage(childMessage)
             setLearning(false)
         })

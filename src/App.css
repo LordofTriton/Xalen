@@ -67,7 +67,8 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: var(--blue);
+  background-color: hsla(0, 0%, 7%, 0.952);
+  /* background-image: url(./images/2686216261.jpg); */
   background-size: cover;
   box-sizing: border-box;
   position: absolute;

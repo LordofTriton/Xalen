@@ -18,7 +18,6 @@
     aspect-ratio: 1;
     margin: 25px 40% 100px 40%;
     padding: 0px;
-    animation: strobe 5s infinite;
     pointer-events: none;
     border-radius: 50%;
     background-size: cover;

@@ -3,6 +3,12 @@
     100% {transform: scale(1,1);}
 }
 
+@keyframes strobe {
+    0% {transform: scale(1,1);}
+    50% {transform: scale(1.1,1.1);}
+    100% {transform: scale(1,1);}
+}
+
 .chatWindow {
     width: 100%;
     height: calc(100vh - 160px);

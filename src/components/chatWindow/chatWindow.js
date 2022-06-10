@@ -18,7 +18,7 @@ let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({CortexControl}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -49,8 +49,8 @@ const ChatWindow = ({CortexControl}) => {
     useEffect(() => {
         axios.get(`${baseAPIURL}yggdrasil/start`).then(re => {
             if (chatHistory.length < 1 && premierSpeaker) {
-                console.log(re.data)
-                replyMessage(re.data)
+                let data = re.data;
+                replyMessage(re.data, Math.floor(Math.random() * data.length))
             }
             setContext(re.data)
         })
@@ -69,7 +69,11 @@ const ChatWindow = ({CortexControl}) => {
 
         axios.post(`${baseAPIURL}getReply/`, messageData).then(re => {
             setTyping(true)
-            setTimeout(() => replyMessage(re.data.replies), Math.min(2000, Math.floor(Math.random() * 5000)))
+
+            let data = re.data.replies;
+            let replyIndex = Math.floor(Math.random() * data.length);
+            let typingDelay = 100 * data[replyIndex].length;
+            setTimeout(() => replyMessage(data, replyIndex), typingDelay)
         })
 
     }, [currentMessage])
@@ -93,7 +97,7 @@ const ChatWindow = ({CortexControl}) => {
             setContext(re.data.newContext);
             setAncestor(re.data.newAncestor);
             setParent(re.data.newParent);
-            if (subject === "triton") setCurrentMessage(childMessage)
+            if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
             setLearning(false)
         })
     }
@@ -142,10 +146,10 @@ const ChatWindow = ({CortexControl}) => {
         setTyping(false)
     }
 
-    function replyMessage(reply) {
+    function replyMessage(reply, replyIndex) {
         if (reply.length > 0) {
             if (reply.filter((message) => !Fallbacks.includes(message)).length > 0) reply = reply.filter((message) => !Fallbacks.includes(message))
-            reply = reply[Math.floor(Math.random() * reply.length)]
+            reply = reply[replyIndex]
             let replyMessages = reply.split("+")
             let replyList = []
             for (let i = 0; i < replyMessages.length; i++) {

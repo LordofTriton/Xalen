@@ -148,7 +148,6 @@ const ChatWindow = ({CortexControl}) => {
 
     function replyMessage(reply, replyIndex) {
         if (reply.length > 0) {
-            if (reply.filter((message) => !Fallbacks.includes(message)).length > 0) reply = reply.filter((message) => !Fallbacks.includes(message))
             reply = reply[replyIndex]
             let replyMessages = reply.split("+")
             let replyList = []

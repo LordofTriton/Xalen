@@ -45,7 +45,6 @@ const InfoPage = ({CortexControl}) => {
                         <br/>
                         <br/>
                         <h3 className="infoText">Lemme know what you think.</h3>
-                        <h3 className="infoText">Phone: +234 7065194708</h3>
                         <h3 className="infoText">Email: agboola918@gmail.com</h3>
                         </>
                     : null

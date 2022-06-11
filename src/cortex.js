@@ -51,10 +51,6 @@ const Cortex = () => {
         }
     }
 
-    useEffect(() => {
-        document.title = "Xalen";
-    })
-
     const CortexControl = {
         profilePicture,
         titleDisplay,

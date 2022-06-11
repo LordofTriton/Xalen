@@ -71,8 +71,12 @@ const ChatWindow = ({CortexControl}) => {
             setTyping(true)
 
             let data = re.data.replies;
-            let replyIndex = Math.floor(Math.random() * data.length);
-            let typingDelay = 100 * data[replyIndex].length;
+            let typingDelay = 2000
+            let replyIndex = 0;
+            if (data.length > 0) {
+                replyIndex = Math.floor(Math.random() * data.length);
+                typingDelay = 100 * data[replyIndex].length;
+            }
             setTimeout(() => replyMessage(data, replyIndex), typingDelay)
         })
 

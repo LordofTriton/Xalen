@@ -47,7 +47,7 @@ const ChatWindow = ({CortexControl}) => {
     }
 
     useEffect(() => {
-        axios.get(`${baseAPIURL}yggdrasil/start`).then(re => {
+        axios.post(`${baseAPIURL}yggdrasil/start`).then(re => {
             if (chatHistory.length < 1 && premierSpeaker) {
                 let data = re.data;
                 replyMessage(re.data, Math.floor(Math.random() * data.length))

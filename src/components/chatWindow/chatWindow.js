@@ -47,7 +47,7 @@ const ChatWindow = ({CortexControl}) => {
     }
 
     useEffect(() => {
-        axios.post(`${baseAPIURL}yggdrasil/start`, {auth: process.env.API_AUTH}).then(re => {
+        axios.post(`${baseAPIURL}yggdrasil/start`, {auth: process.env.REACT_APP_API_AUTH}).then(re => {
             if (chatHistory.length < 1 && premierSpeaker) {
                 let data = re.data;
                 replyMessage(re.data, Math.floor(Math.random() * data.length))
@@ -105,7 +105,7 @@ const ChatWindow = ({CortexControl}) => {
             setContext(re.data.newContext);
             setAncestor(re.data.newAncestor);
             setParent(re.data.newParent);
-            if (subject === "triton") setTimeout(() => setCurrentMessage(childMessage), 1000)
+            if (subject === "xalen") setTimeout(() => setCurrentMessage(childMessage), 1000)
             setLearning(false)
         })
     }
@@ -125,7 +125,7 @@ const ChatWindow = ({CortexControl}) => {
             }
 
             setChatHistory(chatHistory.concat(newMessage))
-            learnStuff("triton", chatHistory.concat(newMessage), newMessage)
+            learnStuff("xalen", chatHistory.concat(newMessage), newMessage)
             setNewMsg("")
             scrollDown()
         }
@@ -139,7 +139,7 @@ const ChatWindow = ({CortexControl}) => {
         let fallbackMessages = []
         for (let i = 0; i < ignoranceList.length; i++) {
             const newXalenMessage = {
-                parent: "triton",
+                parent: "xalen",
                 content: DateTime.addStamp(ignoranceList[i].trim()),
                 fullContent: DateTime.addStamp(ignorance),
                 time: d
@@ -161,7 +161,7 @@ const ChatWindow = ({CortexControl}) => {
             let replyList = []
             for (let i = 0; i < replyMessages.length; i++) {
                 const newXalenMessage = {
-                    parent: "triton",
+                    parent: "xalen",
                     content: DateTime.addStamp(Identity(replyMessages[i].trim())),
                     fullContent: DateTime.addStamp(reply),
                     time: d
@@ -183,13 +183,13 @@ const ChatWindow = ({CortexControl}) => {
                 {
                     chatHistory.map((message) =>
                         <div className="chatMessage">
-                            <h3 className="chatContent" style={{float: message.parent === "triton" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white)" : "var(--blue)", color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
+                            <h3 className="chatContent" style={{float: message.parent === "xalen" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white)" : "var(--blue)", color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
                                 {Censor.CensorText(DateTime.removeStamp(message.content), censor)}
                             </h3>
                             <h4 className="chatMessageTime" style={{
-                                textAlign: message.parent === "triton" ? "left" : "right",
-                                float: message.parent === "triton" ? "left" : "right",
-                                transform: message.parent === "triton" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
+                                textAlign: message.parent === "xalen" ? "left" : "right",
+                                float: message.parent === "xalen" ? "left" : "right",
+                                transform: message.parent === "xalen" ? "translate(15px, 0px)" : "translate(-15px, 0px)"}}
                             >{DateTime.formatTime(message.time)}</h4>
                         </div>
                     )

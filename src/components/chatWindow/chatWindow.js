@@ -18,7 +18,7 @@ let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({CortexControl}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -47,7 +47,7 @@ const ChatWindow = ({CortexControl}) => {
     }
 
     useEffect(() => {
-        axios.get(`${baseAPIURL}yggdrasil/start`).then(re => {
+        axios.post(`${baseAPIURL}yggdrasil/start`, {auth: process.env.API_AUTH}).then(re => {
             if (chatHistory.length < 1 && premierSpeaker) {
                 let data = re.data;
                 replyMessage(re.data, Math.floor(Math.random() * data.length))
@@ -57,28 +57,31 @@ const ChatWindow = ({CortexControl}) => {
     }, [])
 
     useEffect(() => {
-        window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
+        if (chatHistory.length > 0) {
+            window.navigator.onLine ? setBotState("Online") : setBotState("Offline");
 
-        let messageData = {
-            chatHistory: chatHistory,
-            ancestor: ancestor,
-            context: context,
-            botState: botState,
-            parent: parent
-        }
-
-        axios.post(`${baseAPIURL}getReply/`, messageData).then(re => {
-            setTyping(true)
-
-            let data = re.data.replies;
-            let typingDelay = 2000
-            let replyIndex = 0;
-            if (data.length > 0) {
-                replyIndex = Math.floor(Math.random() * data.length);
-                typingDelay = 100 * data[replyIndex].length;
+            let messageData = {
+                chatHistory: chatHistory,
+                ancestor: ancestor,
+                context: context,
+                botState: botState,
+                parent: parent,
+                auth: process.env.API_AUTH
             }
-            setTimeout(() => replyMessage(data, replyIndex), typingDelay)
-        })
+
+            axios.post(`${baseAPIURL}getReply/`, messageData).then(re => {
+                setTyping(true)
+
+                let data = re.data.replies;
+                let typingDelay = 2000
+                let replyIndex = 0;
+                if (data.length > 0) {
+                    replyIndex = Math.floor(Math.random() * data.length);
+                    typingDelay = 100 * data[replyIndex].length;
+                }
+                setTimeout(() => replyMessage(data, replyIndex), typingDelay)
+            })
+        }
 
     }, [currentMessage])
 
@@ -94,7 +97,8 @@ const ChatWindow = ({CortexControl}) => {
             ancestor: ancestor,
             newMessage: newMessage,
             context: context,
-            subject: subject
+            subject: subject,
+            auth: process.env.API_AUTH
         }
 
         await axios.post(`${baseAPIURL}learn/`, learnData).then(re => {

@@ -132,7 +132,7 @@ const ChatWindow = ({CortexControl}) => {
     }
 
     function fallbackMessage() {
-        axios.post(`${baseAPIURL}research/addOne`, {researchTopic: currentMessage.fullContent})
+        axios.post(`${baseAPIURL}research/addOne`, {researchTopic: currentMessage.fullContent, auth: process.env.API_AUTH})
 
         let ignorance = Fallbacks[Math.floor(Math.random() * Fallbacks.length)]
         const ignoranceList = ignorance.split("+")

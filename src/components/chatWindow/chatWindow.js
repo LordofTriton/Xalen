@@ -18,7 +18,7 @@ let d = new Date();
 let premierSpeaker = Math.random() * 10 > 5;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({CortexControl}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -47,7 +47,7 @@ const ChatWindow = ({CortexControl}) => {
     }
 
     useEffect(() => {
-        axios.post(`${baseAPIURL}yggdrasil/start`, {auth: process.env.REACT_APP_API_AUTH}).then(re => {
+        axios.get(`${baseAPIURL}yggdrasil/start`).then(re => {
             if (chatHistory.length < 1 && premierSpeaker) {
                 let data = re.data;
                 replyMessage(re.data, Math.floor(Math.random() * data.length))
@@ -65,8 +65,7 @@ const ChatWindow = ({CortexControl}) => {
                 ancestor: ancestor,
                 context: context,
                 botState: botState,
-                parent: parent,
-                auth: process.env.API_AUTH
+                parent: parent
             }
 
             axios.post(`${baseAPIURL}getReply/`, messageData).then(re => {
@@ -97,8 +96,7 @@ const ChatWindow = ({CortexControl}) => {
             ancestor: ancestor,
             newMessage: newMessage,
             context: context,
-            subject: subject,
-            auth: process.env.API_AUTH
+            subject: subject
         }
 
         await axios.post(`${baseAPIURL}learn/`, learnData).then(re => {
@@ -132,7 +130,7 @@ const ChatWindow = ({CortexControl}) => {
     }
 
     function fallbackMessage() {
-        axios.post(`${baseAPIURL}research/addOne`, {researchTopic: currentMessage.fullContent, auth: process.env.API_AUTH})
+        axios.post(`${baseAPIURL}research/addOne`, {researchTopic: currentMessage.fullContent})
 
         let ignorance = Fallbacks[Math.floor(Math.random() * Fallbacks.length)]
         const ignoranceList = ignorance.split("+")

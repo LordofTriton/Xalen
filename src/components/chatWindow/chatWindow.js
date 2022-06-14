@@ -15,7 +15,7 @@ import emojiIcon from '../../images/emoji.png';
 
 //Defaults
 let d = new Date();
-let premierSpeaker = Math.random() * 10 > 5;
+let premierSpeaker = Math.random() * 10 > 3;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
 // baseAPIURL = "http://localhost:5000/";
@@ -33,7 +33,7 @@ const ChatWindow = ({CortexControl}) => {
     const [context, setContext] = useState([])
     const [ancestor, setAncestor] = useState("")
     const [parent, setParent] = useState("")
-    const [learning, setLearning] = useState("")
+    const [xalenTurn, setXalenTurn] = useState("")
     const [emojiBox, setEmojiBox] = useState(false)
 
     let botState = CortexControl.botState;
@@ -85,7 +85,7 @@ const ChatWindow = ({CortexControl}) => {
     }, [currentMessage])
 
     async function learnStuff(subject, learningMaterial, childMessage) {
-        setLearning(true)
+        setXalenTurn(true)
         
         let parentMessage = learningMaterial.filter(msg => msg.parent === subject)
         parentMessage = parentMessage[parentMessage.length - 1]
@@ -104,14 +104,13 @@ const ChatWindow = ({CortexControl}) => {
             setAncestor(re.data.newAncestor);
             setParent(re.data.newParent);
             if (subject === "xalen") setTimeout(() => setCurrentMessage(childMessage), 1000)
-            setLearning(false)
         })
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
         setEmojiBox(false)
-        if (newMsg.trim().length > 0 && !typing && !learning) {
+        if (newMsg.trim().length > 0 && !typing && !xalenTurn) {
             let d = new Date()
             let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
             msg = msg.replaceAll("_", " ")
@@ -150,6 +149,7 @@ const ChatWindow = ({CortexControl}) => {
         learnStuff("user", chatHistory.concat(fallbackMessages), fallbackMessages[fallbackMessages.length - 1])
 
         setTyping(false)
+        setXalenTurn(false)
     }
 
     function replyMessage(reply, replyIndex) {
@@ -170,6 +170,7 @@ const ChatWindow = ({CortexControl}) => {
             setChatHistory(chatHistory.concat(replyList))
             learnStuff("user", chatHistory.concat(replyList), replyList[replyList.length - 1])
             setTyping(false)
+            setXalenTurn(false)
         }
         else fallbackMessage()
     }

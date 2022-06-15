@@ -35,6 +35,7 @@ const ChatWindow = ({CortexControl}) => {
     const [parent, setParent] = useState("")
     const [xalenTurn, setXalenTurn] = useState("")
     const [emojiBox, setEmojiBox] = useState(false)
+    const [myTurn, setMyTurn] = useState(false)
 
     let botState = CortexControl.botState;
     let setBotState = CortexControl.setBotState;
@@ -126,6 +127,7 @@ const ChatWindow = ({CortexControl}) => {
             setNewMsg("")
             scrollDown()
         }
+        else setMyTurn(true)
     }
 
     function fallbackMessage() {

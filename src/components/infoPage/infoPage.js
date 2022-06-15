@@ -30,6 +30,9 @@ const InfoPage = ({CortexControl}) => {
                         <br/>
                         <h3 className="infoText">Xalen will deny being a chatbot.</h3>
                         <h3 className="infoText">No matter what Xalen tells you, it is definitely a bot. 😉</h3>
+                        <br />
+                        <br />
+                        <h3 className="infoText">You might actually enjoy the conversation if you pretend Xalen is a real person, though.</h3>
                         </>
                     : null
                 }

@@ -51,6 +51,7 @@ const ChatWindow = ({CortexControl}) => {
         axios.post(`${baseAPIURL}yggdrasil/start`).then(re => {
             if (chatHistory.length < 1 && premierSpeaker) {
                 let data = re.data;
+                setXalenTurn(true)
                 replyMessage(re.data, Math.floor(Math.random() * data.length))
             }
             setContext(re.data)

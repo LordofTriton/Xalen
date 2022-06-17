@@ -24,7 +24,7 @@ const InfoPage = ({CortexControl}) => {
                         <h3 className="infoTitle">Who is Xalen?</h3>
                         <h3 className="infoText">Xalen is your friend.</h3>
                         <h3 className="infoText">A snarky, sarcastic, sometimes idiotic friend, but a friend nonetheless. 😅</h3>
-                        <h3 className="infoText">Xalen is a self learning conversational chatbot designed to hold funny and witty conversations with users through artificial intellignece methods that enable the program to communicate like an actual human being.</h3>
+                        <h3 className="infoText">Xalen is a self learning conversational chatbot designed to hold funny and witty conversations with users through artificial intelligence methods that enable the program to communicate like an actual human being.</h3>
                         <h3 className="infoText">Xalen learns from each and every conversation, becoming better and more intelligent, improving it's ability to hold conversations like a boss. 😎</h3>
                         <br/>
                         <br/>

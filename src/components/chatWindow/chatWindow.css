@@ -19,24 +19,17 @@
     top: 70px;
     left: 0px;
     padding: 30px;
-    padding-top: 100px;
     box-sizing: border-box;
     padding-bottom: 50px;
 }
 
 .dateTimeDisplay {
     color: white;
+    text-align: center;
     font-weight: 600;
     font-size: 13px;
     margin: 0px 0px 20px 0px;
     padding: 10px 20px 10px 20px;
-    width: fit-content;
-    background-image: linear-gradient(to bottom, var(--blue), blueviolet);
-    border-radius: 20px;
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translate(-50%, 0px);
 }
 
 .chatMessage {
@@ -62,6 +55,7 @@
 }
 
 .chatContent {
+    background-color: white;
     background-image: linear-gradient(to bottom, var(--blue), blueviolet);
     padding: 10px 20px 10px 20px;
     margin: 0px;

@@ -14,7 +14,7 @@ const Alert = ({CortexControl}) => {
                     <h3 className="alertTitle">{info.title}</h3>
                 </div>
                 <div className="alertContent">
-                    <h3 className="alertText" style={{fontWeight: theme === "Light" ? "400" : "200"}}>{info.content}</h3>
+                    <h3 className="alertText">{info.content}</h3>
                 </div>
                 <button className="alertClose" onClick={() => control(null)}>{info.button}</button>
             </div>

@@ -38,12 +38,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--blue);
+  background-image: linear-gradient(to bottom, var(--blue), blueviolet);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: var(--dark-orange);
+  background-image: linear-gradient(to bottom, var(--light-orange), var(--dark-orange));
 }
 
 .body {

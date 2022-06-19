@@ -5,6 +5,7 @@ import Title from './components/title/title';
 import TopNav from './components/topNav/topNav';
 import ChatWindow from './components/chatWindow/chatWindow';
 import Offline from './components/offline/offline';
+import Alert from './components/alert/alert';
 
 //Images
 import lightBckg from './images/lightThemeBckg.png';
@@ -21,6 +22,11 @@ const Cortex = () => {
     const [popMenuState, setPopMenuState] = useState(false)
     const [censor, setCensor] = useState(localStorage.getItem("XalenCensor") ? localStorage.getItem("XalenCensor") : "Off")
     const [infoPage, setInfoPage] = useState(false)
+    const [alert, setAlert] = useState({
+        title: "Hello!",
+        content: ["I'm Xalen. Welcome to my chat app! 😎", "I'm Xalen. You're gonna love me 🥰", "I'm Xalen. Can't wait to chat with you 😋"][Math.floor(Math.random() * 3)],
+        button: "Continue."
+    })
 
     function toggleTheme() {
         if (theme === "Light") {
@@ -67,7 +73,9 @@ const Cortex = () => {
         toggleTheme,
         toggleCensor,
         infoPage,
-        setInfoPage
+        setInfoPage,
+        alert,
+        setAlert
     }
 
     return(
@@ -79,6 +87,7 @@ const Cortex = () => {
                 <PopMenu CortexControl={CortexControl} />
                 <Offline CortexControl={CortexControl} />
                 <InfoPage CortexControl={CortexControl} />
+                {alert ? <Alert CortexControl={CortexControl} /> : null}
             </div>
         </div>
     )

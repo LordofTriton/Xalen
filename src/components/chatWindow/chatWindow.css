@@ -19,17 +19,24 @@
     top: 70px;
     left: 0px;
     padding: 30px;
+    padding-top: 100px;
     box-sizing: border-box;
     padding-bottom: 50px;
 }
 
 .dateTimeDisplay {
-    color: dimgray;
+    color: white;
     font-weight: 600;
-    text-align: center;
     font-size: 13px;
     margin: 0px 0px 20px 0px;
-    padding: 0px;
+    padding: 10px 20px 10px 20px;
+    width: fit-content;
+    background-image: linear-gradient(to bottom, var(--blue), blueviolet);
+    border-radius: 20px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0px);
 }
 
 .chatMessage {
@@ -55,7 +62,7 @@
 }
 
 .chatContent {
-    background-color: var(--orange-peel);
+    background-image: linear-gradient(to bottom, var(--blue), blueviolet);
     padding: 10px 20px 10px 20px;
     margin: 0px;
     color: var(--white);
@@ -68,7 +75,7 @@
 }
 
 .chatContentTyping {
-    background-color: var(--blue);
+    background-image: linear-gradient(to bottom, var(--blue), blueviolet);
     padding: 10px 20px 10px 20px;
     margin: 0px;
     color: var(--white);
@@ -123,7 +130,7 @@
     height: 50px;
     margin: 10px 0px 10px 2%;
     float: left;
-    background-color: var(--blue);
+    background-image: linear-gradient(to bottom, var(--blue), blueviolet);
     color: var(--white);
     border: 0px;
     outline: 0px;
@@ -136,7 +143,7 @@
 }
 
 .chatInputDockSubmit:hover {
-    background-color: var(--dark-orange);
+    background-image: linear-gradient(to bottom, var(--light-orange), var(--dark-orange));
     transform: scale(1.1,1.1);
 }
 

@@ -11,11 +11,11 @@ const InfoPage = ({CortexControl}) => {
         <div className="infoPageContainer" style={{top: toggle ? "70px" : "-100vh", backgroundColor: theme === "Light" ? "whitesmoke" : "#121212"}}>
             <h3 className="comic">You know you could just ask me this stuff, right?</h3>
             <div className="infoSideBar">
-                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Introduction" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Introduction" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Introduction")}>Introduction</h3>
-                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Developer" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Developer" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Developer")}>Developer</h3>
-                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Pricing" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Pricing" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Pricing")}>Pricing</h3>
-                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Platforms" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Platforms" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Platforms")}>Platforms</h3>
-                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Language" ? "white" : "var(--blue)", backgroundColor: infoDisplay === "Language" ? "var(--blue)" : "transparent"}} onClick={() => setInfoDisplay("Language")}>Language</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Introduction" ? "white" : "var(--blue)", backgroundImage: infoDisplay === "Introduction" ? null : "none"}} onClick={() => setInfoDisplay("Introduction")}>Introduction</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Developer" ? "white" : "var(--blue)", backgroundImage: infoDisplay === "Developer" ? null : "none"}} onClick={() => setInfoDisplay("Developer")}>Developer</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Pricing" ? "white" : "var(--blue)", backgroundImage: infoDisplay === "Pricing" ? null : "none"}} onClick={() => setInfoDisplay("Pricing")}>Pricing</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Platforms" ? "white" : "var(--blue)", backgroundImage: infoDisplay === "Platforms" ? null : "none"}} onClick={() => setInfoDisplay("Platforms")}>Platforms</h3>
+                <h3 className="infoSideBarLink" style={{border: theme === "Light" ? null : "0px", color: infoDisplay === "Language" ? "white" : "var(--blue)", backgroundImage: infoDisplay === "Language" ? null : "none"}} onClick={() => setInfoDisplay("Language")}>Language</h3>
             </div>
             <div className="infoDisplayBox">
                 {

@@ -1,0 +1,68 @@
+.alertContainer {
+    width: 90%;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 18;
+    transition: all 0.5s;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 10px;
+}
+
+.alertHeader {
+    width: 100%;
+    height: fit-content;
+    padding: 0px;
+}
+
+.alertTitle {
+    color: var(--dark-orange);
+    font-weight: 500;
+    font-family: Title;
+    padding: 25px 0px 10px 30px;
+    margin: 0px;
+    font-size: 25px;
+}
+
+.alertContent {
+    width: 100%;
+    height: fit-content;
+}
+
+.alertText {
+    margin: 0px;
+    padding: 5px 0px 25px 30px;
+    font-weight: 300;
+    color: var(--blue);
+}
+
+.alertClose {
+    width: 90%;
+    height: 50px;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom, var(--blue), blueviolet);
+    border: 0px;
+    outline: 0px;
+    color: white;
+    margin-left: 5%;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.5s;
+}
+
+.alertClose:hover {
+    background-image: linear-gradient(to bottom, var(--light-orange), var(--dark-orange));
+}
+
+
+
+@media screen and (min-width: 1125px) {
+    .alertContainer {
+        width: 500px;
+    }
+}

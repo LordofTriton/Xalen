@@ -27,7 +27,7 @@
 
 .infoSideBarLink {
     color: white;
-    background-color: var(--blue);
+    background-image: linear-gradient(to bottom, var(--blue), blueviolet);
     border-radius: 3px;
     padding: 10px 20px;
     font-weight: 400;

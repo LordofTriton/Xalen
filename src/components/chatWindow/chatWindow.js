@@ -128,7 +128,13 @@ const ChatWindow = ({CortexControl}) => {
             setNewMsg("")
             scrollDown()
         }
-        else setMyTurn(true)
+        else {
+            CortexControl.setAlert({
+                title: ["Really?", "Seriously?", "Kidding me?"][Math.floor(Math.random() * 3)],
+                content: ["Don't type while I'm replying 😒", "At least lemme reply first? 😕", "Won't you let me reply before sending another message? 🤔"][Math.floor(Math.random() * 3)],
+                button: "Got it."
+            })
+        }
     }
 
     function fallbackMessage() {
@@ -181,11 +187,11 @@ const ChatWindow = ({CortexControl}) => {
     return(
         <>
             <div className="chatWindow" id="chatWindow">
-                <h3 className="dateTimeDisplay" style={{color: theme === "Light" ? "#121212" : "white"}}>{DateTime.getDateFormatOne()}</h3>
+                <h3 className="dateTimeDisplay">{DateTime.getDateFormatOne()}</h3>
                 {
                     chatHistory.map((message) =>
                         <div className="chatMessage">
-                            <h3 className="chatContent" style={{float: message.parent === "xalen" ? "left" : "right", backgroundColor: message.parent === "user" ? "var(--white)" : "var(--blue)", color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
+                            <h3 className="chatContent" style={{float: message.parent === "xalen" ? "left" : "right", backgroundImage: message.parent === "user" ? "none" : null, color: message.parent === "user" ? "var(--blue)" : "var(--white)"}}>
                                 {Censor.CensorText(DateTime.removeStamp(message.content), censor)}
                             </h3>
                             <h4 className="chatMessageTime" style={{

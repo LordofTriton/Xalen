@@ -112,21 +112,30 @@ const ChatWindow = ({CortexControl}) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         setEmojiBox(false)
-        if (newMsg.trim().length > 0 && !typing && !xalenTurn) {
-            let d = new Date()
-            let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
-            msg = msg.replaceAll("_", " ")
-            const newMessage = {
-                parent: "user",
-                content: DateTime.addStamp(msg.trim()),
-                fullContent: DateTime.addStamp(msg.trim()),
-                time: d
-            }
+        if (!xalenTurn) {
+            if (newMsg.trim().length > 0) {
+                let d = new Date()
+                let msg = newMsg.charAt(0).toUpperCase() + newMsg.slice(1);
+                msg = msg.replaceAll("_", " ")
+                const newMessage = {
+                    parent: "user",
+                    content: DateTime.addStamp(msg.trim()),
+                    fullContent: DateTime.addStamp(msg.trim()),
+                    time: d
+                }
 
-            setChatHistory(chatHistory.concat(newMessage))
-            learnStuff("xalen", chatHistory.concat(newMessage), newMessage)
-            setNewMsg("")
-            scrollDown()
+                setChatHistory(chatHistory.concat(newMessage))
+                learnStuff("xalen", chatHistory.concat(newMessage), newMessage)
+                setNewMsg("")
+                scrollDown()
+            }
+            else {
+                CortexControl.setAlert({
+                    title: ["Excuse me?", "Nope.", "Hmmmmm."][Math.floor(Math.random() * 3)],
+                    content: ["You might wanna type something before sending. 😒", "You can't send empty messages 😕", "How about typing something first? 🤔"][Math.floor(Math.random() * 3)],
+                    button: "Got it."
+                })
+            }
         }
         else {
             CortexControl.setAlert({

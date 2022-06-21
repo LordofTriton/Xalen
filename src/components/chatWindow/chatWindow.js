@@ -18,7 +18,7 @@ let d = new Date();
 let premierSpeaker = Math.random() * 10 > 3;
 // premierSpeaker = true;
 let baseAPIURL = "https://xalen-server.herokuapp.com/";
-// baseAPIURL = "http://localhost:5000/";
+baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({CortexControl}) => {
     const [chatHistory, setChatHistory] = useState([])
@@ -178,7 +178,7 @@ const ChatWindow = ({CortexControl}) => {
             for (let i = 0; i < replyMessages.length; i++) {
                 const newXalenMessage = {
                     parent: "xalen",
-                    content: DateTime.addStamp(Identity(replyMessages[i].trim())),
+                    content: DateTime.addStamp(replyMessages[i].trim()),
                     fullContent: DateTime.addStamp(reply),
                     time: d
                 }

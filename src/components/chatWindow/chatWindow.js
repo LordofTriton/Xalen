@@ -7,7 +7,6 @@ import DateTime from '../../services/dateTime';
 import Fallbacks from '../../services/defaults';
 import Censor from '../../services/censor';
 import Emoji from '../../services/emoji';
-import Identity from '../../services/identity';
 
 //Images
 import sendIcon from '../../images/send1.png';
@@ -17,7 +16,7 @@ import emojiIcon from '../../images/emoji.png';
 let d = new Date();
 let premierSpeaker = Math.random() * 10 > 3;
 // premierSpeaker = true;
-let baseAPIURL = "https://xalen-server.herokuapp.com/";
+let baseAPIURL = "https://ajserver.herokuapp.com/";
 // baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({CortexControl}) => {

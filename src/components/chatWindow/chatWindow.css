@@ -18,18 +18,18 @@
     position: absolute;
     top: 70px;
     left: 0px;
-    padding: 30px;
+    padding: 0px 30px 50px 30px;
     box-sizing: border-box;
-    padding-bottom: 50px;
 }
 
 .dateTimeDisplay {
     color: white;
-    text-align: center;
     font-weight: 600;
+    text-align: center;
     font-size: 13px;
-    margin: 0px 0px 20px 0px;
-    padding: 10px 20px 10px 20px;
+    margin: 0px 10% 40px 10%;
+    padding: 10px 0px 10px 0px;
+    border-radius: 0px 0px 30px 30px;
 }
 
 .chatMessage {

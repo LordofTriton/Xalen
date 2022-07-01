@@ -16,7 +16,6 @@ const TopNav = ({CortexControl}) => {
     return(
         <>
             <div className="topNav" style={{backgroundColor: theme === "Light" ? "white" : "#121212"}}>
-                    {/* <img className="topNavLogo" src={logo} alt="logo" /> */}
                     <div className="topNavProfile" style={{backgroundImage: "url("+profilePicture+")"}}></div>
                     <div style={{width: "fit-content", height: "fit-content", float: "left"}}>
                         <h3 className="topNavTitle">Xalen</h3>

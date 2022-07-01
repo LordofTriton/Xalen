@@ -30,7 +30,7 @@ const ChatWindow = ({CortexControl}) => {
     const [context, setContext] = useState([])
     const [ancestor, setAncestor] = useState("")
     const [parent, setParent] = useState("")
-    const [xalenTurn, setXalenTurn] = useState("")
+    const [xalenTurn, setXalenTurn] = useState(true)
     const [emojiBox, setEmojiBox] = useState(false)
     const [myTurn, setMyTurn] = useState(false)
 

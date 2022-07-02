@@ -14,6 +14,8 @@ import emojiIcon from '../../images/emoji.png';
 
 //Defaults
 let d = new Date();
+let premierSpeaker = Math.random() * 10 > 3;
+// premierSpeaker = true;
 let baseAPIURL = "https://tritonserver.herokuapp.com/xalen/";
 // baseAPIURL = "http://localhost:5000/";
 
@@ -30,7 +32,7 @@ const ChatWindow = ({CortexControl}) => {
     const [context, setContext] = useState([])
     const [ancestor, setAncestor] = useState("")
     const [parent, setParent] = useState("")
-    const [xalenTurn, setXalenTurn] = useState(true)
+    const [xalenTurn, setXalenTurn] = useState(false)
     const [emojiBox, setEmojiBox] = useState(false)
     const [myTurn, setMyTurn] = useState(false)
 
@@ -46,10 +48,11 @@ const ChatWindow = ({CortexControl}) => {
 
     useEffect(() => {
         axios.post(`${baseAPIURL}yggdrasil/start`).then(re => {
-            let data = re.data;
-            setXalenTurn(true)
-            replyMessage(re.data, Math.floor(Math.random() * data.length))
-            
+            if (chatHistory.length < 1 && premierSpeaker) {
+                let data = re.data;
+                setXalenTurn(true)
+                replyMessage(re.data, Math.floor(Math.random() * data.length))
+            }
             setContext(re.data)
         })
     }, [])

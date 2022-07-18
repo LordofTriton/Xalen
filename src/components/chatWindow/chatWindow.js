@@ -16,7 +16,7 @@ import emojiIcon from '../../images/emoji.png';
 let d = new Date();
 let premierSpeaker = Math.random() * 10 > 3;
 // premierSpeaker = true;
-let baseAPIURL = "https://tritonserver.herokuapp.com/xalen/";
+let baseAPIURL = "https://tritonserver.onrender.com/xalen/";
 // baseAPIURL = "http://localhost:5000/";
 
 const ChatWindow = ({CortexControl}) => {
